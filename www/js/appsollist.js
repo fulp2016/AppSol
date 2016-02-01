@@ -48,16 +48,14 @@ function getAvisosList() {
 
 
 function getSesionForm() {
-	alert(1);
-	alert(sesion);
+
 	if((sesion!='')&&(sesion!='0'))
 	{
-		alert(2);
 		cerrar_sesion();
 		sesion = '';
-		alert('Sesión cerrada correctamente');
 		document.getElementById('mencerrar').id='meniniciar';
 		document.getElementById('meniniciar').innerHTML='Iniciar sesión';
+		alert('Sesión cerrada correctamente');
 	}
 	mostrarSesion();
 }
