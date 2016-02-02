@@ -78,10 +78,10 @@ if((cod_personal!='0')&&(cod_personal!=''))
 }
 
 
-if(pagina=='destacado'){getDestacadosList();}
-else if(pagina=='cita'){getCitaForm();}
-else if(pagina=='aviso'){getAvisosList();}
-else if(pagina=='inicio'){getSesionForm(); }
+if(pagina=='destacado'){getDestacadosList(); document.getElementById("mendest").className = "ui-btn-active";}
+else if(pagina=='cita'){getCitaForm(); document.getElementById("mencita").className = "ui-btn-active";}
+else if(pagina=='aviso'){getAvisosList(); document.getElementById("menaviso").className = "ui-btn-active";}
+else if(pagina=='inicio'){getSesionForm(); document.getElementById("meniniciar").className = "ui-btn-active";}
 
 $(document).ready(function() {	
 
@@ -103,6 +103,8 @@ $(document).ready(function() {
 					sesion = data;
 					document.getElementById('meniniciar').id='mencerrar';
 					document.getElementById('mencerrar').innerHTML='Cerrar sesión';
+					document.getElementById('mencerrar').className='';
+					document.getElementById("mendest").className = "ui-btn-active";
 					getDestacadosList();
 				}
             }

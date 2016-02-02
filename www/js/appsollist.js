@@ -11,7 +11,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
 
 
 function getDestacadosList() {
-	document.getElementById("mendest").className = "ui-btn-active";
+	
 	mostrarDestacados();
 	$.getJSON(serviceDestacadosURL, function(data) {
 		$('#destacadosList li').remove();
@@ -28,13 +28,13 @@ function getDestacadosList() {
 
 
 function getCitaForm() {
-	document.getElementById("mencita").className = "ui-btn-active";
+	
 	mostrarCita();
 }
 
 
 function getAvisosList() {
-	document.getElementById("menaviso").className = "ui-btn-active";
+	
 	mostrarAvisos();
 	/*$.getJSON(serviceocasionURL, function(data) {
 		$('#ocasionList li').remove();
@@ -58,7 +58,6 @@ function getSesionForm() {
 		sesion = '';
 		document.getElementById('mencerrar').id='meniniciar';
 		document.getElementById('meniniciar').innerHTML='Iniciar sesión';
-		document.getElementById("meniniciar").className = "ui-btn-active";
 		alert('Sesión cerrada correctamente');
 	}
 	mostrarSesion();
