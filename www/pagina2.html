@@ -103,9 +103,9 @@ $(document).ready(function() {
 					sesion = data;
 					document.getElementById('meniniciar').id='mencerrar';
 					document.getElementById('mencerrar').innerHTML='Cerrar sesión';
-					document.getElementById('mencerrar').className='';
-					document.getElementById("mendest").className = "ui-btn-active";
 					getDestacadosList();
+					document.getElementById('mencerrar').className.replace( /(?:^|\s)ui-btn-active(?!\S)/ , '' )
+					document.getElementById("mendest").className = "ui-btn-active";
 				}
             }
         });
