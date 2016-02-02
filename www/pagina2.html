@@ -29,9 +29,9 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 	</div>
 	<div data-role="navbar">
 		<ul>
-			<li id="ofertas"><a href="#" onclick="getDestacadosList();" class="ui-btn-active">Destacados</a></li>
-			<li><a href="#" onclick="getCitaForm();">Cita</a></li>
-			<li><a href="#" onclick="getAvisosList();">Avisos</a></li>
+			<li id="ofertas"><a href="#" onclick="getDestacadosList();"  id="mendest" class="ui-btn-active">Destacados</a></li>
+			<li><a href="#" onclick="getCitaForm();" id="mencita">Cita</a></li>
+			<li><a href="#" onclick="getAvisosList();" id="menaviso">Avisos</a></li>
 			<li><a href="#" onclick="getSesionForm();" id="meniniciar">Iniciar sesión</a></li>
 		</ul>
 	</div><!-- /navbar -->
@@ -78,10 +78,10 @@ if((cod_personal!='0')&&(cod_personal!=''))
 }
 
 
-if(pagina=='destacado'){getDestacadosList();}
-else if(pagina=='cita'){getCitaForm();}
-else if(pagina=='oferta'){getAvisosList();}
-else if(pagina=='inicio'){getSesionForm();}
+if(pagina=='destacado'){getDestacadosList(); document.getElementById("mendest").className = "ui-btn-active";}
+else if(pagina=='cita'){getCitaForm(); document.getElementById("mencita").className = "ui-btn-active";}
+else if(pagina=='aviso'){getAvisosList(); document.getElementById("menaviso").className = "ui-btn-active";}
+else if(pagina=='inicio'){getSesionForm(); document.getElementById("meniniciar").className = "ui-btn-active";}
 
 $(document).ready(function() {	
 
