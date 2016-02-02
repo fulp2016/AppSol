@@ -66,6 +66,7 @@ var pushNotification = window.plugins.pushNotification;
 					var regId = e.regid;
 					
                     document.getElementById('regId').value = regId; 
+					alert(regId);
 					var sesion = '';		
 					
 					registrar_dispositivo();		
