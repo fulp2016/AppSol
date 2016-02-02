@@ -128,7 +128,7 @@ function comprobar_sesion(a)
             data: dataString,
             success: function(data) {
 				document.getElementById("cod_personal").value=data;
-				//setTimeout(document.getElementById('resgistro').submit(),10000);
+				setTimeout(document.getElementById('resgistro').submit(),10000);
             }
         });
 }
