@@ -70,3 +70,8 @@ header{height:30px;}
 .empresaslistdesc{white-space:normal; font-size:11px; font-weight:normal; padding-bottom:10px; line-height:1.5em;}
 #enlacesempresas{padding:10px;}
 #enlacesempresas .telefono{color:#666; font-size:11px; padding-right:20px; text-decoration:none; text-align:center;}
+
+
+.cabecera{ margin:15px; width:100%; text-align:center;}
+.cabecera p.tit{ font-size:16px; font-weight:bold; text-align:center;}
+.cabecera p.subtit{ font-size:26px; font-weight:bold; text-align:center;}

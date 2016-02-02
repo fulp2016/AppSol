@@ -132,9 +132,3 @@ function comprobar_sesion(a)
             }
         });
 }
-
-function change(a)
-{
-	document.getElementById("pagina").value=a;
-	document.getElementById('resgistro').submit();
-}

@@ -103,3 +103,9 @@ function cerrar_sesion(){
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&cerrar=S",false);
 	 xmlhttp.send(null);	
 }
+
+function change(a)
+{
+	document.getElementById("pagina").value=a;
+	document.getElementById('irpagina').submit();
+}
