@@ -72,6 +72,7 @@ function mostrarDestacados()
 
 function mostrarCita()
 {
+	alert('entra');
   $('#apptitle').text('Solicitar Cita');
   $('#contenedorDestacados').hide();
   $('#contenedorCita').show();
