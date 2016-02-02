@@ -12,6 +12,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
 
 function getDestacadosList() {
 	mostrarDestacados();
+	document.getElementById("mendest").className = "ui-btn-active";
 	$.getJSON(serviceDestacadosURL, function(data) {
 		$('#destacadosList li').remove();
 		employees = data;
@@ -28,11 +29,13 @@ function getDestacadosList() {
 
 function getCitaForm() {
 	mostrarCita();
+	 document.getElementById("mencita").className = "ui-btn-active";
 }
 
 
 function getAvisosList() {
 	mostrarAvisos();
+	 document.getElementById("menaviso").className = "ui-btn-active";
 	/*$.getJSON(serviceocasionURL, function(data) {
 		$('#ocasionList li').remove();
 		eventos = data;
@@ -58,6 +61,7 @@ function getSesionForm() {
 		alert('Sesión cerrada correctamente');
 	}
 	mostrarSesion();
+	document.getElementById("meniniciar").className = "ui-btn-active";
 }
 
 function mostrarDestacados()
