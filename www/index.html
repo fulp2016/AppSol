@@ -4,8 +4,7 @@
         <script type="text/javascript" src="phonegap.js"></script> 
         <script type="text/javascript" src="PushNotification.js"></script> 
         <script type="text/javascript" src="js/index.js"></script> 
-        <script src="js/jquery.js"></script>
-		<script src="js/jquery.mobile-1.0rc1.min.js"></script>        
+        <script src="js/jquery.js"></script>        
         <script type="text/javascript"> 
         //El registro al servicio de google lo hacemos automáticamente 
         	app.initialize(); 
@@ -16,19 +15,25 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" href="css/styles.css" />
         <title>Servicio de Orientaci&oacute;n Laboral</title>
     </head>
-    <body>
+    <body  class="p1">
+    <div class="cabecera">
+    	<p><img src="img/identificador_visual_fulp.png"></p>
+    	<p class="tit">Servicio<br>de Orientaci&oacute;n Laboral</p>
+        <p class="subtit">SOL</p>
+    </div>
         <div class="app">
+        <img src="img/loading.gif">
             <form id="resgistro" name="resgistro" method="get" action="pagina1.html"> 
                 <input type="hidden" id="cod_personal" name="cod_personal" >
                 <input type="hidden" name="regId" id="regId" > 
             </form>   
-        <img src="img/loading.gif">
         <div id="deviceready" class="blink"> 
-                <p class="event listening"></p> 
-                <p class="event received"></p> 
+                <p class="event listening">CONECTANDO</p> 
+                <p class="event received">LISTO!!</p> 
             </div>
-       </div>     
+       </div>  
     </body>
 </html>

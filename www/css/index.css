@@ -47,19 +47,21 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logofulp.png) no-repeat center top; /* 170px x 200px */
-	background-size:auto;
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:100;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+	/* background:url(../img/logofulp.png) no-repeat center top; /* 170px x 200px */
+	background-size: auto;
+	/*position: absolute;             /* position in the center of the screen */
+	/*left: 352px;
+	top: 392px;
+	/*height: 118px;                   /* text area height */
+	width: 100;                   /* text area width */
+	text-align: center;
+	padding: 0px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+	/*margin: -115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+    margin:50px auto;	
+	tex-aling:center;   
 }
 
+.app img{ text-align:center;}
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
@@ -81,12 +83,14 @@ h1 {
 }
 
 .event {
+	width:100% !important;
     border-radius:4px;
     -webkit-border-radius:4px;
     color:#FFFFFF;
     font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+    margin:10px 0px;
+    padding:2px 5px;
+	text-align:center;
 }
 
 .event.listening {
