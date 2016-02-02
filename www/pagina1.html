@@ -14,16 +14,11 @@ cadVariables = location.search.substring(1,location.search.length);
 arrVariables = cadVariables.split("&");
 for (i=0; i<arrVariables.length; i++) {
 arrVariableActual = arrVariables[i].split("=");
-alert(arrVariableActual);
 if (isNaN(parseFloat(arrVariableActual[1])))
 eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
 else
 eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 }
-
-document.getElementById("cod_personal").value=cod_personal;
-document.getElementById("regId").value=regId;
-
 </script>
 </head>
 
@@ -46,7 +41,10 @@ document.getElementById("regId").value=regId;
             <input type="button" id="inicio" value="" onClick="change('inicio')"></div>
         </form>    
     </div>
-
+<script>
+document.getElementById("cod_personal").value=cod_personal;
+document.getElementById("regId").value=regId;
+</script>
 
 </body>
 </html>

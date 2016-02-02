@@ -6,13 +6,12 @@ cadVariables = location.search.substring(1,location.search.length);
 arrVariables = cadVariables.split("&");
 for (i=0; i<arrVariables.length; i++) {
 arrVariableActual = arrVariables[i].split("=");
-alert(arrVariableActual);
 if (isNaN(parseFloat(arrVariableActual[1])))
 eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
 else
 eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 }
-alert(regId);
+
 </script>
 <title>Servicio de Orientaci&oacute;n Laboral</title>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
