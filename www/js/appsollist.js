@@ -2,10 +2,10 @@ var serviceDestacadosURL = "http://www.fulp.es/servicesfulp/ofertas.json";
 
 var employees;
 
-
+/*
 $('#appsolListPage').bind('pageinit', function(event) {
 	getDestacadosList();
-});
+});*/
 
 
 
