@@ -11,8 +11,8 @@ $('#appsolListPage').bind('pageinit', function(event) {
 
 
 function getDestacadosList() {
-	mostrarDestacados();
 	document.getElementById("mendest").className = "ui-btn-active";
+	mostrarDestacados();
 	$.getJSON(serviceDestacadosURL, function(data) {
 		$('#destacadosList li').remove();
 		employees = data;
@@ -28,14 +28,14 @@ function getDestacadosList() {
 
 
 function getCitaForm() {
+	document.getElementById("mencita").className = "ui-btn-active";
 	mostrarCita();
-	 document.getElementById("mencita").className = "ui-btn-active";
 }
 
 
 function getAvisosList() {
+	document.getElementById("menaviso").className = "ui-btn-active";
 	mostrarAvisos();
-	 document.getElementById("menaviso").className = "ui-btn-active";
 	/*$.getJSON(serviceocasionURL, function(data) {
 		$('#ocasionList li').remove();
 		eventos = data;
@@ -58,10 +58,10 @@ function getSesionForm() {
 		sesion = '';
 		document.getElementById('mencerrar').id='meniniciar';
 		document.getElementById('meniniciar').innerHTML='Iniciar sesión';
+		document.getElementById("meniniciar").className = "ui-btn-active";
 		alert('Sesión cerrada correctamente');
 	}
 	mostrarSesion();
-	document.getElementById("meniniciar").className = "ui-btn-active";
 }
 
 function mostrarDestacados()
