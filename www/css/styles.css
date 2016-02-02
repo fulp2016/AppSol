@@ -80,7 +80,23 @@ background: url("../img/fondo.png") no-repeat center center fixed; -webkit-backg
 
 .botones{ margin:auto; text-align:center; }
 
-.botones #destacado{background:url("../img/bdestacado.png") no-repeat; width:200px; height:200px; border:none;}
-.botones #aviso{ background:url("../img/baviso.png") no-repeat; width:200px; height:200px;  border:none;}
-.botones #cita{ background:url("../img/bcita.png") no-repeat; width:200px; height:200px;  border:none;}
-.botones #inicio{ background:url("../img/binicio.png") no-repeat; width:200px; height:200px;  border:none;}
+.botones #destacado{background:url("../img/bdestacado.png");background-repeat:no-repeat;
+background-size:150px;
+  height:150px;
+  width:150px;
+  background-position:center; border:none;}
+.botones #aviso{ background:url("../img/baviso.png");background-repeat:no-repeat;
+background-size:150px;
+  height:150px;
+  width:150px;
+  background-position:center; border:none;}
+.botones #cita{ background:url("../img/bcita.png");background-repeat:no-repeat;
+background-size:150px;
+  height:150px;
+  width:150px;
+  background-position:center; border:none;}
+.botones #inicio{ background:url("../img/binicio.png");background-repeat:no-repeat;
+background-size:150px;
+  height:150px;
+  width:150px;
+  background-position:center; border:none;}
