@@ -69,11 +69,6 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 <script src="phonegap.js"></script>
 <script>
 
-if(pagina=='destacado'){getDestacadosList();}
-else if(pagina=='cita'){getCitaForm();}
-else if(pagina=='oferta'){getAvisosList();}
-else if(pagina=='inicio'){getSesionForm();}
-
 var sesion = cod_personal;	
 if((cod_personal!='0')&&(cod_personal!=''))
 {
@@ -81,6 +76,11 @@ if((cod_personal!='0')&&(cod_personal!=''))
 	document.getElementById('meniniciar').id='mencerrar';
 	document.getElementById('mencerrar').innerHTML='Cerrar sesión';
 }
+
+if(pagina=='destacado'){getDestacadosList();}
+else if(pagina=='cita'){getCitaForm();}
+else if(pagina=='oferta'){getAvisosList();}
+else if(pagina=='inicio'){getSesionForm();}
 
 $(document).ready(function() {	
 
