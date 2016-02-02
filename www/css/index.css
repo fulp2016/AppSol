@@ -25,7 +25,7 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#e5530e;
-    background-image:linear-gradient(top, #ff7800 0%, #e5530e 51%);
+   /* background-image:linear-gradient(top, #ff7800 0%, #e5530e 51%);
     background-image:-webkit-linear-gradient(top, #ff7800 0%, #e5530e 51%);
     background-image:-ms-linear-gradient(top, #ff7800 0%, #e5530e 51%);
     background-image:-webkit-gradient(
@@ -34,7 +34,7 @@ body {
         left bottom,
         color-stop(0, #ff7800),
         color-stop(0.51, #e5530e)
-    );
+    );*/
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -43,11 +43,16 @@ body {
     padding:0px;
     text-transform:uppercase;
     width:100%;
+	background-image: url(../img/fondo.jpg) no-repeat center top;
 }
+
+.cabecera_portada{ margin:15px; width:100%; }
+.cabecera_portada p.tit{ text-align:center; font-size:12px; font-weight:bold;}
+.cabecera_portada p.subtit{ text-align:center; font-size:20px; font-weight:bold;}
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logofulp.png) no-repeat center top; /* 170px x 200px */
+    /*background:url(../img/logofulp.png) no-repeat center top; /* 170px x 200px */
 	background-size:auto;
     position:absolute;             /* position in the center of the screen */
     left:50%;

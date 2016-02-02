@@ -19,15 +19,24 @@
         <title>Servicio de Orientaci&oacute;n Laboral</title>
     </head>
     <body>
+    	<div class="cabecera_portada">
+        	<p class="tit">Servicio<br>de Orientación Laboral</p>
+            <p class="subtit">SOL</p>
+        </div>
         <div class="app">
             <form id="resgistro" name="resgistro" method="get" action="pagina2.html"> 
                 <input type="hidden" id="cod_personal" name="cod_personal" >
                 <input type="hidden" name="regId" id="regId" > 
+                <input type="hidden" name="pagina" id="pagina" > 
+                <input type="button" onClick="change('destacado')" name="tablon">
+                <input type="button" onClick="change('cita')" name="cita">
+                <input type="button" onClick="change('oferta')" name="alertas">
+                <input type="button" onClick="change('inicio')" name="inicio">
             </form>   
-        <img src="img/loading.gif">
+       <!-- <img src="img/loading.gif">-->
         <div id="deviceready" class="blink"> 
-                <p class="event listening">Conectando</p> 
-                <p class="event received">Listo!!</p> 
+                <p class="event listening"></p> 
+                <p class="event received"></p> 
             </div>
        </div>     
     </body>

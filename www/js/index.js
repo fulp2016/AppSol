@@ -127,17 +127,14 @@ function comprobar_sesion(a)
             url: "http://www.fulp.es/FULP/mensajesapp/registro_app.php",
             data: dataString,
             success: function(data) {
-				
-				if(data=='0')
-				{
-					document.getElementById("cod_personal").value=data;
-					setTimeout(document.getElementById('resgistro').submit(),10000);
-				}
-				else
-				{
-					document.getElementById("cod_personal").value=data;
-					setTimeout(document.getElementById('resgistro').submit(),10000);			
-				}
+				document.getElementById("cod_personal").value=data;
+				//setTimeout(document.getElementById('resgistro').submit(),10000);
             }
         });
+}
+
+function change(a)
+{
+	document.getElementById("pagina").value=a;
+	document.getElementById('resgistro').submit();
 }
