@@ -77,9 +77,9 @@ if((cod_personal!='0')&&(cod_personal!=''))
 	document.getElementById('mencerrar').innerHTML='Cerrar sesión';
 }
 
-alert(pagina);
+
 if(pagina=='destacado'){getDestacadosList();}
-else if(pagina=='cita'){getCitaForm();}
+else if(pagina=='cita'){getCitaForm(); alert('entra');}
 else if(pagina=='oferta'){getAvisosList();}
 else if(pagina=='inicio'){getSesionForm();}
 
