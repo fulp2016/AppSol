@@ -17,10 +17,10 @@ function getDestacadosList() {
 		$('#destacadosList li').remove();
 		employees = data;
 		$.each(employees, function(index, destacado) {
-			$('#destacadosList').append('<li><a href="destacadodetails.html?id=' + destacado.id_solicitud + '">' +
+			$('#destacadosList').append('<a href="destacadodetails.html?id=' + destacado.id_solicitud + '"><li>' +
 					'<h4>' + destacado.asunto + '</h4>' +
 					'<p>' + destacado.entidad + '</p>' +
-					'<span class="precioantes">' + destacado.contrato + ' &euro;</span><span class="preciooferta">' + destacado.salario + ' &euro;</span></a></li>');
+					'<span>' + destacado.contrato + '</span><span>' + destacado.salario + ' &euro;</span></li></a>');
 		});
 		$('#destacadosList').listview('refresh');
 	});
