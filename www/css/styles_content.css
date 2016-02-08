@@ -11,39 +11,47 @@
 
 #contenido #contenedorSesion{ text-align:center;}
 
+#contenido #contenedorAvisos ul{ padding:0;}
+#contenido #contenedorAvisos ul li { list-style:none; border:1px solid #ccc; padding:10px}
+#contenido #contenedorAvisos ul a{ text-decoration:none;}
+#contenido #contenedorAvisos ul a li h4{ color:#e9530d; font-size:20px; font-weight:bold;}
+#contenido #contenedorAvisos ul a li p{ color:#000;}
+#contenido #contenedorAvisos ul a li span{ color:#000; margin:0 10px;}
+#contenido #contenedorAvisos ul li p,#contenido #contenedorAvisos ul li h4{margin:0;}
+
 #menu-pie { background:url("../img/fondo.png") no-repeat center center fixed; position:fixed; bottom:0; left:0; width:100%; padding:10px; text-align:center;}
 
 #menu-pie input{ margin:0 3% 0 3%;}
 
 #menu-pie #mendest{background:url("../img/bdestacado.png") no-repeat;background-repeat:no-repeat;
-background-size:60px;
+background-size:70px;
 background-color:#fff;
-border-radius:10px;
-  height:60px;
-  width:60px;
+border-radius:15px;
+  height:70px;
+  width:70px;
   background-position:center;}
 #menu-pie #menaviso{ background:url("../img/baviso.png") no-repeat;background-repeat:no-repeat;
-background-size:60px;
+background-size:70px;
 background-color:#fff;
-border-radius:10px;
-  height:60px;
-  width:60px;
+border-radius:15px;
+  height:70px;
+  width:70px;
   background-position:center;}
 #menu-pie #mencita{ background:url("../img/bcita.png") no-repeat;background-repeat:no-repeat;
-background-size:60px;
+background-size:70px;
 background-color:#fff;
-border-radius:10px;
-  height:60px;
-  width:60px;
+border-radius:15px;
+  height:70px;
+  width:70px;
   background-position:center;}
 #cabecera #meniniciar{ 
 position:absolute;
 top:20%;
 right:10%;
 background:url("../img/binicio.png") no-repeat;background-repeat:no-repeat;
-background-size:60px;
-border-radius:10px;
+background-size:50px;
+border-radius:5px;
 border-color:#fff;
-  height:60px;
-  width:60px;
+  height:50px;
+  width:50px;
   background-position:center;}
