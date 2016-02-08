@@ -11,13 +11,13 @@
 
 #contenido #contenedorSesion{ text-align:center;}
 
-#contenido #contenedorAvisos ul{ padding:0;}
-#contenido #contenedorAvisos ul a li { list-style:none; border:1px solid #ccc; padding:10px}
-#contenido #contenedorAvisos ul a{ text-decoration:none !important;}
-#contenido #contenedorAvisos ul a li h4{ color:#e9530d; font-size:20px; font-weight:bold;}
-#contenido #contenedorAvisos ul a li p{ color:#000;}
-#contenido #contenedorAvisos ul a li span{ color:#000; margin:0 10px;}
-#contenido #contenedorAvisos ul a li p,#contenido #contenedorAvisos ul a li h4{margin:0;}
+#destacadosList{ padding:0;}
+#destacadosList a li { list-style:none; border:1px solid #ccc; padding:10px}
+#destacadosList a { text-decoration:none !important;}
+#destacadosList a li h4{ color:#e9530d; font-size:20px; font-weight:bold;}
+#destacadosList a li p{ color:#000;}
+#destacadosList a li span{ color:#000; margin:0 10px;}
+#destacadosList a li p,#destacadosList a li h4{margin:0;}
 
 #menu-pie { background:url("../img/fondo.png") no-repeat center center fixed; position:fixed; bottom:0; left:0; width:100%; padding:10px; text-align:center;}
 
