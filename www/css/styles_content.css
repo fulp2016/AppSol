@@ -11,8 +11,8 @@
 
 #contenido #contenedorSesion{ text-align:center;}
 
-#destacadosList{ padding:0;}
-#destacadosList a li { list-style:none; border:1px solid #ccc; padding:10px}
+#destacadosList{ padding:0; width:100%;}
+#destacadosList a li { list-style:none; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:10px; margin:10px 0;}
 #destacadosList a { text-decoration:none !important;}
 #destacadosList a li h4{ color:#e9530d; font-size:20px; font-weight:bold;}
 #destacadosList a li p{ color:#000;}
