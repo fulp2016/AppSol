@@ -15,7 +15,7 @@
 #destacadosList a li { list-style:none; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:10px; margin:10px 0;}
 #destacadosList a { text-decoration:none !important;}
 #destacadosList a li h4{ color:#e9530d; font-size:16px; font-weight:bold;}
-#destacadosList a li p{ color:#000;}
+#destacadosList a li p{ color:#000;  font-size:12px;}
 #destacadosList a li span{ color:#000; margin:0 10px;}
 #destacadosList a li p,#destacadosList a li h4{margin:0;}
 
