@@ -13,22 +13,29 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 }
 
 </script>
-
 <title>Servicio de Orientaci&oacute;n Laboral</title>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<link rel="stylesheet" href="css/styles_content.css" />
+<link rel="stylesheet" href="css/jquery.mobile-1.0rc1.min.css" />
+<link rel="stylesheet" href="css/styles.css" />
 
 </head>
-
-<body>
-
-<div id="appsolListPage" data-role="page">
-
-	<div id="cabecera">
-		<img id="imgcab" src="img/cab_descatado.png">
-	</div>
     
- <div id="contenido">
+<body>
+<div id="appsolListPage" data-role="page" >
+
+
+	<div data-role="header" data-position="fixed">
+		<h1 id="apptitle">Destacados</h1>
+	</div>
+	<div data-role="navbar">
+		<ul>
+			<li id="ofertas"><a href="#" onclick="getDestacadosList();"  id="mendest">Destacados</a></li>
+			<li><a href="#" onclick="getCitaForm();" id="mencita">Cita</a></li>
+			<li><a href="#" onclick="getAvisosList();" id="menaviso">Avisos</a></li>
+			<li><a href="#" onclick="getSesionForm();" id="meniniciar">Iniciar sesión</a></li>
+		</ul>
+	</div><!-- /navbar -->
+
 	<div data-role="content" id="contenedorDestacados">
          <ul id="destacadosList" data-role="listview" data-filter="true"></ul>
     </div>		
@@ -53,18 +60,10 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
             <p><input type="button" value="INICIAR" name="iniciar" id="iniciar"> </p>
          </form>
     </div>	
- </div>	
-    
-    <div id="menu-pie">
-    	<input type="button" onclick="getDestacadosList();" id="mendest">
-        <input type="button" onclick="getCitaForm();" id="mencita">
-        <input type="button" onclick="getAvisosList();" id="menaviso">
-        <input type="button" onclick="getSesionForm();" id="meniniciar">
-	</div><!-- /navbar -->
-    
+	
 </div>
-
 <script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-1.0rc1.min.js"></script>
 <script src="js/appsollist.js"></script>
 <script src="js/appsoldetails.js"></script>
 <script src="phonegap.js"></script>
@@ -79,10 +78,10 @@ if((cod_personal!='0')&&(cod_personal!=''))
 }
 
 
-if(pagina=='destacado'){getDestacadosList(); $("#imgcab").attr("src","img/cab_descatado.png");}
-else if(pagina=='cita'){getCitaForm(); $("#imgcab").attr("src","cita.png");}
-else if(pagina=='aviso'){getAvisosList(); $("#imgcab").attr("src","aviso.png");}
-else if(pagina=='inicio'){getSesionForm(); ;$("#imgcab").attr("src","inicio.png");}
+if(pagina=='destacado'){getDestacadosList(); document.getElementById("mendest").className = "ui-btn-active";}
+else if(pagina=='cita'){getCitaForm(); document.getElementById("mencita").className = "ui-btn-active";}
+else if(pagina=='aviso'){getAvisosList(); document.getElementById("menaviso").className = "ui-btn-active";}
+else if(pagina=='inicio'){getSesionForm(); document.getElementById("meniniciar").className = "ui-btn-active";}
 
 $(document).ready(function() {	
 
