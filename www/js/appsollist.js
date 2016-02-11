@@ -13,6 +13,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
 						 var id = video.id;
 						 var title = video.snippet.title;
 						 var imagen = video.thumbnails.default;
+						 alert(imagen);
 						 $('#destacadosList').append('<a href="https://www.youtube.com/watch?v=' + id + '"><li>' +
 						'<h4><img src="'+ imagen +'"> ' + title + '</h4>' +
 						'</li></a>');
