@@ -12,7 +12,6 @@ $('#appsolListPage').bind('pageinit', function(event) {
 					$.each(data.items, function(index, video) {
 						 var id = video.id;
 						 var title = video.snippet.title;
-						 alert(title);
 						 $('#destacadosList').append('<a href="https://www.youtube.com/watch?v=' + id + '"><li>' +
 						'<img src="img/ico-youtube.png"> '+
 						'<h4>' + title + '</h4>' +
