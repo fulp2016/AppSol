@@ -10,11 +10,12 @@ $('#appsolListPage').bind('pageinit', function(event) {
  function getYouTubeInfo(id) {
 						$.getJSON("https://www.googleapis.com/youtube/v3/videos?id="+id+"&key=AIzaSyCRFtBQ4pANIXYaZapjjnaHNIeOVzPKwqY&part=snippet", function(data) {
 					$.each(data.items, function(index, video) {
+						 var id = video.id;
 						 var title = video.snippet.title;
-						 alert(title);
-						 return title;
+						 $('#destacadosList').append('<a href="https://www.youtube.com/watch?v=' + id + '"><li>' +
+						'<h4>' + title + '</h4>' +
+						'</li></a>');
 					});
-					//return title;
 				});			
         }
 
@@ -28,10 +29,7 @@ function getDestacadosList() {
 		$.each(employees, function(index, destacado) {
 			if(destacado.tipo=='youtube')
 			{
-				alert(getYouTubeInfo(destacado.id_solicitud));
-				$('#destacadosList').append('<a href="https://www.youtube.com/watch?v=' + destacado.id_solicitud + '"><li>' +
-					'<h4>' + getYouTubeInfo(destacado.id_solicitud) + '</h4>' +
-					'</li></a>');
+				getYouTubeInfo(destacado.id_solicitud);
 			}
 			else
 			{
