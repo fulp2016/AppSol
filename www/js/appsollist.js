@@ -12,10 +12,8 @@ $('#appsolListPage').bind('pageinit', function(event) {
 					$.each(data.items, function(index, video) {
 						 var id = video.id;
 						 var title = video.snippet.title;
-						 var imagen = video.thumbnails.default.url;
-						 alert(imagen);
 						 $('#destacadosList').append('<a href="https://www.youtube.com/watch?v=' + id + '"><li>' +
-						'<h4><img src="'+ imagen +'"> ' + title + '</h4>' +
+						'<h4>' + title + '</h4>' +
 						'</li></a>');
 					});
 				});			
