@@ -12,9 +12,9 @@ $('#appsolListPage').bind('pageinit', function(event) {
 					$.each(data.items, function(index, video) {
 						 var title = video.snippet.title;
 					});
-				});	
-				alert(title);
-				return title;
+					alert(title);
+					return title;
+				});			
         }
 
 
