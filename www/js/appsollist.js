@@ -30,6 +30,7 @@ function getDestacadosList() {
 		$.each(employees, function(index, destacado) {
 			if(destacado.tipo=='youtube')
 			{
+				alert(1);
 				getYouTubeInfo(destacado.id_solicitud);
 			}
 			else
