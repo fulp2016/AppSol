@@ -12,9 +12,10 @@ $('#appsolListPage').bind('pageinit', function(event) {
 						$.getJSON("https://www.googleapis.com/youtube/v3/videos?id="+id+"=AIzaSyCRFtBQ4pANIXYaZapjjnaHNIeOVzPKwqY&part=snippet", function(data) {
 					$.each(data.items, function(index, video) {
 						 var title = video.snippet.title;
+						 alert(title);
 					});
 				});	
-				alert(title);
+				alert(3);
 				return title;
         }
 
