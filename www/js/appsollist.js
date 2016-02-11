@@ -28,7 +28,7 @@ function getDestacadosList() {
 		$('#destacadosList li').remove();
 		employees = data;
 		$.each(employees, function(index, destacado) {
-			if(destacado.tipo=='youtube')
+		/*	if(destacado.tipo=='youtube')
 			{
 				alert(1);
 				getYouTubeInfo(destacado.id_solicitud);
@@ -40,7 +40,12 @@ function getDestacadosList() {
 					'<h4>' + destacado.asunto + '</h4>' +
 					'<p>' + destacado.entidad + '</p>' + cont_contrato + cont_salario + cont_jornada +					
 					'</li></a>');
-			}
+			}*/
+			$('#destacadosList').append('<a href="destacadodetails.html?id=' + destacado.id_solicitud + '"><li>' +
+					'<h4>' + destacado.asunto + '</h4>' +
+					'<p>' + destacado.entidad + '</p>' + cont_contrato + cont_salario + cont_jornada +					
+					'</li></a>');
+			
 		});
 		$('#destacadosList').listview('refresh');
 	});
