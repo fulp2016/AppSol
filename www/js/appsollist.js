@@ -7,7 +7,14 @@ $('#appsolListPage').bind('pageinit', function(event) {
 	getDestacadosList();
 });*/
 
-
+ function getYouTubeInfo(id) {
+						$.getJSON("https://www.googleapis.com/youtube/v3/videos?id="+id+"=AIzaSyCRFtBQ4pANIXYaZapjjnaHNIeOVzPKwqY&part=snippet", function(data) {
+					$.each(data.items, function(index, video) {
+						 var title = video.snippet.title;
+					});
+				});	
+				return title;
+        }
 
 
 function getDestacadosList() {
@@ -17,14 +24,20 @@ function getDestacadosList() {
 		$('#destacadosList li').remove();
 		employees = data;
 		$.each(employees, function(index, destacado) {
-			var cont_contrato =''; var cont_salario =''; var cont_jornada ='';
-			if ((data.contrato)&&(data.contrato!='No especificado')) { cont_contrato ='<span>' + destacado.contrato + '</span>'; }
-			if ((data.salario)&&(data.salario!='No especificado')) { cont_salario ='<span>' + destacado.salario + ' &euro;</span>'; }
-			if ((data.jornada)&&(data.jornada!='No especificado')) { cont_jornada ='<span>' + destacado.jornada + ' &euro;</span>'; }
-			$('#destacadosList').append('<a href="destacadodetails.html?id=' + destacado.id_solicitud + '"><li>' +
+		
+			if(destacado.tipo=='youtube')
+			{
+				$('#destacadosList').append('<a href="https://www.youtube.com/watch?v=' + destacado.id_solicitud + '"><li>' +
+					'<h4>' + getYouTubeInfo(destacado.id_solicitud) + '</h4>' +
+					'</li></a>');
+			}
+			else
+			{
+				$('#destacadosList').append('<a href="destacadodetails.html?id=' + destacado.id_solicitud + '"><li>' +
 					'<h4>' + destacado.asunto + '</h4>' +
 					'<p>' + destacado.entidad + '</p>' + cont_contrato + cont_salario + cont_jornada +					
 					'</li></a>');
+			}
 		});
 		$('#destacadosList').listview('refresh');
 	});
