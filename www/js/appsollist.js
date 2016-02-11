@@ -13,7 +13,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
 						 var id = video.id;
 						 var title = video.snippet.title;
 						 $('#destacadosList').append('<a href="https://www.youtube.com/watch?v=' + id + '"><li>' +
-						'<h4>' + title + '</h4>' +
+						'<h4><img src="/img/ico-youtube.png">' + title + '</h4>' +
 						'</li></a>');
 					});
 				});			
