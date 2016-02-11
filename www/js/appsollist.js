@@ -8,6 +8,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
 });*/
 
  function getYouTubeInfo(id) {
+	 alert(id);
 						$.getJSON("https://www.googleapis.com/youtube/v3/videos?id="+id+"&key=AIzaSyCRFtBQ4pANIXYaZapjjnaHNIeOVzPKwqY&part=snippet", function(data) {
 					$.each(data.items, function(index, video) {
 						 var id = video.id;
