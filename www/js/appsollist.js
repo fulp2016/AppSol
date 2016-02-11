@@ -10,12 +10,12 @@ $('#appsolListPage').bind('pageinit', function(event) {
  function getYouTubeInfo(id) {
 	 alert(id)
 						$.getJSON("https://www.googleapis.com/youtube/v3/videos?id="+id+"=AIzaSyCRFtBQ4pANIXYaZapjjnaHNIeOVzPKwqY&part=snippet", function(data) {
+							alert(data);
 					$.each(data.items, function(index, video) {
 						 var title = video.snippet.title;
 						 alert(title);
 					});
 				});	
-				alert(3);
 				return title;
         }
 
@@ -27,10 +27,8 @@ function getDestacadosList() {
 		$('#destacadosList li').remove();
 		employees = data;
 		$.each(employees, function(index, destacado) {
-		alert(destacado.tipo);
 			if(destacado.tipo=='youtube')
 			{
-				alert(2);
 				$('#destacadosList').append('<a href="https://www.youtube.com/watch?v=' + destacado.id_solicitud + '"><li>' +
 					'<h4>' + getYouTubeInfo(destacado.id_solicitud) + '</h4>' +
 					'</li></a>');
