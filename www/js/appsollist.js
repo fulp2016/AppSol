@@ -45,12 +45,11 @@ function getDestacadosList() {
 			}
 			else
 			{
-				alert('o='+i);
+				
 				$('#destacadosList').append('<a href="destacadodetails.html?id=' + destacado.id + '"><li>' +
 					'<h4>' + destacado.titulo + '</h4>' +					
 					'</li></a>');
 			}
-		 i = i+1;
 			
 		});
 		$('#destacadosList').listview('refresh');
