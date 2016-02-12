@@ -43,6 +43,13 @@ function getDestacadosList() {
 						'<h4>' + destacado.titulo + '</h4>' +
 						'</li></a>');
 			}
+			else if(destacado.tipo=='TERRAZA')
+			{
+				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
+						'<img src="http://www.fulp.es/FULP/terraza/imagenes/'+ destacado.id +'.jpg"> '+
+						'<h4>' + destacado.titulo + '</h4>' +
+						'</li></a>');
+			}
 			else
 			{
 				
