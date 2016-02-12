@@ -1,9 +1,9 @@
 @charset "utf-8";
 
-#cabecera { position:fixed; top:0; left:0; width:100%;}
+#cabecera { background:transparent; position:fixed; top:0; left:0; width:100%; border:0;}
 #cabecera img{ width:100% }
 
-#contenido {height:100%; width:100% overflow:auto; padding-top:20%;}
+#contenido {height:100%; width:100%; overflow:auto;}
 
 #contenido input{ width:90%; border-radius:10px;}
 
@@ -22,15 +22,22 @@
 
 #menu-pie { background:url("../img/fondo.png") no-repeat center center fixed; position:fixed; bottom:0; left:0; width:100%; padding:10px; text-align:center;}
 
-#menu-pie input{ margin:0 3% 0 3%;}
+#menu-pie a{ margin:0 3% 0 3%;}
 
-#menu-pie #mendest{background:url("../img/bdestacado.png") no-repeat;background-repeat:no-repeat;
+#menu-pie img{ width:70px; height:70px;} 
+#menu-pie #mendest, #menu-pie #menaviso, #menu-pie #mencita { padding:0;height:70px;
+  width:70px; border-radius:15px; text-align:center; }
+
+#menu-pie #meniniciar img{ width:50px; height:50px;}   
+#cabecera #meniniciar{position:absolute; top:20%;
+right:0; padding:0; height:50px; width:50px; border-radius:10px; text-align:center; background:transparent;}
+/*#menu-pie #mendest{background:url("../img/bdestacado.png") no-repeat;background-repeat:no-repeat;
 background-size:70px;
 background-color:#fff;
 border-radius:15px;
   height:70px;
   width:70px;
-  background-position:center;}
+  background-position:center;} 
 #menu-pie #menaviso{ background:url("../img/baviso.png") no-repeat;background-repeat:no-repeat;
 background-size:70px;
 background-color:#fff;
@@ -55,4 +62,4 @@ border-radius:5px;
 border-color:#fff;
   height:50px;
   width:50px;
-  background-position:center;}
+  background-position:center;}*/
