@@ -16,8 +16,8 @@
 #destacadosList a li { list-style:none; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:10px; margin:10px 0; width:100%;}
 #destacadosList a { text-decoration:none !important;}
 #destacadosList a li img {float:left; margin-right:5px; width:40px;}
-#destacadosList a li h4{ color:#e9530d; font-size:16px; font-weight:bold;}
-#destacadosList a li p{ color:#000;  font-size:12px;}
+#destacadosList a li h4{ color:#e9530d; font-size:14px; font-weight:bold;}
+#destacadosList a li p{ color:#666;  font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
 #destacadosList a li span{ color:#000; margin:0 10px;}
 #destacadosList a li p,#destacadosList a li h4{margin:0;}
 

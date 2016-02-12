@@ -34,6 +34,7 @@ function getDestacadosList() {
 				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
 						'<img src="img/ico-youtube.png"> '+
 						'<h4>' + destacado.titulo + '</h4>' +
+						
 						'</li></a>');
 			}
 			else if(destacado.tipo=='INFOJOBS')
@@ -41,6 +42,7 @@ function getDestacadosList() {
 				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
 						'<img src="img/ico-infojobs.png"> '+
 						'<h4>' + destacado.titulo + '</h4>' +
+						
 						'</li></a>');
 			}
 			else if(destacado.tipo=='TERRAZA')
@@ -48,12 +50,14 @@ function getDestacadosList() {
 				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
 						'<img src="http://www.fulp.es/FULP/terraza/imagenes/'+ destacado.id +'.jpg"> '+
 						'<h4>' + destacado.titulo + '</h4>' +
+						'<p>Texto de prueba para evento de la terraza de la fundación</p>' +
 						'</li></a>');
 			}
 			else
 			{
 				
 				$('#destacadosList').append('<a href="destacadodetails.html?id=' + destacado.id + '"><li>' +
+					'<img src="img/oferta.png"> '+
 					'<h4>' + destacado.titulo + '</h4>' +					
 					'</li></a>');
 			}
