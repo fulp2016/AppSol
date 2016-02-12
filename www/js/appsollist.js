@@ -7,7 +7,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
 	getDestacadosList();
 });*/
 
- function getYouTubeInfo(id) {
+ /*function getYouTubeInfo(id) {
 						$.getJSON("https://www.googleapis.com/youtube/v3/videos?id="+id+"&key=AIzaSyCRFtBQ4pANIXYaZapjjnaHNIeOVzPKwqY&part=snippet", function(data) {
 					$.each(data.items, function(index, video) {
 						 var id = video.id;
@@ -18,7 +18,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
 						'</li></a>');
 					});
 				});			
-        }
+        }*/
 
 
 function getDestacadosList() {
@@ -27,19 +27,30 @@ function getDestacadosList() {
 	$.getJSON(serviceDestacadosURL, function(data) {
 		$('#destacadosList li').remove();
 		employees = data;
+		var i=0;
 		$.each(employees, function(index, destacado) {
-			if(destacado.tipo=='youtube')
+			if(destacado.tipo=='YOUTUBE')
 			{
-				getYouTubeInfo(destacado.id_solicitud);
+				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
+						'<img src="img/ico-youtube.png"> '+
+						'<h4>' + destacado.titulo + '</h4>' +
+						'</li></a>');
+			}
+			else if(destacado.tipo=='INFOJOBS')
+			{
+				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
+						'<img src="img/ico-infojobs.png"> '+
+						'<h4>' + destacado.titulo + '</h4>' +
+						'</li></a>');
 			}
 			else
 			{
-				$('#destacadosList').append('<a href="destacadodetails.html?id=' + destacado.id_solicitud + '"><li>' +
-					'<h4>' + destacado.asunto + '</h4>' +
-					'<p>' + destacado.entidad + '</p>' +					
+				alert('o='+i);
+				$('#destacadosList').append('<a href="destacadodetails.html?id=' + destacado.id + '"><li>' +
+					'<h4>' + destacado.titulo + '</h4>' +					
 					'</li></a>');
 			}
-		
+		 i = i+1;
 			
 		});
 		$('#destacadosList').listview('refresh');
