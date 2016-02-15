@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 #appsolListPage{
-background: url("../img/fondo.png") no-repeat center center fixed; background-color:#ff8663; -webkit-background-size: cover; background-size: cover;}
+background: url("../img/fondo.png") no-repeat fixed; background-color:#ff8663; -webkit-background-size: cover; background-size: cover;}
 
 #cabecera { background:transparent; position:fixed; top:0; left:0; width:100%; border:0; padding:0; margin:0;}
 
