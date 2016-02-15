@@ -1,9 +1,9 @@
-$('#detailsPage').live('pageshow', function(event) {
+/*$('#detailsPage').live('pageshow', function(event) {
 	var id = getUrlVars()["id"];
 	//$.getJSON(serviceURL, displayEmployee);
 	//$.getJSON(serviceURL + 'getemployee.php?id='+id, displayEmployee);
 	displayEmployee(id);
-});
+});*/
 
 /*
 $('#detailsPageEvento').live('pageshow', function(event) {
@@ -24,7 +24,7 @@ $('#detailsPageOcasion').live('pageshow', function(event) {
 function displayEmployee(id) { 
 	//var employee = data.item;
 	//console.log(employee);
-	
+	alert(id);
 	var deviceWidth;
 	var serviceURL2 = "http://www.fulp.es/servicesfulp/oferta.json?id="+id;
 	deviceWidth = $('[data-role="page"]').first().width();
