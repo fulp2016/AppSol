@@ -77,7 +77,7 @@ var pushNotification = window.plugins.pushNotification;
 
             case 'message': 
               // NOTIFICACION!!! 
-              alert('message = '+e.message+' msgcnt = '+e.msgcnt+' url = '+e.payload.url); 
+              //alert('message = '+e.message+' msgcnt = '+e.msgcnt+' url = '+e.payload.url); 
 			  
 			  comprobar_sesion(regId);	
 			  
