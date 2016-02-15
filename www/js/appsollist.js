@@ -30,37 +30,29 @@ function getDestacadosList() {
 		$.each(employees, function(index, destacado) {
 			if(destacado.tipo=='YOUTUBE')
 			{
-				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
-						'<div class="imagn"><img src="img/ico-youtube.png"></div> '+
-						'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
-						'<p>' + destacado.descripcion_corta + '</p></div>' +
-						'</li></a>');
+				var icono = "img/ico-youtube.png";
 			}
 			else if(destacado.tipo=='INFOJOBS')
 			{
-				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
-						'<div class="imagn"><img src="img/ico-infojobs.png"> </div>'+
-						'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
-						'<p>' + destacado.descripcion_corta + '</p></div>' +
-						'</li></a>');
+				var icono = "img/ico-infojobs.png";
 			}
 			else if(destacado.tipo=='TERRAZA')
 			{
-				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
-						'<div class="imagn"><img src="http://www.fulp.es/FULP/terraza/imagenes/'+ destacado.id +'.jpg"></div> '+
-						'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
-						'<p>' + destacado.descripcion_corta + '</p></div>' +
-						'</li></a>');
+				var icono = "img/ico-terraza.png";
 			}
-			else
+			else if(destacado.tipo=='C')
 			{
-				
-				$('#destacadosList').append('<a href="destacadodetails.html?id=' + destacado.id + '"><li>' +
-					'<div class="imagn"><img src="img/oferta.png"> </div>'+
-					'<div class="contn"><h4>' + destacado.titulo + '</h4>' +	
-					'<p>' + destacado.descripcion_corta + '</p></div>' +				
-					'</li></a>');
+				var icono = "img/ico-empleo.png";
 			}
+			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
+			{
+				var icono = "img/ico-beca.png";
+			}
+			$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
+				'<div class="imagn"><img src="'+ icono +'"></div> '+
+				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
+				'<p>' + destacado.descripcion_corta + '</p></div>' +
+				'</li></a>');
 			
 		});
 		$('#destacadosList').listview('refresh');
