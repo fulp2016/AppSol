@@ -2,16 +2,18 @@
 <html>
 <head>
 <script>
+
 cadVariables = location.search.substring(1,location.search.length);
 arrVariables = cadVariables.split("&");
+
 for (i=0; i<arrVariables.length; i++) {
-	alert(arrVariableActual);
 arrVariableActual = arrVariables[i].split("=");
 if (isNaN(parseFloat(arrVariableActual[1])))
 eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
 else
 eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 }
+
 </script>
 
 <title>Servicio de Orientaci&oacute;n Laboral</title>
@@ -20,7 +22,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
  
 </head>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/appsollist.js"></script>
@@ -49,7 +51,6 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 </div>
 
 <script>
-alert(id);
 
 displayEmployee(id);
 
