@@ -31,24 +31,29 @@ function getDestacadosList() {
 			if(destacado.tipo=='YOUTUBE')
 			{
 				var icono = "img/ico-youtube.png";
+				var enlace = destacado.enlace;
 			}
 			else if(destacado.tipo=='INFOJOBS')
 			{
 				var icono = "img/ico-infojobs.png";
+				var enlace = destacado.enlace;
 			}
 			else if(destacado.tipo=='TERRAZA')
 			{
 				var icono = "img/ico-terraza.png";
+				var enlace = destacado.enlace;
 			}
 			else if(destacado.tipo=='C')
 			{
 				var icono = "img/ico-empleo.png";
+				var enlace = "detalle.html?id="+destacado.id;
 			}
 			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
 			{
 				var icono = "img/ico-beca.png";
+				var enlace = "detalle.html?id="+destacado.id;
 			}
-			$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
+			$('#destacadosList').append('<a href="' + enlace + '"><li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
 				'<p>' + destacado.descripcion_corta + '</p></div>' +
