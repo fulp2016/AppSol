@@ -29,7 +29,7 @@ function displayEmployee(id) {
 	var serviceURL2 = "http://www.fulp.es/servicesfulp/oferta.json?id="+id;
 	deviceWidth = $('[data-role="page"]').first().width();
 	$.getJSON(serviceURL2, function(data) {
-		
+		alert(data.asunto);
 		//$.each(data, function(index, oferta) {
 			$('#titulo').append('<h4>'+data.asunto+'</h4><p><strong>' + data.entidad + '</strong></p>');
 			
