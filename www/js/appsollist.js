@@ -118,7 +118,7 @@ function mostrarDestacados()
 function mostrarCita()
 {
  // $('#apptitle').text('Solicitar Cita');
-  $("#imgcab").attr("src","cab_cita.png");
+  $("#imgcab").attr("src","img/cab_cita.png");
   $('#contenedorDestacados').hide();
   $('#contenedorCita').show();
   $('#contenedorAvisos').hide();
@@ -128,7 +128,7 @@ function mostrarCita()
 function mostrarAvisos()
 {
   //$('#apptitle').text('Notificaciones/Avisos');
-  $("#imgcab").attr("src","cab_alertas.png");
+  $("#imgcab").attr("src","img/cab_alertas.png");
   $('#contenedorDestacados').hide();
   $('#contenedorCita').hide();
   $('#contenedorAvisos').show();
@@ -149,7 +149,7 @@ function cerrar_sesion(){
 	 var xmlhttp =new XMLHttpRequest();
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&cerrar=S",false);
 	 xmlhttp.send(null);	
-	 $("#binicio").attr("src","binicio.png");
+	 $("#binicio").attr("src","img/binicio.png");
 }
 
 function change(a)
