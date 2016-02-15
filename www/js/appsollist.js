@@ -23,7 +23,6 @@ $('#appsolListPage').bind('pageinit', function(event) {
 
 function getDestacadosList() {
 	
-	mostrarDestacados();
 	$.getJSON(serviceDestacadosURL, function(data) {
 		$('#destacadosList li').remove();
 		employees = data;
@@ -32,39 +31,41 @@ function getDestacadosList() {
 			if(destacado.tipo=='YOUTUBE')
 			{
 				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
-						'<img src="img/ico-youtube.png"> '+
-						'<h4>' + destacado.titulo + '</h4>' +
-						
+						'<div class="imagn"><img src="img/ico-youtube.png"></div> '+
+						'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
+						'<p>' + destacado.descripcion_corta + '</p></div>' +
 						'</li></a>');
 			}
 			else if(destacado.tipo=='INFOJOBS')
 			{
 				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
-						'<img src="img/ico-infojobs.png"> '+
-						'<h4>' + destacado.titulo + '</h4>' +
-						
+						'<div class="imagn"><img src="img/ico-infojobs.png"> </div>'+
+						'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
+						'<p>' + destacado.descripcion_corta + '</p></div>' +
 						'</li></a>');
 			}
 			else if(destacado.tipo=='TERRAZA')
 			{
 				$('#destacadosList').append('<a href="' + destacado.enlace + '"><li>' +
-						'<img src="http://www.fulp.es/FULP/terraza/imagenes/'+ destacado.id +'.jpg"> '+
-						'<h4>' + destacado.titulo + '</h4>' +
-						'<p>Texto de prueba para evento de la terraza de la fundación</p>' +
+						'<div class="imagn"><img src="http://www.fulp.es/FULP/terraza/imagenes/'+ destacado.id +'.jpg"></div> '+
+						'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
+						'<p>' + destacado.descripcion_corta + '</p></div>' +
 						'</li></a>');
 			}
 			else
 			{
 				
 				$('#destacadosList').append('<a href="destacadodetails.html?id=' + destacado.id + '"><li>' +
-					'<img src="img/oferta.png"> '+
-					'<h4>' + destacado.titulo + '</h4>' +					
+					'<div class="imagn"><img src="img/oferta.png"> </div>'+
+					'<div class="contn"><h4>' + destacado.titulo + '</h4>' +	
+					'<p>' + destacado.descripcion_corta + '</p></div>' +				
 					'</li></a>');
 			}
 			
 		});
 		$('#destacadosList').listview('refresh');
 	});
+mostrarDestacados();	
 }
 
 
@@ -98,7 +99,6 @@ function getSesionForm() {
 		cerrar_sesion();
 		sesion = '';
 		document.getElementById('mencerrar').id='meniniciar';
-		document.getElementById('meniniciar').innerHTML='Iniciar sesión';
 		alert('Sesión cerrada correctamente');
 	}
 	mostrarSesion();
@@ -106,7 +106,8 @@ function getSesionForm() {
 
 function mostrarDestacados()
 {
-  $('#apptitle').text('Destacados');
+  //$('#apptitle').text('Destacados');
+  $("#imgcab").attr("src","img/cab_descatado.png");
   $('#contenedorDestacados').show();
   $('#contenedorCita').hide();
   $('#contenedorAvisos').hide();
@@ -116,7 +117,8 @@ function mostrarDestacados()
 
 function mostrarCita()
 {
-  $('#apptitle').text('Solicitar Cita');
+ // $('#apptitle').text('Solicitar Cita');
+  $("#imgcab").attr("src","cab_cita.png");
   $('#contenedorDestacados').hide();
   $('#contenedorCita').show();
   $('#contenedorAvisos').hide();
@@ -125,7 +127,8 @@ function mostrarCita()
 
 function mostrarAvisos()
 {
-  $('#apptitle').text('Notificaciones/Avisos');
+  //$('#apptitle').text('Notificaciones/Avisos');
+  $("#imgcab").attr("src","cab_alertas.png");
   $('#contenedorDestacados').hide();
   $('#contenedorCita').hide();
   $('#contenedorAvisos').show();
@@ -135,7 +138,7 @@ function mostrarAvisos()
 
 function mostrarSesion()
 {
-  $('#apptitle').text('Iniciar Sesión');
+  //$('#apptitle').text('Iniciar Sesión');
   $('#contenedorDestacados').hide();
   $('#contenedorCita').hide();
   $('#contenedorAvisos').hide();
@@ -146,6 +149,7 @@ function cerrar_sesion(){
 	 var xmlhttp =new XMLHttpRequest();
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&cerrar=S",false);
 	 xmlhttp.send(null);	
+	 $("#binicio").attr("src","binicio.png");
 }
 
 function change(a)

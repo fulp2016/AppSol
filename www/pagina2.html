@@ -31,7 +31,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 <div id="appsolListPage" data-role="page">
 
 	<div id="cabecera" data-role="header" data-position="fixed">
-        <a href="*" onclick="getSesionForm();" data-role="button" id="meniniciar"><img src="img/binicio.png"></a>
+        <a onclick="getSesionForm(); " data-role="button" id="meniniciar"><img src="img/binicio.png" id="binicio"></a>
 		<img id="imgcab" src="img/cab_descatado.png">
 	</div>
     
@@ -66,9 +66,9 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
  </div>	
     
     <div id="menu-pie" data-role="footer" data-position="fixed">
-    	<a href="*" onclick="getDestacadosList();" data-role="button" data-inline="true" id="mendest"><img src="img/bdestacado.png"></a>
-        <a href="*" onclick="getCitaForm();" data-role="button" data-inline="true" id="mencita"><img src="img/bcita.png"></a>
-        <a href="*" onclick="getAvisosList();" data-role="button" data-inline="true" id="menaviso"><img src="img/baviso.png"></a>
+    	<a onclick="getDestacadosList();" data-role="button" data-inline="true" id="mendest"><img src="img/bdestacado.png"></a>
+        <a onclick="getCitaForm();" data-role="button" data-inline="true" id="mencita"><img src="img/bcita.png"></a>
+        <a onclick="getAvisosList();" data-role="button" data-inline="true" id="menaviso"><img src="img/baviso.png"></a>
 	</div><!-- /navbar -->
     
 </div>
@@ -79,14 +79,13 @@ if((cod_personal!='0')&&(cod_personal!=''))
 {
 	//mostrarDestacados();
 	document.getElementById('meniniciar').id='mencerrar';
-	document.getElementById('mencerrar').innerHTML='Cerrar sesión';
+	$("#binicio").attr("src","bcerrar.png");
 }
 
-
-if(pagina=='destacado'){getDestacadosList(); $("#imgcab").attr("src","img/cab_descatado.png");}
-else if(pagina=='cita'){getCitaForm(); $("#imgcab").attr("src","cita.png");}
-else if(pagina=='aviso'){getAvisosList(); $("#imgcab").attr("src","aviso.png");}
-else if(pagina=='inicio'){getSesionForm(); ;$("#imgcab").attr("src","inicio.png");}
+if(pagina=='destacado'){getDestacadosList(); $("#imgcab").attr("src","img/cab_descatado.png"); }
+else if(pagina=='cita'){getCitaForm(); $("#imgcab").attr("src","cab_cita.png");}
+else if(pagina=='aviso'){getAvisosList(); $("#imgcab").attr("src","cab_alertas.png");}
+else if(pagina=='inicio'){getSesionForm(); $("#imgcab").attr("src","inicio.png");}
 
 $(document).ready(function() {	
 
@@ -109,8 +108,9 @@ $(document).ready(function() {
 					document.getElementById('meniniciar').id='mencerrar';
 					document.getElementById('mencerrar').innerHTML='Cerrar sesión';
 					getDestacadosList();
-					document.getElementById('mencerrar').className.replace( /(?:^|\s)ui-btn-active(?!\S)/ , '' );
-					document.getElementById("mendest").className = "ui-btn-active";
+					/*document.getElementById('mencerrar').className.replace( /(?:^|\s)btn-active(?!\S)/ , '' );
+					document.getElementById("mendest").className = "btn-active";*/
+					$("#binicio").attr("src","bcerrar.png");
 				}
             }
         });
