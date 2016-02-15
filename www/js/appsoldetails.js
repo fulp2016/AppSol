@@ -31,22 +31,22 @@ function displayEmployee(id) {
 	$.getJSON(serviceURL2, function(data) {
 		
 		//$.each(data, function(index, oferta) {
-			$('#fullName').text(data.asunto);
-			$('#descripcionoferta').text(data.descripcion);
-			$('#datosempresa').append('<p><strong>' + data.entidad + '</strong></p>');	
+			$('#titulo').append('<h4>'+data.asunto+'</h4><p><strong>' + data.entidad + '</strong></p>');
 			
+			var contrato = ''; var jornada = ''; var salario = '';
 			if ((data.contrato)&&(data.contrato!='No especificado')) {
-				$('#actionList').append('<li><h3>Contrato:</h3>' +
-						'<p>' + data.contrato + '</p></a></li>');
+				contrato ='<p><strong>Contrato:</strong>' + data.contrato + '</p>';
 			}
 			if ((data.jornada)&&(data.jornada!='No especificado')) {
-				$('#actionList').append('<li><h3>Jornada:</h3>' +
-						'<p>' + data.jornada + '</p></a></li>');
+				jornada ='<p><strong>Jornada:</strong>' + data.jornada + '</p>';
 			}
 			if ((data.salario)&&(data.salario!='No especificado')) {
-				$('#actionList').append('<li><h3>Salario:</h3>' +
-						'<p>' + data.salario + '€</p></a></li>');
+				salario ='<p><strong>Salario:</strong>' + data.salario + '</p>';
 			}
+			
+			$('#dgenerales').append(contrato + jornada + salario);
+			
+			$('#descripcion').append("<p>Descripción</p><p>"+data.descripcion+"</p>");
 			
 		//});
 		$('#actionList').listview('refresh');

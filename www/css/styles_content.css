@@ -7,7 +7,7 @@
 
 #cabecera img{ width:100%;}
 
-#cabecera div { float:right; margin-right:20px;}
+#cabecera div { margin-top:0; padding-top:0; float:right; margin-right:20px;}
 
 #contenido {height:100%; width:100%; overflow:auto;}
 
