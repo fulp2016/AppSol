@@ -22,10 +22,9 @@ background: url("../img/fondo.png") no-repeat center center fixed; background-co
 #destacadosList ul{ width:100%;}
 #destacadosList a li { background:#fff; list-style:none; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:10px; margin:10px 0; width:100%; min-height:40px;}
 #destacadosList a { text-decoration:none !important;}
-#destacadosList a li div.imagn{ width:auto; margin-right:5px;  vertical-align:middle;}
-#destacadosList a li div.contn{ margin-left:5px; width:90%; vertical-align:top;}
-#destacadosList a li div{ display: inline-block;}
-#destacadosList a li img { width:40px;}
+#destacadosList a li div.imagn{ width:100%; }
+#destacadosList a li div.contn{ width:100%; }
+#destacadosList a li img { width:40px; float:right;}
 #destacadosList a li h4{ color:#e9530d; font-size:14px; font-weight:bold;}
 #destacadosList a li p{ color:#666;  font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
 #destacadosList a li span{ color:#000; margin:0 10px;}
