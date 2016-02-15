@@ -92,6 +92,7 @@ function getSesionForm() {
 		sesion = '';
 		document.getElementById('mencerrar').id='meniniciar';
 		alert('Sesión cerrada correctamente');
+		$("#binicio").attr("src","img/binicio.png");
 	}
 	mostrarSesion();
 }
@@ -131,6 +132,7 @@ function mostrarAvisos()
 function mostrarSesion()
 {
   //$('#apptitle').text('Iniciar Sesión');
+  $("#imgcab").attr("src","img/cab_inicio.png");
   $('#contenedorDestacados').hide();
   $('#contenedorCita').hide();
   $('#contenedorAvisos').hide();
