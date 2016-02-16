@@ -3,11 +3,117 @@
 <head>
 <script>
 alert(1);
+cadVariables = location.search.substring(1,location.search.length);
+arrVariables = cadVariables.split("&");
+for (i=0; i<arrVariables.length; i++) {
+arrVariableActual = arrVariables[i].split("=");
+if (isNaN(parseFloat(arrVariableActual[1])))
+eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
+else
+eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
+}
 </script>
-</head>
 
+<title>Servicio de Orientaci&oacute;n Laboral</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/styles_content.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+ 
+</head>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/appsollist.js"></script>
+<script src="js/appsoldetails.js"></script>
+<script src="phonegap.js"></script>
 <body>
-test
+
+<div id="appsolListPage" data-role="page">
+
+	<div id="cabecera" data-role="header" data-position="fixed">
+        <div><a onclick="getSesionForm(); " data-role="button" id="meniniciar"><img src="img/binicio.png" id="binicio"></a></div>
+		<img id="imgcab" src="img/cab_descatado.png">
+	</div>
+    
+ <div id="contenido">
+	<div data-role="content" id="contenedorDestacados">
+         <ul id="destacadosList" data-role="listview" data-filter="true">
+         
+         </ul>
+    </div>		
+    
+    <div data-role="content" id="contenedorCita">
+         <form id="solcita" name="solcita" action="*">
+         	<p><input type="text" placeholder="NOMBRE" id="nombre" name="nombre"></p>
+            <p><input type="email" placeholder="EMAIL" id="email" name="email"></p>
+            <p><input type="tel" placeholder="TELÉFONO" id="telefono" name="telefono"></p>
+            <p><input type="button" value="SOLICITAR CITA" name="solicitar" id="solicitar"> </p>
+         </form>
+    </div>	
+    
+    <div data-role="content" id="contenedorAvisos">
+         <ul id="destacadosList" data-role="listview" data-filter="true">
+         </ul>
+    </div>	
+    
+    <div data-role="content" id="contenedorSesion">
+         <form id="solcita" name="solcita" action="*">
+         	<p><input type="text" placeholder="NOMBRE USUARIO" id="login" name="login"></p>
+            <p><input type="password" placeholder="CONTRASEÑA" id="pass" name="pass"></p>
+            <p><input type="button" value="INICIAR" name="iniciar" id="iniciar"> </p>
+         </form>
+    </div>	
+   
+ </div>	
+    
+    <div id="menu-pie" data-role="footer" data-position="fixed">
+    	<a onclick="getDestacadosList();" data-role="button" data-inline="true" id="mendest"><img src="img/bdestacado.png"></a>
+        <a onclick="getCitaForm();" data-role="button" data-inline="true" id="mencita"><img src="img/bcita.png"></a>
+        <a onclick="getAvisosList();" data-role="button" data-inline="true" id="menaviso"><img src="img/baviso.png"></a>
+	</div><!-- /navbar -->
+    
+</div>
+<script>
+var sesion = cod_personal;	
+if((cod_personal!='0')&&(cod_personal!=''))
+{
+	//mostrarDestacados();
+	document.getElementById('meniniciar').id='mencerrar';
+	$("#binicio").attr("src","img/bcerrar.png");
+}
+if(pagina=='destacado'){getDestacadosList(); $("#imgcab").attr("src","img/cab_descatado.png"); }
+else if(pagina=='cita'){getCitaForm(); $("#imgcab").attr("src","img/cab_cita.png");}
+else if(pagina=='aviso'){getAvisosList(); $("#imgcab").attr("src","img/cab_alertas.png");}
+else if(pagina=='inicio'){getSesionForm(); $("#imgcab").attr("src","img/cab_inicio.png");}
+$(document).ready(function() {	
+	$('#iniciar').click(function(){
+		var username = $(this).val();		
+		var dataString = "login="+document.getElementById("login").value+"&pass="+document.getElementById("pass").value+"&regId2="+regId;
+		$.ajax({
+            type: "POST",
+            url: "http://www.fulp.es/FULP/mensajesapp/registro_app.php",
+            data: dataString,
+            success: function(data) {
+				if(data=='0')
+				{
+					alert("Error al iniciar sesión");
+				}
+				else
+				{
+					cod_personal = data;
+					sesion = data;
+					document.getElementById('meniniciar').id='mencerrar';
+					getDestacadosList();
+					/*document.getElementById('mencerrar').className.replace( /(?:^|\s)btn-active(?!\S)/ , '' );
+					document.getElementById("mendest").className = "btn-active";*/
+					$("#binicio").attr("src","img/bcerrar.png");
+				}
+            }
+        });
+    });             
+	
+});
+</script>
 </body>
 
 </html>
