@@ -47,7 +47,6 @@ function getDestacadosList() {
 			{
 				var icono = "img/ico-empleo.png";
 				var enlace = "detalle.html?id="+destacado.id;
-				alert(enlace);
 			}
 			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
 			{
