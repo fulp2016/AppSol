@@ -102,13 +102,13 @@ function getDetalleOferta(id) {
 			
 			var contrato = ''; var jornada = ''; var salario = '';
 			if ((data.contrato)&&(data.contrato!='No especificado')) {
-				contrato ='<p><strong>Contrato:</strong>' + data.contrato + '</p>';
+				contrato ='<p><strong>Contrato:</strong> ' + data.contrato + '</p>';
 			}
 			if ((data.jornada)&&(data.jornada!='No especificado')) {
-				jornada ='<p><strong>Jornada:</strong>' + data.jornada + '</p>';
+				jornada ='<p><strong>Jornada:</strong> ' + data.jornada + '</p>';
 			}
 			if ((data.salario)&&(data.salario!='No especificado')) {
-				salario ='<p><strong>Salario:</strong>' + data.salario + '</p>';
+				salario ='<p><strong>Salario:</strong> ' + data.salario + '</p>';
 			}
 			
 			$('#dgenerales').append(contrato + jornada + salario);
