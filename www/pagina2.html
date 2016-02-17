@@ -23,7 +23,6 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/appsollist.js"></script>
-<script src="js/appsoldetails.js"></script>
 <script src="phonegap.js"></script>
 <body>
 
@@ -35,12 +34,15 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 	</div>
     
  <div id="contenido">
+	
+	<!--Tablon-->
 	<div data-role="content" id="contenedorDestacados">
          <ul id="destacadosList" data-role="listview" data-filter="true">
          
          </ul>
     </div>		
     
+	<!--Cita-->
     <div data-role="content" id="contenedorCita">
          <form id="solcita" name="solcita" action="*">
          	<p><input type="text" placeholder="NOMBRE" id="nombre" name="nombre"></p>
@@ -50,11 +52,13 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
          </form>
     </div>	
     
+	<!--Avisos-->
     <div data-role="content" id="contenedorAvisos">
          <ul id="destacadosList" data-role="listview" data-filter="true">
          </ul>
     </div>	
     
+	<!--Sesion-->
     <div data-role="content" id="contenedorSesion">
          <form id="solcita" name="solcita" action="*">
          	<p><input type="text" placeholder="NOMBRE USUARIO" id="login" name="login"></p>
@@ -62,6 +66,18 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
             <p><input type="button" value="INICIAR" name="iniciar" id="iniciar"> </p>
          </form>
     </div>	
+	
+	<!--DetalleOferta-->
+	<div data-role="content"  id="contenedorDetalle"> 
+		<div id="titulo"></div>
+        
+        <div id="dgenerales"></div>
+        
+        <div id="descripcion"></div>
+        
+        <div id="bton"><a data-role="button">INSCRIBIRSE</a></div>
+        
+  	</div>
    
  </div>	
     

@@ -31,34 +31,33 @@ function getDestacadosList() {
 			if(destacado.tipo=='YOUTUBE')
 			{
 				var icono = "img/ico-youtube.png";
-				var enlace = destacado.enlace;
+				var enlace = '<a href="' +destacado.enlace+ '">';
 			}
 			else if(destacado.tipo=='INFOJOBS')
 			{
 				var icono = "img/ico-infojobs.png";
-				var enlace = destacado.enlace;
+				var enlace =  '<a href="' +destacado.enlace+ '">';
 			}
 			else if(destacado.tipo=='TERRAZA')
 			{
 				var icono = "img/ico-terraza.png";
-				var enlace = destacado.enlace;
+				var enlace =  '<a href="' +destacado.enlace+ '">';
 			}
 			else if(destacado.tipo=='C')
 			{
 				var icono = "img/ico-empleo.png";
-				var enlace = "detalle.html?id="+destacado.id;
+				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');"';
 			}
 			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
 			{
 				var icono = "img/ico-beca.png";
 				var enlace = "detalle.html?id="+destacado.id+"&regId="+regId+"&cod_personal="+cod_personal;
 			}
-			$('#destacadosList').append('<a href="' + enlace + '"><li>' +
+			$('#destacadosList').append( enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
 				'<p>' + destacado.descripcion_corta + '</p></div>' +
 				'</li></a>');
-				window.location.href="detalle.html";
 			
 		});
 		$('#destacadosList').listview('refresh');
@@ -89,6 +88,37 @@ function getAvisosList() {
 	});*/
 }
 
+function getDetalleOferta(id) { 
+	
+	mostrarDetalle();
+	var serviceURL2 = "http://www.fulp.es/servicesfulp/oferta.json?id="+id;
+	$.getJSON(serviceURL2, function(data) {
+		alert(data.asunto);
+		//$.each(data, function(index, oferta) {
+			$('#titulo').append('<h4>'+data.asunto+'</h4><p><strong>' + data.entidad + '</strong></p>');
+			
+			var contrato = ''; var jornada = ''; var salario = '';
+			if ((data.contrato)&&(data.contrato!='No especificado')) {
+				contrato ='<p><strong>Contrato:</strong>' + data.contrato + '</p>';
+			}
+			if ((data.jornada)&&(data.jornada!='No especificado')) {
+				jornada ='<p><strong>Jornada:</strong>' + data.jornada + '</p>';
+			}
+			if ((data.salario)&&(data.salario!='No especificado')) {
+				salario ='<p><strong>Salario:</strong>' + data.salario + '</p>';
+			}
+			
+			$('#dgenerales').append(contrato + jornada + salario);
+			
+			$('#descripcion').append("<p>Descripción</p><p>"+data.descripcion+"</p>");
+			
+		//});
+		//$('#actionList').listview('refresh');
+	});
+	
+	
+}
+
 
 function getSesionForm() {
 
@@ -111,6 +141,7 @@ function mostrarDestacados()
   $('#contenedorCita').hide();
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').hide();
+  $('#contenedorDetalle').hide();
 }
 
 
@@ -122,6 +153,7 @@ function mostrarCita()
   $('#contenedorCita').show();
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').hide();
+  $('#contenedorDetalle').hide();
 }
 
 function mostrarAvisos()
@@ -132,6 +164,7 @@ function mostrarAvisos()
   $('#contenedorCita').hide();
   $('#contenedorAvisos').show();
   $('#contenedorSesion').hide();
+  $('#contenedorDetalle').hide();
 }
 
 
@@ -143,6 +176,18 @@ function mostrarSesion()
   $('#contenedorCita').hide();
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').show();
+  $('#contenedorDetalle').hide();
+}
+
+function mostrarDetalle()
+{
+  //$('#apptitle').text('Iniciar Sesión');
+  $("#imgcab").attr("src","img/cab_inicio.png");
+  $('#contenedorDestacados').hide();
+  $('#contenedorCita').hide();
+  $('#contenedorAvisos').hide();
+  $('#contenedorSesion').hide();
+  $('#contenedorDetalle').show();
 }
 
 function cerrar_sesion(){	 
