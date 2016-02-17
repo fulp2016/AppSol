@@ -46,12 +46,12 @@ function getDestacadosList() {
 			else if(destacado.tipo=='C')
 			{
 				var icono = "img/ico-empleo.png";
-				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');"';
+				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');">';
 			}
 			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
 			{
 				var icono = "img/ico-beca.png";
-				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');"';
+				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');">';
 			}
 			$('#destacadosList').append( enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+

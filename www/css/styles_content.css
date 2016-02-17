@@ -30,6 +30,9 @@
 #destacadosList a li span{ color:#000; margin:0 10px;}
 #destacadosList a li p,#destacadosList a li h4{margin:0;}
 
+#contenedorDetalle { background-color:#fff; margin:2px;}
+#contenedorDetalle #titulo{ font-size:16px; font-weight:bold; color:#e9530d;}
+
 #menu-pie { background:url("../img/fondo.png") no-repeat center center fixed; position:fixed; bottom:0; left:0;  width:100%; padding:10px; text-align:center; border:0;}
 
 #menu-pie a{ margin:0 3% 0 3%;}
