@@ -113,7 +113,7 @@ function getDetalleOferta(id) {
 			
 			$('#dgenerales').append(contrato + jornada + salario);
 			
-			$('#descripcion').append("<p>Descripción</p><p>"+data.descripcion+"</p>");
+			$('#descripcion').append("<h5>Descripción</h5><p>"+data.descripcion+"</p>");
 			
 		//});
 		//$('#actionList').listview('refresh');
