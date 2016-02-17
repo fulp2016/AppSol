@@ -51,13 +51,20 @@ function getDestacadosList() {
 			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
 			{
 				var icono = "img/ico-beca.png";
-				var enlace = "detalle.html";
+				var enlace = "detalle.html?id="+destacado.id+"&regId="+regId+"&cod_personal="+cod_personal;
 			}
-			$('#destacadosList').append('<a href="' + enlace + '"><li>' +
+			/*$('#destacadosList').append('<a href="' + enlace + '"><li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
 				'<p>' + destacado.descripcion_corta + '</p></div>' +
-				'</li></a>');
+				'</li></a>');*/
+			$('#destacadosList').append('<form action="detalle.html">'+
+				'<input type="hidden" value="'+destacado.id+'" name="id">'+
+				'<a onclick="this.form.submit();"><li>' +
+				'<div class="imagn"><img src="'+ icono +'"></div> '+
+				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
+				'<p>' + destacado.descripcion_corta + '</p></div>' +
+				'</li></a></form>');	
 			
 		});
 		$('#destacadosList').listview('refresh');
