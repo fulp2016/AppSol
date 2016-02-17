@@ -31,7 +31,8 @@
 #destacadosList a li p,#destacadosList a li h4{margin:0;}
 
 #contenedorDetalle { background-color:#fff; margin:2px;}
-#contenedorDetalle #titulo{ font-size:16px; font-weight:bold; color:#e9530d;}
+#contenedorDetalle #titulo h4{ font-size:16px; font-weight:bold; color:#e9530d; text-align:center;}
+#contenedorDetalle #titulo p{ font-size:14px; font-weight:bold; color:#000; text-align:center;}
 
 #menu-pie { background:url("../img/fondo.png") no-repeat center center fixed; position:fixed; bottom:0; left:0;  width:100%; padding:10px; text-align:center; border:0;}
 

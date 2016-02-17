@@ -96,9 +96,9 @@ function getDetalleOferta(id) {
 	$('#descripcion').empty();
 	var serviceURL2 = "http://www.fulp.es/servicesfulp/oferta.json?id="+id;
 	$.getJSON(serviceURL2, function(data) {
-		alert(data.asunto);
+
 		//$.each(data, function(index, oferta) {
-			$('#titulo').append('<h4>'+data.asunto+'</h4><p><strong>' + data.entidad + '</strong></p>');
+			$('#titulo').append('<h4>'+data.asunto+'</h4><p>' + data.entidad + '</p>');
 			
 			var contrato = ''; var jornada = ''; var salario = '';
 			if ((data.contrato)&&(data.contrato!='No especificado')) {
