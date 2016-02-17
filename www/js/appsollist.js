@@ -51,7 +51,7 @@ function getDestacadosList() {
 			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
 			{
 				var icono = "img/ico-beca.png";
-				var enlace = "detalle.html?id="+destacado.id+"&regId="+regId+"&cod_personal="+cod_personal;
+				var enlace = "detalle.html";
 			}
 			$('#destacadosList').append('<a href="' + enlace + '"><li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
