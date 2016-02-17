@@ -53,18 +53,12 @@ function getDestacadosList() {
 				var icono = "img/ico-beca.png";
 				var enlace = "detalle.html?id="+destacado.id+"&regId="+regId+"&cod_personal="+cod_personal;
 			}
-			/*$('#destacadosList').append('<a href="' + enlace + '"><li>' +
+			$('#destacadosList').append('<a href="' + enlace + '"><li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
 				'<p>' + destacado.descripcion_corta + '</p></div>' +
-				'</li></a>');*/
-			$('#destacadosList').append('<form method="get" action="detalle.html">'+
-				'<input type="hidden" value="'+destacado.id+'" name="id">'+
-				'<li>' +
-				'<div class="imagn"><a data-role="submit" ><img src="'+ icono +'"></a></div> '+
-				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
-				'<p>' + destacado.descripcion_corta + '</p></div>' +
-				'</li></form>');	
+				'</li></a>');
+				window.location.href="detalle.html";
 			
 		});
 		$('#destacadosList').listview('refresh');
