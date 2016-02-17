@@ -60,7 +60,7 @@ function getDestacadosList() {
 				'</li></a>');*/
 			$('#destacadosList').append('<form method="get" action="detalle.html">'+
 				'<input type="hidden" value="'+destacado.id+'" name="id">'+
-				'<a onclick="this.form.submit();"><li>' +
+				'<a onclick="this.form.submit();" ><li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
 				'<p>' + destacado.descripcion_corta + '</p></div>' +
