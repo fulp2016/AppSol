@@ -185,7 +185,7 @@ function mostrarSesion()
 function mostrarDetalle()
 {
   //$('#apptitle').text('Iniciar Sesión');
-  $("#imgcab").attr("src","img/cab_inicio.png");
+  $("#imgcab").attr("src","img/cab_oferta.png");
   $('#contenedorDestacados').hide();
   $('#contenedorCita').hide();
   $('#contenedorAvisos').hide();

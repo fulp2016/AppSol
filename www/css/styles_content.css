@@ -33,12 +33,12 @@
 #contenedorDetalle { background-color:#fff; margin:2px;}
 #contenedorDetalle #titulo h4{ font-size:16px; font-weight:bold; color:#e9530d; text-align:center;}
 #contenedorDetalle #titulo p{ font-size:14px; font-weight:bold; color:#000; text-align:center;}
-#contenedorDetalle #dgenerales{background-color:#f2f2f2; padding:10px 5px; margin:10px 0;}
+#contenedorDetalle #dgenerales{background-color:#f2f2f2; padding:5px 5px; margin:10px 0; font-size:12px;}
 #contenedorDetalle #descripcion{margin:10px 0;}
 #contenedorDetalle #descripcion h5{font-size:14px; font-weight:bold; color:#e9530d;}
 #contenedorDetalle #descripcion p{font-size:12px; text-align:justify;}
-#contenedorDetalle #bton{margin:10px 0;}
-#contenedorDetalle #bton a{ background-color:#e9530d;}
+#contenedorDetalle #bton{margin:10px 0; text-align:center;}
+#contenedorDetalle #bton a{ background-color:#e9530d; color:#fff;}
 
 #menu-pie { background:url("../img/fondo.png") no-repeat center center fixed; position:fixed; bottom:0; left:0;  width:100%; padding:10px; text-align:center; border:0;}
 
