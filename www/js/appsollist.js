@@ -51,7 +51,7 @@ function getDestacadosList() {
 			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
 			{
 				var icono = "img/ico-beca.png";
-				var enlace = "detalle.html?id="+destacado.id+"&regId="+regId+"&cod_personal="+cod_personal;
+				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');"';
 			}
 			$('#destacadosList').append( enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
@@ -91,6 +91,9 @@ function getAvisosList() {
 function getDetalleOferta(id) { 
 	
 	mostrarDetalle();
+	$('#titulo').empty();
+	$('#dgenerales').empty();
+	$('#descripcion').empty();
 	var serviceURL2 = "http://www.fulp.es/servicesfulp/oferta.json?id="+id;
 	$.getJSON(serviceURL2, function(data) {
 		alert(data.asunto);
