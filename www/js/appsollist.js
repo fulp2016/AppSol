@@ -38,8 +38,7 @@ function getDestacadosList() {
 				var enlace = '<a href="' +destacado.enlace+ '">';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
-				
-					imagen = '<div style="overflow: hidden; width:100%; height:200px;"><img style=" width:100%;" src="https://i.ytimg.com/vi/V5AB4nrL-8o/maxresdefault.jpg"></div>';
+				imagen = '<div style="overflow: hidden; width:100%; height:200px;"><img style=" width:100%;" src="https://i.ytimg.com/vi/V5AB4nrL-8o/maxresdefault.jpg"></div>';
 				
 			}
 			else if(destacado.tipo=='INFOJOBS')
@@ -131,7 +130,7 @@ function getDetalleOferta(id) {
 			
 			$('#dgenerales').append(contrato + jornada + salario);
 			
-			$('#descripcion').append("<h5>Descripción</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />');+"</p>");
+			$('#descripcion').append("<h5>Descripción</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"</p>");
 			
 		//});
 		//$('#actionList').listview('refresh');
