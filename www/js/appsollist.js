@@ -28,7 +28,7 @@ function getDestacadosList() {
 		$('#destacadosList li').remove();
 		employees = data;
 		var i=0;
-		
+		var m=0;
 		$.each(employees, function(index, destacado) {
 		var imagen='';		var descripcion = '';		var imgfav= '';		var fav = 'N';
 		
@@ -89,14 +89,14 @@ function getDestacadosList() {
 				imgfav='img/strellaon.png';
 			}
 
-			$('#destacadosList').append( '<img id="icofavorito" src="'+ imgfav +'">'+
+			$('#destacadosList').append( '<a onclick="anadir_favorito('''+destacado.tipo+''','''+codigo+''',''icofavorito'+ m +''')"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
 				enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
 				descripcion + '</div>'+
 				imagen +
 				'</li></a>');
-			
+			m=m+1;
 		});
 		$('#destacadosList').listview('refresh');
 	});
@@ -242,4 +242,11 @@ function change(a)
 {
 	document.getElementById("pagina").value=a;
 	document.getElementById('irpagina').submit();
+}
+
+function anadir_favorito(tipo,codigo,id){	 
+	 var xmlhttp =new XMLHttpRequest();
+	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&newfavorito=S",false);
+	 xmlhttp.send(null);	
+	 $("#"+id).attr("src","img/strellaon.png");
 }
