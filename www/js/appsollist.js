@@ -25,13 +25,17 @@ function obtner_idimg(ruta)
 {
 alert(ruta);
 	cadVariables = ruta.substring(1,ruta.length);
+	alert(cadVariables);
 	arrVariables = cadVariables.split("&");
+	alert(arrVariables);
 	for (i=0; i<arrVariables.length; i++) {
 		arrVariableActual = arrVariables[i].split("=");
 		if (isNaN(parseFloat(arrVariableActual[1])))
 			eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
 		else
 			eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
+		
+	alert(arrVariableActual);		
 	}
 	alert(v);
 	return v;
