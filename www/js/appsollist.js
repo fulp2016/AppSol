@@ -40,9 +40,9 @@ function getDestacadosList() {
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 				imagen = '<div style="overflow: hidden; width:100%; height:200px;"><img style=" width:100%;" src="https://i.ytimg.com/vi/V5AB4nrL-8o/maxresdefault.jpg"></div>';
 				if(fav=='N')
-				imgfav='strellaoff.png';
+				imgfav='img/strellaoff.png';
 				else
-				imgfav='strellaon.png';
+				imgfav='img/strellaon.png';
 			}
 			else if(destacado.tipo=='INFOJOBS')
 			{
@@ -51,9 +51,9 @@ function getDestacadosList() {
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 				if(fav=='N')
-				imgfav='strellaoff.png';
+				imgfav='img/strellaoff.png';
 				else
-				imgfav='strellaon.png';
+				imgfav='img/strellaon.png';
 			}
 			else if(destacado.tipo=='TERRAZA')
 			{
@@ -62,9 +62,9 @@ function getDestacadosList() {
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 				if(fav=='N')
-				imgfav='strellaoff.png';
+				imgfav='img/strellaoff.png';
 				else
-				imgfav='strellaon.png';
+				imgfav='img/strellaon.png';
 			}
 			else if(destacado.tipo=='C')
 			{
@@ -73,9 +73,9 @@ function getDestacadosList() {
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 				if(fav=='N')
-				imgfav='strellaoff.png';
+				imgfav='img/strellaoff.png';
 				else
-				imgfav='strellaon.png';
+				imgfav='img/strellaon.png';
 			}
 			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
 			{
@@ -84,10 +84,11 @@ function getDestacadosList() {
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 				if(fav=='N')
-				imgfav='strellaoff.png';
+				imgfav='img/strellaoff.png';
 				else
-				imgfav='strellaon.png';
+				imgfav='img/strellaon.png';
 			}
+
 			$('#destacadosList').append( enlace + '<li>' +
 				'<div class="imagnfav"><img src="'+ imgfav +'"></div> '+
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
