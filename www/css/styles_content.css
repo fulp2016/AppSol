@@ -23,9 +23,9 @@
 #destacadosList a li { background:#fff; list-style:none; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:10px; margin:10px 0; width:100%; min-height:40px;}
 #destacadosList a { text-decoration:none !important;}
 #destacadosList a li div.imagn{ width:100%; }
-#destacadosList a li div.contn{ width:90%; }
+#destacadosList a li div.contn{ width:90%; display:inline-block; }
 #destacadosList a li div.imagnfav { width:40px; margin:10px; vertical-align:middle;}
-#destacadosList a li div.imagn {width:10%; }
+#destacadosList a li div.imagnfav {width:10%; display:inline-block; }
 #destacadosList a li div.imagn img { width:40px; float:right; margin-left:10px;}
 #destacadosList a li h4{ color:#e9530d; font-size:14px; font-weight:bold;}
 #destacadosList a li p{ color:#666;  font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
