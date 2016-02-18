@@ -24,7 +24,7 @@
 #destacadosList a { text-decoration:none !important;}
 #destacadosList a li div.imagn{ width:100%; }
 #destacadosList a li div.contn{ width:100%; }
-#destacadosList #icofavorito{width:25px; margin: 0 10px 0 5px; padding: 10px 0 5px 0; float:left;}
+#destacadosList #icofavorito{width:25px; margin: 0 10px 0 5px; padding: 15px 0 5px 0; float:left;}
 /*#destacadosList a li div.imagnfav { width:40px; margin:10px; vertical-align:middle;}
 #destacadosList a li div.imagnfav {width:10%; display:inline-block; }*/
 #destacadosList a li div.imagn img { width:40px; float:right; margin-left:10px;}
