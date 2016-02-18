@@ -20,7 +20,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
 					});
 				});			
         }*/
-		
+		document.getElementById('#test').innerHTML
 
 function getDestacadosList() {
 	
@@ -89,7 +89,7 @@ function getDestacadosList() {
 				imgfav='img/strellaon.png';
 			}
 
-			$('#destacadosList').append( '<a onclick="anadir_favorito('''+destacado.tipo+''','''+codigo+''',''icofavorito'+ m +''')"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
+			$('#destacadosList').append( '<a onclick="anadir_favorito(\"'+destacado.tipo+'\",\"'+destacado.id+'\",\"icofavorito'+ m +'\")"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
 				enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
