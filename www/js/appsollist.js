@@ -21,26 +21,6 @@ $('#appsolListPage').bind('pageinit', function(event) {
 				});			
         }*/
 		
-function obtner_idimg(ruta)
-{
-alert(ruta);
-	cadVariables = ruta.substring(1,ruta.length);
-	alert(cadVariables);
-	arrVariables = cadVariables.split("?");
-	alert(arrVariables);
-	for (i=0; i<arrVariables.length; i++) {
-		arrVariableActual = arrVariables[i].split("=");
-		if (isNaN(parseFloat(arrVariableActual[1])))
-			eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
-		else
-			eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
-		
-	alert(arrVariableActual);		
-	}
-	alert(v);
-	return v;
-}		
-
 
 function getDestacadosList() {
 	
@@ -54,12 +34,9 @@ function getDestacadosList() {
 			{
 				var icono = "img/ico-youtube.png";
 				var enlace = '<a href="' +destacado.enlace+ '">';
-				var idimg = obtner_idimg(destacado.enlace);
-				if(idimg)
-				{
-					imagen = '<img src="https://i.ytimg.com/vi/'+ idimg +'/maxresdefault.jpg">';
-					alert(imagen);
-				}
+				
+					imagen = '<div style="overflow: hidden; width:100%; height:200px;"><img style=" width:100%;" src="https://i.ytimg.com/vi/V5AB4nrL-8o/maxresdefault.jpg"></div>';
+				
 			}
 			else if(destacado.tipo=='INFOJOBS')
 			{
@@ -85,7 +62,7 @@ function getDestacadosList() {
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
 				'<p>' + destacado.descripcion_corta + '</p></div>'+
-				'<p>'+ imagen +'</p>' +
+				imagen +
 				'</li></a>');
 			
 		});
