@@ -24,6 +24,7 @@
 #destacadosList a { text-decoration:none !important;}
 #destacadosList a li div.imagn{ width:100%; }
 #destacadosList a li div.contn{ width:100%; }
+#destacadosList a li imagnfav { width:40px; margin:10px; vertical-align:middle;}
 #destacadosList a li img { width:40px; float:right; margin-left:10px;}
 #destacadosList a li h4{ color:#e9530d; font-size:14px; font-weight:bold;}
 #destacadosList a li p{ color:#666;  font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
@@ -55,36 +56,3 @@ right:1%; padding:0; height:50px; width:50px; border-radius:10px; text-align:cen
 #menu-pie #mencerrar img{ width:50px; height:50px;}   
 #cabecera #mencerrar{position:absolute; top:5%;
 right:1%; padding:0; height:50px; width:50px; border-radius:10px; text-align:center; background:transparent;}
-
-/*#menu-pie #mendest{background:url("../img/bdestacado.png") no-repeat;background-repeat:no-repeat;
-background-size:70px;
-background-color:#fff;
-border-radius:15px;
-  height:70px;
-  width:70px;
-  background-position:center;} 
-#menu-pie #menaviso{ background:url("../img/baviso.png") no-repeat;background-repeat:no-repeat;
-background-size:70px;
-background-color:#fff;
-border-radius:15px;
-  height:70px;
-  width:70px;
-  background-position:center;}
-#menu-pie #mencita{ background:url("../img/bcita.png") no-repeat;background-repeat:no-repeat;
-background-size:70px;
-background-color:#fff;
-border-radius:15px;
-  height:70px;
-  width:70px;
-  background-position:center;}
-#cabecera #meniniciar{ 
-position:absolute;
-top:20%;
-right:10%;
-background:url("../img/binicio.png") no-repeat;background-repeat:no-repeat;
-background-size:50px;
-border-radius:5px;
-border-color:#fff;
-  height:50px;
-  width:50px;
-  background-position:center;}*/

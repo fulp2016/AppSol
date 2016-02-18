@@ -30,8 +30,8 @@ function getDestacadosList() {
 		var i=0;
 		
 		$.each(employees, function(index, destacado) {
-		var imagen='';
-		var descripcion = '';
+		var imagen='';		var descripcion = '';		var imgfav= '';		var fav = 'N';
+		
 			if(destacado.tipo=='YOUTUBE')
 			{
 				var icono = "img/ico-youtube.png";
@@ -39,7 +39,10 @@ function getDestacadosList() {
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 				imagen = '<div style="overflow: hidden; width:100%; height:200px;"><img style=" width:100%;" src="https://i.ytimg.com/vi/V5AB4nrL-8o/maxresdefault.jpg"></div>';
-				
+				if(fav=='N')
+				imgfav='strellaoff.png';
+				else
+				imgfav='strellaon.png';
 			}
 			else if(destacado.tipo=='INFOJOBS')
 			{
@@ -47,6 +50,10 @@ function getDestacadosList() {
 				var enlace =  '<a href="' +destacado.enlace+ '">';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
+				if(fav=='N')
+				imgfav='strellaoff.png';
+				else
+				imgfav='strellaon.png';
 			}
 			else if(destacado.tipo=='TERRAZA')
 			{
@@ -54,6 +61,10 @@ function getDestacadosList() {
 				var enlace =  '<a href="' +destacado.enlace+ '">';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
+				if(fav=='N')
+				imgfav='strellaoff.png';
+				else
+				imgfav='strellaon.png';
 			}
 			else if(destacado.tipo=='C')
 			{
@@ -61,6 +72,10 @@ function getDestacadosList() {
 				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');">';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
+				if(fav=='N')
+				imgfav='strellaoff.png';
+				else
+				imgfav='strellaon.png';
 			}
 			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
 			{
@@ -68,8 +83,13 @@ function getDestacadosList() {
 				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');">';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
+				if(fav=='N')
+				imgfav='strellaoff.png';
+				else
+				imgfav='strellaon.png';
 			}
 			$('#destacadosList').append( enlace + '<li>' +
+				'<div class="imagnfav"><img src="'+ imgfav +'"></div> '+
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
 				descripcion + '</div>'+
