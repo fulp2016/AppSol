@@ -26,7 +26,7 @@ function obtner_idimg(ruta)
 alert(ruta);
 	cadVariables = ruta.substring(1,ruta.length);
 	alert(cadVariables);
-	arrVariables = cadVariables.split("&");
+	arrVariables = cadVariables.split("?");
 	alert(arrVariables);
 	for (i=0; i<arrVariables.length; i++) {
 		arrVariableActual = arrVariables[i].split("=");
