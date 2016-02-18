@@ -7,8 +7,9 @@ $('#appsolListPage').bind('pageinit', function(event) {
 	getDestacadosList();
 });*/
 
- /*function getYouTubeInfo(id) {
-						$.getJSON("https://www.googleapis.com/youtube/v3/videos?id="+id+"&key=AIzaSyCRFtBQ4pANIXYaZapjjnaHNIeOVzPKwqY&part=snippet", function(data) {
+/* function getYouTubeInfo(ruta) {
+ 
+						$.getJSON("https://www.googleapis.com/youtube/v3/videos?id="+v+"&key=AIzaSyCRFtBQ4pANIXYaZapjjnaHNIeOVzPKwqY&part=snippet", function(data) {
 					$.each(data.items, function(index, video) {
 						 var id = video.id;
 						 var title = video.snippet.title;
@@ -19,6 +20,21 @@ $('#appsolListPage').bind('pageinit', function(event) {
 					});
 				});			
         }*/
+		
+function obtner_idimg(ruta)
+{
+	cadVariables = ruta.substring(1,ruta.length);
+	arrVariables = cadVariables.split("&");
+	for (i=0; i<arrVariables.length; i++) {
+		arrVariableActual = arrVariables[i].split("=");
+		if (isNaN(parseFloat(arrVariableActual[1])))
+			eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
+		else
+			eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
+	}
+	
+	return v;
+}		
 
 
 function getDestacadosList() {
@@ -27,11 +43,18 @@ function getDestacadosList() {
 		$('#destacadosList li').remove();
 		employees = data;
 		var i=0;
+		var imagen='';
 		$.each(employees, function(index, destacado) {
 			if(destacado.tipo=='YOUTUBE')
 			{
 				var icono = "img/ico-youtube.png";
 				var enlace = '<a href="' +destacado.enlace+ '">';
+				var idimg = obtner_idimg(destacado.enlace);
+				if(idimg)
+				{
+					imagen = '<img src="https://i.ytimg.com/vi/'+ idimg +'/maxresdefault.jpg">';
+					alert(imagen);
+				}
 			}
 			else if(destacado.tipo=='INFOJOBS')
 			{
@@ -56,7 +79,8 @@ function getDestacadosList() {
 			$('#destacadosList').append( enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
-				'<p>' + destacado.descripcion_corta + '</p></div>' +
+				'<p>' + destacado.descripcion_corta + '</p></div>'+
+				'<p>'+ imagen +'</p>' +
 				'</li></a>');
 			
 		});
