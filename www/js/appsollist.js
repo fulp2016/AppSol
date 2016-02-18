@@ -28,12 +28,16 @@ function getDestacadosList() {
 		$('#destacadosList li').remove();
 		employees = data;
 		var i=0;
-		var imagen='';
+		
 		$.each(employees, function(index, destacado) {
+		var imagen='';
+		var descripcion = '';
 			if(destacado.tipo=='YOUTUBE')
 			{
 				var icono = "img/ico-youtube.png";
 				var enlace = '<a href="' +destacado.enlace+ '">';
+				if(destacado.descripcion_corta!=false)
+				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 				
 					imagen = '<div style="overflow: hidden; width:100%; height:200px;"><img style=" width:100%;" src="https://i.ytimg.com/vi/V5AB4nrL-8o/maxresdefault.jpg"></div>';
 				
@@ -42,26 +46,34 @@ function getDestacadosList() {
 			{
 				var icono = "img/ico-infojobs.png";
 				var enlace =  '<a href="' +destacado.enlace+ '">';
+				if(destacado.descripcion_corta!=false)
+				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 			}
 			else if(destacado.tipo=='TERRAZA')
 			{
 				var icono = "img/ico-terraza.png";
 				var enlace =  '<a href="' +destacado.enlace+ '">';
+				if(destacado.descripcion_corta!=false)
+				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 			}
 			else if(destacado.tipo=='C')
 			{
 				var icono = "img/ico-empleo.png";
 				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');">';
+				if(destacado.descripcion_corta!=false)
+				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 			}
 			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
 			{
 				var icono = "img/ico-beca.png";
 				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');">';
+				if(destacado.descripcion_corta!=false)
+				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 			}
 			$('#destacadosList').append( enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
-				'<p>' + destacado.descripcion_corta + '</p></div>'+
+				descripcion + '</div>'+
 				imagen +
 				'</li></a>');
 			
@@ -119,7 +131,7 @@ function getDetalleOferta(id) {
 			
 			$('#dgenerales').append(contrato + jornada + salario);
 			
-			$('#descripcion').append("<h5>Descripción</h5><p>"+data.descripcion+"</p>");
+			$('#descripcion').append("<h5>Descripción</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />');+"</p>");
 			
 		//});
 		//$('#actionList').listview('refresh');
