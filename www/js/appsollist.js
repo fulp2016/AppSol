@@ -245,6 +245,7 @@ function change(a)
 }
 
 function anadir_favorito(tipo,codigo,id){	 
+	alert('->'+tipo+'-'+codigo+'-'+id)
 	 var xmlhttp =new XMLHttpRequest();
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&newfavorito=S",false);
 	 xmlhttp.send(null);	
