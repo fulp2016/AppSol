@@ -23,6 +23,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
 		
 function obtner_idimg(ruta)
 {
+alert(ruta);
 	cadVariables = ruta.substring(1,ruta.length);
 	arrVariables = cadVariables.split("&");
 	for (i=0; i<arrVariables.length; i++) {
@@ -32,7 +33,7 @@ function obtner_idimg(ruta)
 		else
 			eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 	}
-	
+	alert(v);
 	return v;
 }		
 
