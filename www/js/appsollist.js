@@ -90,9 +90,8 @@ function getDestacadosList() {
 			}
 
 			$('#destacadosList').append( enlace + '<li>' +
-				'<div class="imagnfav"><img src="'+ imgfav +'"></div> '+
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
-				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
+				'<div class="contn"><img src="'+ imgfav +'"> <h4>' + destacado.titulo + '</h4>' +
 				descripcion + '</div>'+
 				imagen +
 				'</li></a>');
