@@ -89,9 +89,10 @@ function getDestacadosList() {
 				imgfav='img/strellaon.png';
 			}
 
-			$('#destacadosList').append( enlace + '<li>' +
+			$('#destacadosList').append( '<img id="icofavorito" src="'+ imgfav +'">'+
+				enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
-				'<div class="contn"><img src="'+ imgfav +'"> <h4>' + destacado.titulo + '</h4>' +
+				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
 				descripcion + '</div>'+
 				imagen +
 				'</li></a>');
