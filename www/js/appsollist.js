@@ -88,8 +88,8 @@ function getDestacadosList() {
 				else
 				imgfav='img/strellaon.png';
 			}
-
-			$('#destacadosList').append( '<a onclick="alert(1);"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
+//\"'+destacado.tipo+'\",\"'+destacado.id+'\",\"icofavorito'+ m +'\")"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"
+			$('#destacadosList').append( '<a onclick="alert('+destacado.tipo+');"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
 				enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
