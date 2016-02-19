@@ -64,7 +64,7 @@ var pushNotification = window.plugins.pushNotification;
                     //alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
 					var regId = e.regid;
-					
+					alert(regId);
                     document.getElementById('regId').value = regId; 
 					var sesion = '';		
 					
