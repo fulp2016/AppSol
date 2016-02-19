@@ -22,18 +22,18 @@
 #destacadosList ul{ width:100%;}
 #destacadosList li { background:#fff; list-style:none; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:10px; margin:10px 0; width:100%; min-height:40px;}
 #destacadosList li a { text-decoration:none !important;}
-#destacadosList li a div div.imagn{ width:100%; }
-#destacadosList li a div div.contn{ width:100%; }
-#destacadosList li .icofavorito{width:25px; margin: 0 10px 0 5px; padding: 15px 0 5px 0; float:left;}
+#destacadosList li a .imagn{ width:100%; }
+#destacadosList li a .contn{ width:100%; }
+#destacadosList li .icofavorito{width:25px; margin: 0 10px 0 5px; padding: 10px 0 5px 0; float:left;}
 /*#destacadosList a li div.imagnfav { width:40px; margin:10px; vertical-align:middle;}
 #destacadosList a li div.imagnfav {width:10%; display:inline-block; }*/
 #destacadosList li a div.imagn img { width:40px; float:right; margin-left:10px;}
-#destacadosList li h4{ color:#e9530d; font-size:14px; font-weight:bold;}
-#destacadosList li p{ color:#666;  font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
+#destacadosList li div h4{ color:#e9530d; font-size:14px; font-weight:bold;}
+#destacadosList li div p{ color:#666;  font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
 #destacadosList li span{ color:#000; margin:0 10px;}
-#destacadosList li p,#destacadosList a li h4{margin:0;}
-#destacadosList li .imgcontent{overflow: hidden; width:100%; height:200px; margin-top:10px;}
-#destacadosList li .imgcontent img{ width:100%;}
+#destacadosList li p,#destacadosList li h4{margin:0;}
+#destacadosList li div.imgcontent{overflow: hidden; width:100%; height:200px; margin-top:10px;}
+#destacadosList li div.imgcontent img{ width:100%;}
 
 #contenedorDetalle { background-color:#fff; margin:2px;}
 #contenedorDetalle #titulo h4{ font-size:16px; font-weight:bold; color:#e9530d; text-align:center;}
