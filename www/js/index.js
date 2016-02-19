@@ -64,7 +64,7 @@ var pushNotification = window.plugins.pushNotification;
                     //alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
 					var regId = e.regid;
-					alert(regId);
+					
                     document.getElementById('regId').value = regId; 
 					var sesion = '';		
 					
@@ -113,7 +113,7 @@ var pushNotification = window.plugins.pushNotification;
 
 function registrar_dispositivo(){	 
 	 var xmlhttp =new XMLHttpRequest();
-	 
+	
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+document.getElementById("regId").value+"&cod_personal="+document.getElementById("cod_personal").value+"&new=S",false);
 
 		 xmlhttp.send(null);	

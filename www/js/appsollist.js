@@ -37,7 +37,7 @@ function getDestacadosList() {
 				var enlace = '<a href="' +destacado.enlace+ '">';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
-				imagen = '<div style="overflow: hidden; width:100%; height:200px;"><img style=" width:100%;" src="https://i.ytimg.com/vi/V5AB4nrL-8o/maxresdefault.jpg"></div>';
+				imagen = '<div class="imgcontent"><img src="https://i.ytimg.com/vi/V5AB4nrL-8o/maxresdefault.jpg"></div>';
 				if(fav=='N')
 				imgfav='img/strellaoff.png';
 				else
@@ -60,7 +60,7 @@ function getDestacadosList() {
 				var enlace =  '<a href="' +destacado.enlace+ '">';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
-				imagen = '<div style="overflow: hidden; width:100%; height:200px;"><img style=" width:100%;" src="http://www.fulp.es/FULP/terraza/imagenes/'+destacado.id+'.jpg"></div>';
+				imagen = '<div class="imgcontent"><img src="http://www.fulp.es/FULP/terraza/imagenes/'+destacado.id+'.jpg"></div>';
 				if(fav=='N')
 				imgfav='img/strellaoff.png';
 				else
@@ -245,7 +245,6 @@ function change(a)
 }
 
 function anadir_favorito(tipo,codigo,id){	 
-	alert('->'+regId+'-'+tipo+'-'+codigo+'-'+id);
 	 var xmlhttp =new XMLHttpRequest();
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&newfavorito=S",false);
 	 xmlhttp.send(null);	
