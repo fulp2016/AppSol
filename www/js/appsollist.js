@@ -20,7 +20,6 @@ $('#appsolListPage').bind('pageinit', function(event) {
 					});
 				});			
         }*/
-		document.getElementById('#test').innerHTML
 
 function getDestacadosList() {
 	
@@ -61,6 +60,7 @@ function getDestacadosList() {
 				var enlace =  '<a href="' +destacado.enlace+ '">';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
+				imagen = '<div style="overflow: hidden; width:100%; height:200px;"><img style=" width:100%;" src="http://www.fulp.es/FULP/terraza/imagenes/'+destacado.id+'.jpg"></div>';
 				if(fav=='N')
 				imgfav='img/strellaoff.png';
 				else
