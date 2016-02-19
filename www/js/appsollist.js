@@ -89,13 +89,16 @@ function getDestacadosList() {
 				imgfav='img/strellaon.png';
 			}
 
-			$('#destacadosList').append( '<a onclick="anadir_favorito(\''+destacado.tipo+'\',\''+destacado.id+'\',\'icofavorito'+ m +'\'); return false;"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
-				enlace + '<li>' +
+			$('#destacadosList').append( '<li>' +
+				'<a onclick="anadir_favorito(\''+destacado.tipo+'\',\''+destacado.id+'\',\'icofavorito'+ m +'\'); return false;"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
+				enlace + 
+				'<div>'+
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
 				descripcion + '</div>'+
 				imagen +
-				'</li></a>');
+				'</div>'+
+				'</a></li>');
 			m=m+1;
 		});
 		$('#destacadosList').listview('refresh');
