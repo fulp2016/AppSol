@@ -89,7 +89,7 @@ function getDestacadosList() {
 				imgfav='img/strellaon.png';
 			}
 
-			$('#destacadosList').append( '<a onclick="anadir_favorito(\''+destacado.tipo+'\',\''+destacado.id+'\',\'\'); return false;"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
+			$('#destacadosList').append( '<a onclick="anadir_favorito(\''+destacado.tipo+'\',\''+destacado.id+'\',\'icofavorito'+ m +'\'); return false;"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
 				enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
@@ -245,7 +245,7 @@ function change(a)
 }
 
 function anadir_favorito(tipo,codigo,id){	 
-	alert('->'+tipo+'-'+codigo+'-'+id);
+	alert('->'+regId+'-'+tipo+'-'+codigo+'-'+id);
 	 var xmlhttp =new XMLHttpRequest();
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&newfavorito=S",false);
 	 xmlhttp.send(null);	
