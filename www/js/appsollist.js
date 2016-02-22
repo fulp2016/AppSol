@@ -72,15 +72,15 @@ function getDestacadosList() {
 			if(fav=='N')
 			{
 				imgfav='img/strellaoff.png';
-				funfav= 'anadir_favorito(\''+destacado.tipo+'\',\''+destacado.id+'\',\'icofavorito'+ m +'\'); return false;';
+				funfav= 'anadir_favorito(\''+destacado.tipo+'\',\''+destacado.id+'\',\'icofavorito'+ m +'\')';
 			}
 			else
 			{
 				imgfav='img/strellaon.png';
-				funfav= 'eliminar_fav(\''+destacado.tipo+'\',\''+destacado.id+'\',\'icofavorito'+ m +'\'); return false;';
+				funfav= 'eliminar_fav(\''+destacado.tipo+'\',\''+destacado.id+'\',\''+ m +'\')';
 			}
 
-			$('#destacadosList').append( '<a onclick="'+funfav+'"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
+			$('#destacadosList').append( '<a id="enlcfavorito'+ m +'" onclick="'+funfav+'"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
 				enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
@@ -239,8 +239,8 @@ function anadir_favorito(tipo,codigo,id){
 	 var xmlhttp =new XMLHttpRequest();
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&newfavorito=S",false);
 	 xmlhttp.send(null);	
-	 $("#"+id).attr("src","img/strellaon.png");
-	 $("#"+id).attr("onclick",'eliminar_fav(\''+tipo+'\',\''+codigo+'\',\''+ id +'\'); return false;');
+	 $("#icofavorito"+id).attr("src","img/strellaon.png");
+	 $("#enlcfavorito"+id).attr("onclick",'eliminar_fav(\''+tipo+'\',\''+codigo+'\',\''+ id +'\')');
 	 
 }
 
@@ -248,7 +248,7 @@ function eliminar_fav(tipo,codigo,id){
 	 var xmlhttp =new XMLHttpRequest();
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&nofavorito=S",false);
 	 xmlhttp.send(null);	
-	 $("#"+id).attr("src","img/strellaoff.png");
-	 $("#"+id).attr("onclick",'anadir_favorito(\''+tipo+'\',\''+codigo+'\',\''+ id +'\'); return false;');
+	 $("#icofavorito"+id).attr("src","img/strellaoff.png");
+	 $("#enlcfavorito"+id).attr("onclick",'anadir_favorito(\''+tipo+'\',\''+codigo+'\',\''+ id +'\')');
 	 
 }
