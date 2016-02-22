@@ -29,7 +29,7 @@ function getDestacadosList() {
 		var i=0;
 		var m=0;
 		$.each(employees, function(index, destacado) {
-		var imagen='';		var descripcion = '';		var imgfav= '';		var fav = 'N';
+		var imagen='';		var descripcion = '';		var imgfav= '';		var fav = destacado.favorito;
 		
 			if(destacado.tipo=='YOUTUBE')
 			{
@@ -249,4 +249,15 @@ function anadir_favorito(tipo,codigo,id){
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&newfavorito=S",false);
 	 xmlhttp.send(null);	
 	 $("#"+id).attr("src","img/strellaon.png");
+	 $("#"+id).attr("onclick",'eliminar_fav(\''+tipo+'\',\''+codigo+'\',\''+ id +'\'); return false;');
+	 
+}
+
+function eliminar_fav(tipo,codigo,id){	 
+	 var xmlhttp =new XMLHttpRequest();
+	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&nofavorito=S",false);
+	 xmlhttp.send(null);	
+	 $("#"+id).attr("src","img/strellaoff.png");
+	 $("#"+id).attr("onclick",'anadir_favorito(\''+tipo+'\',\''+codigo+'\',\''+ id +'\'); return false;');
+	 
 }
