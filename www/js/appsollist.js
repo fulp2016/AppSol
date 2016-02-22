@@ -29,7 +29,7 @@ function getDestacadosList() {
 		var i=0;
 		var m=0;
 		$.each(employees, function(index, destacado) {
-		var imagen='';		var descripcion = '';		var imgfav= '';		var fav = destacado.favorito; var funfav= '';
+		var imagen='';		var descripcion = '';		var imgfav= '';		var fav = destacado.favorito;  var funfav= '';
 		
 			if(destacado.tipo=='YOUTUBE')
 			{
@@ -69,16 +69,7 @@ function getDestacadosList() {
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 			}
 			
-			if(fav=='N')
-			{
-				imgfav='img/strellaoff.png';
-				funfav= 'anadir_favorito(\''+destacado.tipo+'\',\''+destacado.id+'\',\'icofavorito'+ m +'\'); return false;';
-			}
-			else
-			{
-				imgfav='img/strellaon.png';
-				funfav= 'eliminar_fav(\''+destacado.tipo+'\',\''+destacado.id+'\',\'icofavorito'+ m +'\'); return false;';
-			}
+			
 
 			$('#destacadosList').append( '<a onclick="'++'"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
 				enlace + '<li>' +
