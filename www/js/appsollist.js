@@ -20,7 +20,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
         }*/
 
 function getDestacadosList() {
-	var serviceDestacadosURL = "http://www.fulp.es/servicesfulp/ofertas.json?redId="+regId;
+	var serviceDestacadosURL = "http://www.fulp.es/servicesfulp/ofertas.json?regId="+regId;
 	alert(serviceDestacadosURL);
 	
 	$.getJSON(serviceDestacadosURL, function(data) {
