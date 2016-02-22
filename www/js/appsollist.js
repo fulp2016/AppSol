@@ -1,5 +1,3 @@
-var serviceDestacadosURL = "http://www.fulp.es/servicesfulp/ofertas.json";
-
 var employees;
 
 /*
@@ -22,6 +20,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
         }*/
 
 function getDestacadosList() {
+	var serviceDestacadosURL = "http://www.fulp.es/servicesfulp/ofertas.json?redId="+regId;
 	
 	$.getJSON(serviceDestacadosURL, function(data) {
 		$('#destacadosList li').remove();
