@@ -71,7 +71,7 @@ function getDestacadosList() {
 			if(fav=='N')
 			{
 				imgfav='img/strellaoff.png';
-				funfav= 'anadir_favorito(\''+destacado.tipo+'\',\''+destacado.id+'\',\'icofavorito'+ m +'\')';
+				funfav= 'anadir_favorito(\''+destacado.tipo+'\',\''+destacado.id+'\',\''+ m +'\')';
 			}
 			else
 			{
