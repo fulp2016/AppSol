@@ -238,16 +238,16 @@ function anadir_favorito(tipo,codigo,id){
 	 var xmlhttp =new XMLHttpRequest();
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&newfavorito=S",false);
 	 xmlhttp.send(null);	
+	 alert(id);
 	 $("#icofavorito"+id).attr("src","img/strellaon.png");
-	 $("#enlcfavorito"+id).attr("onclick",'eliminar_fav(\''+tipo+'\',\''+codigo+'\',\''+ id +'\')');
-	 
+	 $("#enlcfavorito"+id).attr("onclick",'eliminar_fav(\''+tipo+'\',\''+codigo+'\',\''+ id +'\')'); 
 }
 
 function eliminar_fav(tipo,codigo,id){	 
 	 var xmlhttp =new XMLHttpRequest();
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&nofavorito=S",false);
 	 xmlhttp.send(null);	
+	 alert(id);
 	 $("#icofavorito"+id).attr("src","img/strellaoff.png");
-	 $("#enlcfavorito"+id).attr("onclick",'anadir_favorito(\''+tipo+'\',\''+codigo+'\',\''+ id +'\')');
-	 
+	 $("#enlcfavorito"+id).attr("onclick",'anadir_favorito(\''+tipo+'\',\''+codigo+'\',\''+ id +'\')'); 
 }
