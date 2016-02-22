@@ -69,9 +69,18 @@ function getDestacadosList() {
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 			}
 			
-			
+			if(fav=='N')
+			{
+				imgfav='img/strellaoff.png';
+				funfav= 'anadir_favorito(\''+destacado.tipo+'\',\''+destacado.id+'\',\'icofavorito'+ m +'\'); return false;';
+			}
+			else
+			{
+				imgfav='img/strellaon.png';
+				funfav= 'eliminar_fav(\''+destacado.tipo+'\',\''+destacado.id+'\',\'icofavorito'+ m +'\'); return false;';
+			}
 
-			$('#destacadosList').append( '<a onclick="'++'"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
+			$('#destacadosList').append( '<a onclick="'+funfav+'"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
 				enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
