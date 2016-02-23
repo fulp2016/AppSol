@@ -7,9 +7,9 @@
 
 /*#cabecera img{ width:100%;}*/
 #cabecera img {
-width: auto;
+width: 100%;
 /* text-align: center; */
-max-height: 200px;
+max-height: 150px;
 }
 
 #cabecera div { margin-top:0; padding-top:0; float:right; margin-right:20px;}
