@@ -88,8 +88,8 @@ function getDestacadosList() {
 				'</li></a>');
 			m=m+1;
 		});
-		//$('#destacadosList').listview('refresh');
-		$('#destacadosList').load();
+		$('#destacadosList').listview('refresh');
+		//$('#destacadosList').load();
 	});
 mostrarDestacados();	
 }
@@ -163,8 +163,8 @@ function getFavoritosList() {
 				'</li></a>');
 			m=m+1;
 		});
-		//$('#favoritosList').listview('refresh');
-		$('#favoritosList').load();
+		$('#favoritosList').listview('refresh');
+		//$('#favoritosList').load();
 	});
 mostrarFavoritos();	
 }
