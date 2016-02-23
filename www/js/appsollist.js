@@ -98,7 +98,7 @@ function getFavoritosList() {
 	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/favoritos.json?regId="+regId;
 	
 	$.getJSON(serviceFavoritoURL, function(data) {
-		$('#favoritosList li').remove();
+		$('#favoritosList a').remove();
 		employees = data;
 		var i=0;
 		var m=0;
