@@ -42,6 +42,13 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
          </ul>
     </div>		
     
+	<!--Favoritos-->
+	<div data-role="content" id="contenedorFavoritos">
+         <ul id="favoritosList" data-role="listview" data-filter="true">
+         
+         </ul>
+    </div>	
+	
 	<!--Cita-->
     <div data-role="content" id="contenedorCita">
          <form id="solcita" name="solcita" action="*">
@@ -85,6 +92,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
     	<a onclick="getDestacadosList();" data-role="button" data-inline="true" id="mendest"><img src="img/bdestacado.png"></a>
         <a onclick="getCitaForm();" data-role="button" data-inline="true" id="mencita"><img src="img/bcita.png"></a>
         <a onclick="getAvisosList();" data-role="button" data-inline="true" id="menaviso"><img src="img/baviso.png"></a>
+		<a onclick="getFavoritosList();" data-role="button" data-inline="true" id="menfav"><img src="img/bfavorito.png"></a>
 	</div><!-- /navbar -->
     
 </div>

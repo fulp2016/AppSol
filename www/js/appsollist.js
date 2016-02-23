@@ -23,7 +23,7 @@ function getDestacadosList() {
 	var serviceDestacadosURL = "http://www.fulp.es/servicesfulp/ofertas.json?regId="+regId;
 	
 	$.getJSON(serviceDestacadosURL, function(data) {
-		$('#destacadosList li').remove();
+		$('#destacadosList').remove();
 		employees = data;
 		var i=0;
 		var m=0;
@@ -88,12 +88,86 @@ function getDestacadosList() {
 				'</li></a>');
 			m=m+1;
 		});
-		//$('#destacadosList').listview('refresh');
-		$('#destacadosList').load();
+		$('#destacadosList').listview('refresh');
+		//$('#destacadosList').load();
 	});
 mostrarDestacados();	
 }
 
+function getFavoritosList() {
+	var serviceDestacadosURL = "http://www.fulp.es/servicesfulp/favoritos.json?regId="+regId;
+	
+	$.getJSON(serviceDestacadosURL, function(data) {
+		$('#favoritosList').remove();
+		employees = data;
+		var i=0;
+		var m=0;
+		$.each(employees, function(index, destacado) {
+		var imagen='';		var descripcion = '';		var imgfav= '';		var fav = destacado.favorito;  var funfav= '';
+		
+			if(destacado.tipo=='YOUTUBE')
+			{
+				var icono = "img/ico-youtube.png";
+				var enlace = '<a href="' +destacado.enlace+ '">';
+				if(destacado.descripcion_corta!=false)
+				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
+				imagen = '<div class="imgcontent"><img src="https://i.ytimg.com/vi/V5AB4nrL-8o/maxresdefault.jpg"></div>';		
+			}
+			else if(destacado.tipo=='INFOJOBS')
+			{
+				var icono = "img/ico-infojobs.png";
+				var enlace =  '<a href="' +destacado.enlace+ '">';
+				if(destacado.descripcion_corta!=false)
+				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
+			}
+			else if(destacado.tipo=='TERRAZA')
+			{
+				var icono = "img/ico-terraza.png";
+				var enlace =  '<a href="' +destacado.enlace+ '">';
+				if(destacado.descripcion_corta!=false)
+				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
+				imagen = '<div class="imgcontent"><img src="http://www.fulp.es/FULP/terraza/imagenes/'+destacado.id+'.jpg"></div>';
+			}
+			else if(destacado.tipo=='C')
+			{
+				var icono = "img/ico-empleo.png";
+				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');">';
+				if(destacado.descripcion_corta!=false)
+				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
+			}
+			else if((destacado.tipo=='B')||(destacado.tipo=='F'))
+			{
+				var icono = "img/ico-beca.png";
+				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');">';
+				if(destacado.descripcion_corta!=false)
+				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
+			}
+			
+			if(fav=='N')
+			{
+				imgfav='img/strellaoff.png';
+				funfav= 'anadir_favorito(\''+destacado.tipo+'\',\''+destacado.id+'\',\''+ m +'\')';
+			}
+			else
+			{
+				imgfav='img/strellaon.png';
+				funfav= 'eliminar_fav(\''+destacado.tipo+'\',\''+destacado.id+'\',\''+ m +'\')';
+			}
+
+			$('#favoritosList').append( '<a id="enlcfavorito'+ m +'" onclick="'+funfav+'"><img class="icofavorito" id="icofavorito'+ m +'" src="'+ imgfav +'"></a>'+
+				enlace + '<li>' +
+				'<div class="imagn"><img src="'+ icono +'"></div> '+
+				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
+				descripcion + '</div>'+
+				imagen +
+				'</li></a>');
+			m=m+1;
+		});
+		$('#favoritosList').listview('refresh');
+		//$('#favoritosList').load();
+	});
+mostrarFavoritos();	
+}
 
 function getCitaForm() {
 	
@@ -170,6 +244,19 @@ function mostrarDestacados()
   //$('#apptitle').text('Destacados');
   $("#imgcab").attr("src","img/cab_descatado.png");
   $('#contenedorDestacados').show();
+  $('#contenedorFavoritos').hide();
+  $('#contenedorCita').hide();
+  $('#contenedorAvisos').hide();
+  $('#contenedorSesion').hide();
+  $('#contenedorDetalle').hide();
+}
+
+function mostrarFavoritos()
+{
+  //$('#apptitle').text('Destacados');
+  $("#imgcab").attr("src","img/cab_descatado.png");
+  $('#contenedorDestacados').hide();
+  $('#contenedorFavoritos').show();
   $('#contenedorCita').hide();
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').hide();
@@ -182,6 +269,7 @@ function mostrarCita()
  // $('#apptitle').text('Solicitar Cita');
   $("#imgcab").attr("src","img/cab_cita.png");
   $('#contenedorDestacados').hide();
+  $('#contenedorFavoritos').hide();
   $('#contenedorCita').show();
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').hide();
@@ -193,6 +281,7 @@ function mostrarAvisos()
   //$('#apptitle').text('Notificaciones/Avisos');
   $("#imgcab").attr("src","img/cab_alertas.png");
   $('#contenedorDestacados').hide();
+  $('#contenedorFavoritos').hide();
   $('#contenedorCita').hide();
   $('#contenedorAvisos').show();
   $('#contenedorSesion').hide();
@@ -205,6 +294,7 @@ function mostrarSesion()
   //$('#apptitle').text('Iniciar Sesión');
   $("#imgcab").attr("src","img/cab_inicio.png");
   $('#contenedorDestacados').hide();
+  $('#contenedorFavoritos').hide();
   $('#contenedorCita').hide();
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').show();
@@ -216,6 +306,7 @@ function mostrarDetalle()
   //$('#apptitle').text('Iniciar Sesión');
   $("#imgcab").attr("src","img/cab_oferta.png");
   $('#contenedorDestacados').hide();
+  $('#contenedorFavoritos').hide();
   $('#contenedorCita').hide();
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').hide();
