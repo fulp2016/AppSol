@@ -23,7 +23,7 @@ function getDestacadosList() {
 	var serviceDestacadosURL = "http://www.fulp.es/servicesfulp/ofertas.json?regId="+regId;
 	
 	$.getJSON(serviceDestacadosURL, function(data) {
-		$('#destacadosList li').remove();
+		$('#destacadosList a').remove();
 		employees = data;
 		var i=0;
 		var m=0;
