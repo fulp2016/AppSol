@@ -74,8 +74,8 @@ header{height:30px;}
 body.p1{  
 background: url("../img/fondo.png") no-repeat center center fixed; background-color:#e5530e; -webkit-background-size: cover; background-size: cover; background-size:auto auto;}
 .cabecera{ width:100%;}
-.cabecera p{ margin:5px; color:#4c4745; text-align:center;  font-weight:bold;}
-.cabecera img{ margin:auto; width:120px;}
+.cabecera p{ margin:2px; color:#4c4745; text-align:center;  font-weight:bold;}
+.cabecera img{ margin:auto; width:100px;}
 .cabecera p.tit{ font-size:25px; }
 .cabecera p.subtit{ font-size:90px;}
 
