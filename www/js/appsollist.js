@@ -225,10 +225,31 @@ function getDetalleOferta(id) {
 			
 			$('#descripcion').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"</p>");
 			
-			$('#bton').append("<a data-role='button' href='http://www.fulp.es/oferta/"+data.enlace+"'>INSCRIBIRME</a>");
+			$("#enloferta").attr("href","http://www.fulp.es/oferta/"+data.enlace);
 			
 			
 		//});
+		//$('#actionList').listview('refresh');
+	});
+}
+
+function getDetalleTerraza(id) { 
+	
+	mostrarTerraza();
+	$('#tituloT').empty();
+	$('#dgeneralesT').empty();
+	$('#descripcionT').empty();
+	var serviceURL2 = "http://www.fulp.es/servicesfulp/terraza.json?id="+id;
+	$.getJSON(serviceURL2, function(data) {
+	
+			$('#tituloT').append('<h4>'+data.asunto+'</h4><p>' + data.entidad + '</p>');
+			
+			$('#dgeneralesT').append(contrato + jornada + salario);
+			
+			$('#descripcionT').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"</p>");
+			
+			$("#enlterraza").attr("href","http://www.fulp.es/evento/"+data.enlace);
+
 		//$('#actionList').listview('refresh');
 	});
 }
@@ -279,6 +300,7 @@ function mostrarDestacados()
   $('#contenedorSesion').hide();
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').hide();
+  $('#contenedorTerraza').hide();
 }
 
 function mostrarFavoritos()
@@ -292,6 +314,7 @@ function mostrarFavoritos()
   $('#contenedorSesion').hide();
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').hide();
+  $('#contenedorTerraza').hide();
 }
 
 
@@ -306,6 +329,7 @@ function mostrarCita()
   $('#contenedorSesion').hide();
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').hide();
+  $('#contenedorTerraza').hide();
 }
 
 function mostrarAvisos()
@@ -319,6 +343,7 @@ function mostrarAvisos()
   $('#contenedorSesion').hide();
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').hide();
+  $('#contenedorTerraza').hide();
 }
 
 
@@ -333,6 +358,7 @@ function mostrarSesion()
   $('#contenedorSesion').show();
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').hide();
+  $('#contenedorTerraza').hide();
 }
 
 function mostrarDetalle()
@@ -346,6 +372,7 @@ function mostrarDetalle()
   $('#contenedorSesion').hide();
   $('#contenedorDetalle').show();
   $('#contenedorItinerario').hide();
+  $('#contenedorTerraza').hide();
 }
 
 function mostrarItinerario()
@@ -359,6 +386,21 @@ function mostrarItinerario()
   $('#contenedorSesion').hide();
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').show();
+  $('#contenedorTerraza').hide();
+}
+
+function mostrarTerraza()
+{
+  //$('#apptitle').text('Iniciar Sesión');
+  $("#imgcab").attr("src","img/cab_oferta.png");
+  $('#contenedorDestacados').hide();
+  $('#contenedorFavoritos').hide();
+  $('#contenedorCita').hide();
+  $('#contenedorAvisos').hide();
+  $('#contenedorSesion').hide();
+  $('#contenedorDetalle').hide();
+  $('#contenedorItinerario').hide();
+  $('#contenedorTerraza').show();
 }
 
 function cerrar_sesion(){	 
