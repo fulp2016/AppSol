@@ -84,7 +84,8 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 	
 	<!--Itinerario-->
 	<div data-role="content" id="contenedorItinerario">
-         <ul id="itinerarioList" data-role="listview" data-filter="true">
+		 <a onclick="getSesionForm(); " data-role="button" id="mencerrar"><img src="img/bcerrar.png" id="bcerrar"></a>	
+         <ul id="itinerarioList" data-role="listview" >
          
          </ul>
     </div>	
@@ -105,9 +106,9 @@ var sesion = cod_personal;
 if((cod_personal!='0')&&(cod_personal!=''))
 {
 	//mostrarDestacados();
-	document.getElementById('meniniciar').id='mencerrar';
-	$("#binicio").attr("src","img/bcerrar.png");
-	document.getElementById('meniti').style.display='block';
+	//document.getElementById('meniniciar').id='mencerrar';
+	//$("#binicio").attr("src","img/bcerrar.png");
+	$("#meniniciar").attr("onClick","getItinerarioList();");
 }
 if(pagina=='destacado'){getDestacadosList(); $("#imgcab").attr("src","img/cab_descatado.png"); }
 else if(pagina=='cita'){getCitaForm(); $("#imgcab").attr("src","img/cab_cita.png");}
@@ -132,12 +133,12 @@ $(document).ready(function() {
 				{
 					cod_personal = data;
 					sesion = data;
-					document.getElementById('meniniciar').id='mencerrar';
-					getDestacadosList();
+					//document.getElementById('meniniciar').id='mencerrar';
+					getItinerarioList();
 					/*document.getElementById('mencerrar').className.replace( /(?:^|\s)btn-active(?!\S)/ , '' );
 					document.getElementById("mendest").className = "btn-active";*/
-					$("#binicio").attr("src","img/bcerrar.png");
-					document.getElementById('meniti').style.display='block';
+					//$("#binicio").attr("src","img/bcerrar.png");
+					$("#meniniciar").attr("onClick","getItinerarioList();");
 				}
             }
         });

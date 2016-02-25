@@ -254,10 +254,11 @@ function getSesionForm() {
 	{
 		cerrar_sesion();
 		sesion = '';
-		document.getElementById('mencerrar').id='meniniciar';
+		$("#meniniciar").attr("onClick","getSesionForm();");
+		//document.getElementById('mencerrar').id='meniniciar';
 		alert('Sesión cerrada correctamente');
-		$("#binicio").attr("src","img/binicio.png");
-		document.getElementById('meniti').style.display='none';
+		//$("#binicio").attr("src","img/binicio.png");
+		//document.getElementById('meniti').style.display='none';
 	}
 	mostrarSesion();
 }
