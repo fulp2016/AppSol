@@ -59,7 +59,7 @@
 #avisosList  li div.imagn{ width:100%; }
 #avisosList  li div.imagn img { width:40px; float:left; margin-right:10px;}
 #avisosList li div.contn{ width:100%; }
-#avisosList li p{ color:#666;  font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
+#avisosList li p{ color:#666;  font-size:13px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
 
 #contenedorItinerario{ padding-right:4px; padding-top:0;}
 #contenedorItinerario #mencerrar{}
