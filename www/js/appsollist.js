@@ -245,7 +245,7 @@ function getItinerarioList() {
 		});
 		$('#itinerarioList').listview('refresh');
 	});
-mostrarFavoritos();	
+mostrarItinerario();	
 }
 
 function getSesionForm() {
@@ -272,6 +272,7 @@ function mostrarDestacados()
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').hide();
   $('#contenedorDetalle').hide();
+  $('#contenedorItinerario').hide();
 }
 
 function mostrarFavoritos()
@@ -284,6 +285,7 @@ function mostrarFavoritos()
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').hide();
   $('#contenedorDetalle').hide();
+  $('#contenedorItinerario').hide();
 }
 
 
@@ -297,6 +299,7 @@ function mostrarCita()
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').hide();
   $('#contenedorDetalle').hide();
+  $('#contenedorItinerario').hide();
 }
 
 function mostrarAvisos()
@@ -309,6 +312,7 @@ function mostrarAvisos()
   $('#contenedorAvisos').show();
   $('#contenedorSesion').hide();
   $('#contenedorDetalle').hide();
+  $('#contenedorItinerario').hide();
 }
 
 
@@ -322,6 +326,7 @@ function mostrarSesion()
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').show();
   $('#contenedorDetalle').hide();
+  $('#contenedorItinerario').hide();
 }
 
 function mostrarDetalle()
@@ -334,6 +339,20 @@ function mostrarDetalle()
   $('#contenedorAvisos').hide();
   $('#contenedorSesion').hide();
   $('#contenedorDetalle').show();
+  $('#contenedorItinerario').hide();
+}
+
+function mostrarItinerario()
+{
+  //$('#apptitle').text('Iniciar Sesión');
+  $("#imgcab").attr("src","img/cab_oferta.png");
+  $('#contenedorDestacados').hide();
+  $('#contenedorFavoritos').hide();
+  $('#contenedorCita').hide();
+  $('#contenedorAvisos').hide();
+  $('#contenedorSesion').hide();
+  $('#contenedorDetalle').hide();
+  $('#contenedorItinerario').show();
 }
 
 function cerrar_sesion(){	 
