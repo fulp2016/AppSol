@@ -59,6 +59,14 @@
 #avisosList li div.contn{ width:100%; }
 #avisosList li p{ color:#666;  font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
 
+#contenedorItinerario{ padding-right:4px; padding-top:0;}
+#itinerarioList{ padding:0; width:100%;}
+#itinerarioList ul{ width:100%;}
+#itinerarioList li { background:#fff; list-style:none; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:10px; margin:5px 0; width:100%; min-height:20px;}
+#itinerarioList li h4{ color:#e9530d; font-size:14px; font-weight:bold;}
+#itinerarioList li div.contn{ width:100%; }
+#itinerarioList li p{ color:#666;  font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
+
 #contenedorDetalle { background-color:#fff; margin:2px;}
 #contenedorDetalle #titulo h4{ font-size:16px; font-weight:bold; color:#e9530d; text-align:center;}
 #contenedorDetalle #titulo p{ font-size:14px; font-weight:bold; color:#000; text-align:center;}
