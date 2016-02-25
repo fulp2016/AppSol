@@ -246,7 +246,7 @@ function getDetalleTerraza(id) {
 			
 			$("#imgterraza").attr("src","http://www.fulp.es/FULP/terraza/imagenes/"+data.id+".jpg");
 			
-			$('#descripcionT').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(\n)/g, '<br />')+"</p>");
+			$('#descripcionT').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"</p>");
 			
 			$("#enlterraza").attr("href","http://www.fulp.es/evento/"+data.enlace);
 
