@@ -30,7 +30,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 
 	<div id="cabecera" data-role="header" data-position="fixed">
         <div class="btn"><a onclick="getSesionForm(); " data-role="button" id="meniniciar"><img src="img/binicio.png" id="binicio"></a></div>
-		<img id="imgcab" src="img/cab_descatado.png">
+		<img id="imgcab" src="">
 	</div>
     
  <div id="contenido">
@@ -104,11 +104,11 @@ if((cod_personal!='0')&&(cod_personal!=''))
 	document.getElementById('meniniciar').id='mencerrar';
 	$("#binicio").attr("src","img/bcerrar.png");
 }
-if(pagina=='destacado'){getDestacadosList(); $("#imgcab").attr("src","img/cab_descatado.png"); }
-else if(pagina=='cita'){getCitaForm(); $("#imgcab").attr("src","img/cab_cita.png");}
-else if(pagina=='aviso'){getAvisosList(); $("#imgcab").attr("src","img/cab_alertas.png");}
-else if(pagina=='inicio'){getSesionForm(); $("#imgcab").attr("src","img/cab_inicio.png");}
-else if(pagina=='favorito'){getFavoritosList(); $("#imgcab").attr("src","img/cab_descatado.png");}
+if(pagina=='destacado'){getDestacadosList(); setTimeout($("#imgcab").attr("src","img/cab_descatado.png"),10000); }
+else if(pagina=='cita'){getCitaForm(); setTimeout($("#imgcab").attr("src","img/cab_cita.png"),10000);}
+else if(pagina=='aviso'){getAvisosList(); setTimeout($("#imgcab").attr("src","img/cab_alertas.png"),10000);}
+else if(pagina=='inicio'){getSesionForm(); setTimeout($("#imgcab").attr("src","img/cab_inicio.png"),10000);}
+else if(pagina=='favorito'){getFavoritosList(); setTimeout($("#imgcab").attr("src","img/cab_descatado.png"),10000);}
 $(document).ready(function() {	
 	$('#iniciar').click(function(){
 		var username = $(this).val();		
