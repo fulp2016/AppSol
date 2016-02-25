@@ -187,7 +187,7 @@ function getAvisosList() {
 			var clase='';
 			if(aviso.visto=='N'){clase = 'nuevo';}
 			$('#avisosList').append( '<li class="'+ clase +'">' +
-				'<div class="imagn"><img src="img/ico-beca.png"></div> '+
+				//'<div class="imagn"><img src="img/ico-beca.png"></div> '+
 				'<div class="contn">' +
 				'<p>'+aviso.aviso + '</p>'+ 
 				'</div>'+
@@ -244,7 +244,7 @@ function getItinerarioList() {
 		$.each(employees, function(index, itinerario) {
 
 			$('#itinerarioList').append( '<li>' +
-				'<div class="imagn"><img src="img/ico-empleo.png"></div> '+
+				//'<div class="imagn"><img src="img/ico-empleo.png"></div> '+
 				'<div class="contn"><h4>' + itinerario.nombre_accion + '</h4>' +
 				'<p>Del '+itinerario.fecha_inicio + ' al '+itinerario.fecha_fin+'</p></div>'+
 				'</li>');
