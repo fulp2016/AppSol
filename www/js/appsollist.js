@@ -48,7 +48,7 @@ function getDestacadosList() {
 			else if(destacado.tipo=='TERRAZA')
 			{
 				var icono = "img/ico-terraza.png";
-				var enlace =  '<a href="' +destacado.enlace+ '">';
+				var enlace = '<a onclick="getDetalleTerraza('+destacado.id +');">';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 				imagen = '<div class="imgcontent"><img src="http://www.fulp.es/FULP/terraza/imagenes/'+destacado.id+'.jpg"></div>';
@@ -123,7 +123,7 @@ function getFavoritosList() {
 			else if(favorito.tipo=='TERRAZA')
 			{
 				var icono = "img/ico-terraza.png";
-				var enlace =  '<a href="' +favorito.enlace+ '">';
+				var enlace = '<a onclick="getDetalleTerraza('+destacado.id +');">';
 				if(favorito.descripcion_corta!=false)
 				descripcion = '<p>' + favorito.descripcion_corta + '</p>';
 				imagen = '<div class="imgcontent"><img src="http://www.fulp.es/FULP/terraza/imagenes/'+favorito.id+'.jpg"></div>';
@@ -242,9 +242,9 @@ function getDetalleTerraza(id) {
 	var serviceURL2 = "http://www.fulp.es/servicesfulp/terraza.json?id="+id;
 	$.getJSON(serviceURL2, function(data) {
 	
-			$('#tituloT').append('<h4>'+data.asunto+'</h4><p>' + data.entidad + '</p>');
+			$('#tituloT').append('<h4>'+data.titulo+'</h4>');
 			
-			$('#dgeneralesT').append(contrato + jornada + salario);
+			$("#enlterraza").attr("src","http://www.fulp.es/FULP/terraza/imagenes/"+data.id+".jpg");
 			
 			$('#descripcionT').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"</p>");
 			
