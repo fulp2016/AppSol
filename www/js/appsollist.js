@@ -225,7 +225,7 @@ function getDetalleOferta(id) {
 			
 			$('#descripcion').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"</p>");
 			
-			$('#bton').append("<a data-role='button' href='http://www.fulp.es/oferta/"+data.enlace+"'>INSCRIBIRSE</a>");
+			$('#bton').append("<a data-role='button' href='http://www.fulp.es/oferta/"+data.enlace+"'>INSCRIBIRME</a>");
 			
 			
 		//});
