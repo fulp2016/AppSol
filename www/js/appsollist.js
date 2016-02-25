@@ -177,18 +177,24 @@ function getCitaForm() {
 
 function getAvisosList() {
 	
-	mostrarAvisos();
-	/*$.getJSON(serviceocasionURL, function(data) {
-		$('#ocasionList li').remove();
-		eventos = data;
-		$.each(eventos, function(index, ocasion) {
-			$('#ocasionList').append('<li><a href="ocasiondetails.html?id=' + ocasion.id_casco + '">' +
-					'<img src="' + ocasion.ruta_imagen + '"/>' +
-					'<h4>' + ocasion.modelo + '</h4>' +
-					'<p>' + ocasion.kilometros + ' kil&oacute;metros - ' + ocasion.precio + '</p></li>');
+	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/avisos.json?regId="+regId;
+	
+	$.getJSON(serviceFavoritoURL, function(data) {
+		$('#avisosList li').remove();
+		employees = data;
+		var i=0;
+		$.each(employees, function(index, aviso) {
+			var clase='';
+			if(aviso.visto=='N'){clase = 'nuevo';}
+			$('#avisosList').append( '<li>' +
+				'<div class="contn '+ clase +'">' +
+				aviso.aviso + 
+				'</div>'+
+				'</li>');
 		});
-		$('#ocasionList').listview('refresh');
-	});*/
+		$('#avisosList').listview('refresh');
+	});
+	mostrarAvisos();
 }
 
 function getDetalleOferta(id) { 
@@ -221,8 +227,6 @@ function getDetalleOferta(id) {
 		//});
 		//$('#actionList').listview('refresh');
 	});
-	
-	
 }
 
 
