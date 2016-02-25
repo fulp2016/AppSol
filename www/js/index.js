@@ -80,8 +80,8 @@ var pushNotification = window.plugins.pushNotification;
               //alert('message = '+e.message+' msgcnt = '+e.msgcnt+' url = '+e.payload.url); 
 			  
 			  comprobar_sesion(regId);	
-			  
-			  if(e.payload.url){window.location.href = e.payload.url;}
+			  alert(e.payload.url);
+			  if(e.payload.url){alert(1); window.location.href = e.payload.url;}
 			  
             break; 
 
