@@ -240,7 +240,7 @@ function getItinerarioList() {
 
 			$('#itinerarioList').append( '<li>' +
 				'<div class="contn"><h4>' + itinerario.nombre_accion + '</h4>' +
-				'<p>Del '+itinerario.fecha_inicio + ' al '+itinerario.fin+'</p></div>'+
+				'<p>Del '+itinerario.fecha_inicio + ' al '+itinerario.fecha_fin+'</p></div>'+
 				'</li>');
 		});
 		$('#itinerarioList').listview('refresh');
