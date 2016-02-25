@@ -244,7 +244,7 @@ function getDetalleTerraza(id) {
 	
 			$('#tituloT').append('<h4>'+data.titulo+'</h4>');
 			
-			$("#enlterraza").attr("src","http://www.fulp.es/FULP/terraza/imagenes/"+data.id+".jpg");
+			$("#imgterraza").attr("src","http://www.fulp.es/FULP/terraza/imagenes/"+data.id+".jpg");
 			
 			$('#descripcionT').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"</p>");
 			
