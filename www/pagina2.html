@@ -61,7 +61,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
     
 	<!--Avisos-->
     <div data-role="content" id="contenedorAvisos">
-         <ul id="avisosList" data-role="listview" data-filter="true">
+         <ul id="avisosList" data-role="listview">
          </ul>
     </div>	
     
@@ -77,14 +77,17 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 	<!--DetalleOferta-->
 	<div data-role="content"  id="contenedorDetalle"> 
 		<div id="titulo"></div>
-        
         <div id="dgenerales"></div>
-        
         <div id="descripcion"></div>
-        
-        <div id="bton"><a data-role="button">INSCRIBIRSE</a></div>
-        
+        <div id="bton"><a data-role="button">INSCRIBIRSE</a></div>        
   	</div>
+	
+	<!--Itinerario-->
+	<div data-role="content" id="contenedorItinerario">
+         <ul id="itinerarioList" data-role="listview" data-filter="true">
+         
+         </ul>
+    </div>	
    
  </div>	
     
@@ -93,6 +96,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
         <a onclick="getCitaForm();" data-role="button" data-inline="true" id="mencita"><img src="img/bcita.png"></a>
         <a onclick="getAvisosList();" data-role="button" data-inline="true" id="menaviso"><img src="img/baviso.png"></a>
 		<a onclick="getFavoritosList();" data-role="button" data-inline="true" id="menfav"><img src="img/bfavorito.png"></a>
+		<a style="display:none" onclick="getItinerarioList();" data-role="button" data-inline="true" id="meniti"><img src="img/binicio.png"></a>
 	</div><!-- /navbar -->
     
 </div>
@@ -103,12 +107,14 @@ if((cod_personal!='0')&&(cod_personal!=''))
 	//mostrarDestacados();
 	document.getElementById('meniniciar').id='mencerrar';
 	$("#binicio").attr("src","img/bcerrar.png");
+	document.getElementById('meniti').style.display='block';
 }
-if(pagina=='destacado'){getDestacadosList(); setTimeout($("#imgcab").attr("src","img/cab_descatado.png"),10000); }
-else if(pagina=='cita'){getCitaForm(); setTimeout($("#imgcab").attr("src","img/cab_cita.png"),10000);}
-else if(pagina=='aviso'){getAvisosList(); setTimeout($("#imgcab").attr("src","img/cab_alertas.png"),10000);}
-else if(pagina=='inicio'){getSesionForm(); setTimeout($("#imgcab").attr("src","img/cab_inicio.png"),10000);}
-else if(pagina=='favorito'){getFavoritosList(); setTimeout($("#imgcab").attr("src","img/cab_descatado.png"),10000);}
+if(pagina=='destacado'){getDestacadosList(); $("#imgcab").attr("src","img/cab_descatado.png"); }
+else if(pagina=='cita'){getCitaForm(); $("#imgcab").attr("src","img/cab_cita.png");}
+else if(pagina=='aviso'){getAvisosList(); $("#imgcab").attr("src","img/cab_alertas.png");}
+else if(pagina=='inicio'){getSesionForm(); $("#imgcab").attr("src","img/cab_inicio.png");}
+else if(pagina=='favorito'){getFavoritosList(); $("#imgcab").attr("src","img/cab_descatado.png");}
+else if(pagina=='itinerario'){getItinerarioList(); $("#imgcab").attr("src","img/cab_descatado.png");}
 $(document).ready(function() {	
 	$('#iniciar').click(function(){
 		var username = $(this).val();		

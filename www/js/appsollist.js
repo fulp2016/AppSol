@@ -229,6 +229,24 @@ function getDetalleOferta(id) {
 	});
 }
 
+function getItinerarioList() {
+	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/itinerario.json?cod_personal=2262";
+	
+	$.getJSON(serviceFavoritoURL, function(data) {
+		$('#itinerarioList li').remove();
+		employees = data;
+		var i=0;
+		$.each(employees, function(index, itinerario) {
+
+			$('#itinerarioList').append( '<li>' +
+				'<div class="contn"><h4>' + itinerario.nombre_accion + '</h4>' +
+				'<p>Del '+itinerario.fecha_inicio + ' al '+itinerario.fin+'</p></div>'+
+				'</li>');
+		});
+		$('#itinerarioList').listview('refresh');
+	});
+mostrarFavoritos();	
+}
 
 function getSesionForm() {
 
@@ -239,6 +257,7 @@ function getSesionForm() {
 		document.getElementById('mencerrar').id='meniniciar';
 		alert('Sesión cerrada correctamente');
 		$("#binicio").attr("src","img/binicio.png");
+		document.getElementById('meniti').style.display='none';
 	}
 	mostrarSesion();
 }

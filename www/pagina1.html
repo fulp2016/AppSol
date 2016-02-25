@@ -45,12 +45,19 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 		</div>
 		<div>
 			<input type="button" id="inicio" value="" onClick="change('inicio')">
+			<input style="display:none" type="button" id="itinerario" value="" onClick="change('itinerario')">
 		</div>
         </form>    
     </div>
 <script>
 document.getElementById("cod_personal").value=cod_personal;
 document.getElementById("regId").value=regId;
+
+if((cod_personal!='0')&&(cod_personal!=''))
+{
+	document.getElementById('itinerario').style.display='block';
+	document.getElementById('inicio').style.display='none';
+}
 </script>
 
 </body>

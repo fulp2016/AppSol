@@ -54,7 +54,7 @@
 #contenedorAvisos{ padding-right:4px; padding-top:0;}
 #avisosList{ padding:0; width:100%;}
 #avisosList ul{ width:100%;}
-#avisosList li { background:#f3f3f3; list-style:none; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:10px; margin:10px 0; width:100%; min-height:40px;}
+#avisosList li { background:#f3f3f3; list-style:none; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:10px; margin:5px 0; width:100%; min-height:20px;}
 #avisosList li.nuevo{background:#fff; background-image:url("../img/nuevo_aviso.png"); background-repeat: no-repeat; background-attachment: fixed;  background-position: 97% 1%; background-size: 10px; }
 #avisosList li div.contn{ width:100%; }
 #avisosList li p{ color:#666;  font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
@@ -74,7 +74,7 @@
 #menu-pie a{ margin:0 3% 0 3%;}
 
 #menu-pie img{ width:50px; height:50px;} 
-#menu-pie #mendest, #menu-pie #menaviso, #menu-pie #mencita , #menu-pie #menfav{ padding:0; height:50px; width:50px; border-radius:10px; text-align:center; }
+#menu-pie #mendest, #menu-pie #menaviso, #menu-pie #mencita , #menu-pie #menfav, #menu-pie #meniti{ padding:0; height:50px; width:50px; border-radius:10px; text-align:center; }
 
 #menu-pie #meniniciar img{ width:50px; height:50px;}   
 #cabecera #meniniciar{position:absolute; top:5%;
