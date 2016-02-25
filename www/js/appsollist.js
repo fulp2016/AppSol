@@ -186,9 +186,9 @@ function getAvisosList() {
 		$.each(employees, function(index, aviso) {
 			var clase='';
 			if(aviso.visto=='N'){clase = 'nuevo';}
-			$('#avisosList').append( '<li>' +
-				'<div class="contn '+ clase +'">' +
-				aviso.aviso + 
+			$('#avisosList').append( '<li class="'+ clase +'">' +
+				'<div class="contn">' +
+				'<p>'+aviso.aviso + '</p>'+ 
 				'</div>'+
 				'</li>');
 		});
