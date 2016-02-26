@@ -126,7 +126,7 @@ if(pagina=='destacado'){$("#imgcab").attr("src","img/cab_descatado.png"); getDes
 else if(pagina=='cita'){$("#imgcab").attr("src","img/cab_cita.png"); getCitaForm();}
 else if(pagina=='aviso'){$("#imgcab").attr("src","img/cab_alertas.png"); getAvisosList();}
 else if(pagina=='inicio'){$("#imgcab").attr("src","img/cab_inicio.png"); getSesionForm();}
-else if(pagina=='favorito'){$("#imgcab").attr("src","img/cab_favorito.png"); getFavoritosList();}
+else if(pagina=='favorito'){$("#imgcab").attr("src","img/cab_descatado.png"); getFavoritosList();}
 else if(pagina=='itinerario'){$("#imgcab").attr("src","img/cab_descatado.png"); getItinerarioList();}
 $(document).ready(function() {	
 	$('#iniciar').click(function(){
@@ -160,6 +160,7 @@ $(document).ready(function() {
 		var xmlhttp =new XMLHttpRequest();
 		xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?nombre="+document.getElementById('nombre').value+"&email="+document.getElementById('email').value+"&telefono="+document.getElementById('telefono').value+"&cita=S",false);
 		xmlhttp.send(null);	
+		alert("Solicitud realizada con exito.\n En brebe nos pondremos en contacto contigo.");
     });
 	
 });
