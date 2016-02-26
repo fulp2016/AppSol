@@ -112,11 +112,9 @@ var pushNotification = window.plugins.pushNotification;
 };
 
 function registrar_dispositivo(){	 
-	 var xmlhttp =new XMLHttpRequest();
-	
-	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+document.getElementById("regId").value+"&cod_personal="+document.getElementById("cod_personal").value+"&new=S",false);
-
-		 xmlhttp.send(null);	
+	var xmlhttp =new XMLHttpRequest();
+	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+document.getElementById("regId").value+"&cod_personal="+document.getElementById("cod_personal").value+"&new=S",false);
+	xmlhttp.send(null);	
 }
 
 function comprobar_sesion(a)

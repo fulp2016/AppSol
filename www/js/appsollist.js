@@ -306,7 +306,7 @@ function mostrarDestacados()
 function mostrarFavoritos()
 {
   //$('#apptitle').text('Destacados');
-  $("#imgcab").attr("src","img/cab_descatado.png");
+  $("#imgcab").attr("src","img/cab_favorito.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').show();
   $('#contenedorCita').hide();
