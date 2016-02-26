@@ -11,7 +11,7 @@
 <script src="phonegap.js"></script>
 <script>
 cadVariables = location.search.substring(1,location.search.length);
-alert(cadVariables);
+alert("4"+cadVariables);
 arrVariables = cadVariables.split("&");
 for (i=0; i<arrVariables.length; i++) {
 arrVariableActual = arrVariables[i].split("=");
@@ -53,15 +53,15 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 
 document.getElementById("cod_personal").value=cod_personal;
 document.getElementById("regId").value=regId;
-alert(cod_personal);
-alert(regId);
-alert(pagina);
+alert("5"+cod_personal);
+alert("6"+regId);
+alert("7"+pagina);
 if((cod_personal!='0')&&(cod_personal!=''))
 {
 	$("#inicio").attr("onClick","change('itinerario')");
 }
 
-if(pagina!=''){alert(entra);document.getElementById("pagina").value=pagina; document.getElementById("irpagina").submit();}
+if(pagina!=''){alert("8");document.getElementById("pagina").value=pagina; document.getElementById("irpagina").submit();}
 </script>
 
 </body>
