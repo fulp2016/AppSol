@@ -58,7 +58,7 @@ if((cod_personal!='0')&&(cod_personal!=''))
 	$("#inicio").attr("onClick","change('itinerario')");
 }
 
-if(pagina!=''){ document.getElementById("pagina").value=pagina; $(document).ready(function() {document.getElementById("irpagina").submit(); });}
+if(pagina!=''){ $(document).ready(function() { document.getElementById("pagina").value=pagina; document.getElementById("irpagina").submit(); });}
 </script>
 
 </body>
