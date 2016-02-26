@@ -76,7 +76,6 @@ var pushNotification = window.plugins.pushNotification;
             break; 
 
             case 'message': 
-			  if ( e.regid.length > 0 ) { var regId = e.regid; }
               // NOTIFICACION!!! 
               //alert('message = '+e.message+' msgcnt = '+e.msgcnt+' url = '+e.payload.url);   
 			  if(e.payload.url){ alert(e.payload.url); document.getElementById('pagina').value=e.payload.url; /*$("#resgistro").attr("action",'pagina2.html');*/}
