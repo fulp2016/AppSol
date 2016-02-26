@@ -262,9 +262,11 @@ function getItinerarioList() {
 		employees = data;
 		var i=0;
 		$.each(employees, function(index, itinerario) {
-
+		var icoiti='';
+			if(itinerario.tipo == 'T') {icoiti='img/ico_tutoria.png';}
+			else if(itinerario.tipo == 'C') {icoiti='img/ico_curso.png';}
 			$('#itinerarioList').append( '<li>' +
-				'<div class="imagn"><img src="img/ico-empleo.png"></div> '+
+				'<div class="imagn"><img src="'+icoiti+'"></div> '+
 				'<div class="contn"><h4>' + itinerario.nombre_accion + '</h4>' +
 				'<p>Del '+itinerario.fecha_inicio + ' al '+itinerario.fecha_fin+'</p></div>'+
 				'</li>');
