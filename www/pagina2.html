@@ -114,22 +114,24 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
     
 </div>
 <script>
-var sesion = cod_personal;	
-if((cod_personal!='0')&&(cod_personal!=''))
-{
-	//mostrarDestacados();
-	//document.getElementById('meniniciar').id='mencerrar';
-	//$("#binicio").attr("src","img/bcerrar.png");
-	$("#meniniciar").attr("onClick","getItinerarioList();");
-}
-
-if(pagina=='destacado'){$("#imgcab").attr("src","img/cab_descatado.png"); getDestacadosList(); }
-else if(pagina=='cita'){$("#imgcab").attr("src","img/cab_cita.png"); getCitaForm();}
-else if(pagina=='aviso'){$("#imgcab").attr("src","img/cab_alertas.png"); getAvisosList();}
-else if(pagina=='inicio'){$("#imgcab").attr("src","img/cab_inicio.png"); getSesionForm();}
-else if(pagina=='favorito'){$("#imgcab").attr("src","img/cab_favorito.png"); getFavoritosList();}
-else if(pagina=='itinerario'){$("#imgcab").attr("src","img/cab_itinerario.png"); getItinerarioList();}
 $(document).ready(function() {	
+
+	var sesion = cod_personal;	
+	if((cod_personal!='0')&&(cod_personal!=''))
+	{
+		//mostrarDestacados();
+		//document.getElementById('meniniciar').id='mencerrar';
+		//$("#binicio").attr("src","img/bcerrar.png");
+		$("#meniniciar").attr("onClick","getItinerarioList();");
+	}
+
+	if(pagina=='destacado'){$("#imgcab").attr("src","img/cab_descatado.png"); getDestacadosList(); }
+	else if(pagina=='cita'){$("#imgcab").attr("src","img/cab_cita.png"); getCitaForm();}
+	else if(pagina=='aviso'){$("#imgcab").attr("src","img/cab_alertas.png"); getAvisosList();}
+	else if(pagina=='inicio'){$("#imgcab").attr("src","img/cab_inicio.png"); getSesionForm();}
+	else if(pagina=='favorito'){$("#imgcab").attr("src","img/cab_favorito.png"); getFavoritosList();}
+	else if(pagina=='itinerario'){$("#imgcab").attr("src","img/cab_itinerario.png"); getItinerarioList();}
+
 	$('#iniciar').click(function(){
 		var username = $(this).val();		
 		var dataString = "login="+document.getElementById("login").value+"&pass="+document.getElementById("pass").value+"&regId2="+regId;
@@ -162,8 +164,7 @@ $(document).ready(function() {
 		xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?nombre="+document.getElementById('nombre').value+"&email="+document.getElementById('email').value+"&telefono="+document.getElementById('telefono').value+"&cita=S",false);
 		xmlhttp.send(null);	
 		alert("Solicitud realizada con exito.\nEn brebe nos pondremos en contacto contigo.");
-    });
-	
+    });	
 });
 </script>
 </body>
