@@ -81,7 +81,7 @@ var pushNotification = window.plugins.pushNotification;
 			  
 			  comprobar_sesion(regId);	
 
-			  if(e.payload.url){ document.getElementById('pagina').value=e.payload.url; $("#resgistro").attr("action",'pagina2.html');}
+			  if(e.payload.url){ document.getElementById('pagina').value=e.payload.url; /*$("#resgistro").attr("action",'pagina2.html');*/}
 			  
             break; 
 
