@@ -378,7 +378,7 @@ function mostrarDetalle()
 function mostrarItinerario()
 {
   //$('#apptitle').text('Iniciar Sesión');
-  $("#imgcab").attr("src","img/cab_oferta.png");
+  $("#imgcab").attr("src","img/cab_itinerario.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').hide();
   $('#contenedorCita').hide();
