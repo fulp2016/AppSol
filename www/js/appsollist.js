@@ -123,7 +123,7 @@ function getFavoritosList() {
 			else if(favorito.tipo=='TERRAZA')
 			{
 				var icono = "img/ico-terraza.png";
-				var enlace = '<a onclick="getDetalleTerraza('+destacado.id +');">';
+				var enlace = '<a onclick="getDetalleTerraza('+favorito.id +');">';
 				if(favorito.descripcion_corta!=false)
 				descripcion = '<p>' + favorito.descripcion_corta + '</p>';
 				imagen = '<div class="imgcontent"><img src="http://www.fulp.es/FULP/terraza/imagenes/'+favorito.id+'.jpg"></div>';
