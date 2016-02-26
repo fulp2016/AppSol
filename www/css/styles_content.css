@@ -11,7 +11,7 @@
 
 #cabecera div.btn img{width:100%;}
 
-#contenido {height:100%; width:100%; overflow:auto;}
+#contenido { width:100%;}
 
 #contenido input{ width:90%; border-radius:10px;}
 
