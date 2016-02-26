@@ -55,7 +55,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 				<p><input type="text" placeholder="NOMBRE" id="nombre" name="nombre"></p>
 				<p><input type="email" placeholder="EMAIL" id="email" name="email"></p>
 				<p><input type="tel" placeholder="TELEFONO" id="telefono" name="telefono"></p>
-				<p><input type="button" value="SOLICITAR CITA" name="solicitar" id="solicitar"> </p>
+				<p><input type="button" value="SOLICITAR CITA" name="solicitar" id="solicitar"></p>
 			 </form>
 		</div>	
     
@@ -154,7 +154,27 @@ $(document).ready(function() {
 				}
             }
         });
-    });             
+    });    
+
+	$('#solicitar').click(function(){
+		var username = $(this).val();		
+		var dataString = "nombre="+document.getElementById('nombre').value+"&email="+document.getElementById('email').value+"&telefono="+document.getElementById('telefono').value+"&cita=S;
+		$.ajax({
+            type: "POST",
+            url: "http://www.fulp.es/FULP/mensajesapp/registro_app.php",
+            data: dataString,
+            success: function(data) {
+				if(data)
+				{
+					alert("Solicitud realizada con exito.\n En brebe nos pondremos en contacto contigo.");
+				}
+				else
+				{
+
+				}
+            }
+        });
+    });
 	
 });
 </script>
