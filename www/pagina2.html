@@ -35,73 +35,74 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
     
  <div id="contenido">
 	
-	<!--Tablon-->
-	<div data-role="content" id="contenedorDestacados">
-         <ul id="destacadosList" data-role="listview" data-filter="true">
-         
-         </ul>
-    </div>		
+		<!--Tablon-->
+		<div data-role="content" id="contenedorDestacados">
+			 <ul id="destacadosList" data-role="listview" data-filter="true">
+			 
+			 </ul>
+		</div>		
     
-	<!--Favoritos-->
-	<div data-role="content" id="contenedorFavoritos">
-         <ul id="favoritosList" data-role="listview" data-filter="true">
-         
-         </ul>
-    </div>	
+		<!--Favoritos-->
+		<div data-role="content" id="contenedorFavoritos">
+			 <ul id="favoritosList" data-role="listview" data-filter="true">
+			 
+			 </ul>
+		</div>	
 	
-	<!--Cita-->
-    <div data-role="content" id="contenedorCita">
-         <form id="solcita" name="solcita" action="*">
-         	<p><input type="text" placeholder="NOMBRE" id="nombre" name="nombre"></p>
-            <p><input type="email" placeholder="EMAIL" id="email" name="email"></p>
-            <p><input type="tel" placeholder="TELEFONO" id="telefono" name="telefono"></p>
-            <p><input type="button" value="SOLICITAR CITA" name="solicitar" id="solicitar"> </p>
-         </form>
-    </div>	
+		<!--Cita-->
+		<div data-role="content" id="contenedorCita">
+			 <form id="solcita" name="solcita" action="*">
+				<p><input type="text" placeholder="NOMBRE" id="nombre" name="nombre"></p>
+				<p><input type="email" placeholder="EMAIL" id="email" name="email"></p>
+				<p><input type="tel" placeholder="TELEFONO" id="telefono" name="telefono"></p>
+				<p><input type="button" value="SOLICITAR CITA" name="solicitar" id="solicitar"> </p>
+			 </form>
+		</div>	
     
-	<!--Avisos-->
-    <div data-role="content" id="contenedorAvisos">
-	<br>
-         <ul id="avisosList" data-role="listview">
-         </ul>
-    </div>	
+		<!--Avisos-->
+		<div data-role="content" id="contenedorAvisos">
+		<br>
+			 <ul id="avisosList" data-role="listview">
+			 </ul>
+		</div>	
     
-	<!--Sesion-->
-    <div data-role="content" id="contenedorSesion">
-         <form id="solcita" name="solcita" action="*">
-         	<p><input type="text" placeholder="NOMBRE USUARIO" id="login" name="login"></p>
-            <p><input type="password" placeholder="CLAVE" id="pass" name="pass"></p>
-            <p><input type="button" value="INICIAR" name="iniciar" id="iniciar"> </p>
-         </form>
-    </div>	
+		<!--Sesion-->
+		<div data-role="content" id="contenedorSesion">
+			 <form id="solcita" name="solcita" action="*">
+				<p><input type="text" placeholder="NOMBRE USUARIO" id="login" name="login"></p>
+				<p><input type="password" placeholder="CLAVE" id="pass" name="pass"></p>
+				<p><input type="button" value="INICIAR" name="iniciar" id="iniciar"> </p>
+			 </form>
+		</div>	
 	
-	<!--DetalleOferta-->
-	<div data-role="content"  id="contenedorDetalle"> 
-		<div id="titulo"></div>
-        <div id="dgenerales"></div>
-        <div id="descripcion"></div>
-        <div id="bton"><a data-role='button' id="enloferta" href=''>INSCRIBIRME</a></div>        
-  	</div>
+		<!--DetalleOferta-->
+		<div data-role="content"  id="contenedorDetalle"> 
+			<div id="titulo"></div>
+			<div id="dgenerales"></div>
+			<div id="descripcion"></div>
+			<div id="bton"><a data-role='button' id="enloferta" href=''>INSCRIBIRME</a></div>        
+		</div>
 	
-	<!--Itinerario-->
-	<div data-role="content" id="contenedorItinerario">
-	<br>
-		 <!--<a onclick="getSesionForm(); " data-role="button" id="mencerrar"><!--<img src="img/bcerrar.png" id="bcerrar">Cerrar Sesi&oacuten</a>	
-		 <br><br>-->
-         <ul id="itinerarioList" data-role="listview" >
-         
-         </ul>
-    </div>	
+		<!--Itinerario-->
+		<div data-role="content" id="contenedorItinerario">
+		<br>
+			 <!--<a onclick="getSesionForm(); " data-role="button" id="mencerrar"><!--<img src="img/bcerrar.png" id="bcerrar">Cerrar Sesi&oacuten</a>	
+			 <br><br>-->
+			 <ul id="itinerarioList" data-role="listview" >
+			 
+			 </ul>
+		</div>	
 	
-	<!--DetalleTerrazaa-->
-	<div data-role="content"  id="contenedorTerraza"> 
-		<div id="tituloT"></div>
-		<div id="imagenT"><img id="imgterraza" src=""></div>
-        <div id="dgeneralesT"></div>
-        <div id="descripcionT"></div
-        <div id="btonT"><a data-role='button' id="enlterraza" href=''>INSCRIBIRME</a></div>        
-  	</div>	
- 
+		<!--DetalleTerrazaa-->
+		<div data-role="content"  id="contenedorTerraza"> 
+			<div id="tituloT"></div>
+			<div id="imagenT"><img id="imgterraza" src=""></div>
+			<div id="dgeneralesT"></div>
+			<div id="descripcionT"></div>
+			<div id="btonT"><a data-role='button' id="enlterraza" href=''>INSCRIBIRME</a></div>        
+		</div>	
+	</div>
+	
     <!-- /Pie -->
     <div id="menu-pie" data-role="footer" data-position="fixed">
     	<a onclick="getDestacadosList();" data-role="button" data-inline="true" id="mendest"><img src="img/bdestacado.png"></a>
