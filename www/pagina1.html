@@ -11,6 +11,7 @@
 <script src="phonegap.js"></script>
 <script>
 cadVariables = location.search.substring(1,location.search.length);
+alert(cadVariables);
 arrVariables = cadVariables.split("&");
 for (i=0; i<arrVariables.length; i++) {
 arrVariableActual = arrVariables[i].split("=");
@@ -49,16 +50,17 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
         </form>    
     </div>
 <script>
+
 document.getElementById("cod_personal").value=cod_personal;
 document.getElementById("regId").value=regId;
-
+alert(cod_personal);
+alert(regId);
+alert(pagina);
 if((cod_personal!='0')&&(cod_personal!=''))
 {
 	$("#inicio").attr("onClick","change('itinerario')");
 }
-alert(cod_personal);
-alert(cod_personal.value);
-alert(pagina.value);
+
 if(pagina!=''){alert(entra);document.getElementById("pagina").value=pagina; document.getElementById("irpagina").submit();}
 </script>
 

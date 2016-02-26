@@ -78,7 +78,7 @@ var pushNotification = window.plugins.pushNotification;
             case 'message': 
               // NOTIFICACION!!! 
               //alert('message = '+e.message+' msgcnt = '+e.msgcnt+' url = '+e.payload.url);   
-			  if(e.payload.url){ document.getElementById('pagina').value=e.payload.url; /*$("#resgistro").attr("action",'pagina2.html');*/}
+			  if(e.payload.url){ alert(e.payload.url); document.getElementById('pagina').value=e.payload.url; /*$("#resgistro").attr("action",'pagina2.html');*/}
 			  setTimeout(comprobar_sesion(regId),10000);
             break; 
 
@@ -123,6 +123,8 @@ function comprobar_sesion(a)
             data: dataString,
             success: function(data) {
 				document.getElementById("cod_personal").value=data;
+				alert(document.getElementById('pagina').value);
+				alert(document.getElementById('cod_personal').value);
 				setTimeout(document.getElementById('resgistro').submit(),10000);
             }
         });
