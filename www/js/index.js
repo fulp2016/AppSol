@@ -61,7 +61,6 @@ var pushNotification = window.plugins.pushNotification;
             case 'registered': 
                 if ( e.regid.length > 0 ) 
                 { 
-				alert(1);
                     console.log("Regid " + e.regid); 
                     //alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
@@ -69,20 +68,13 @@ var pushNotification = window.plugins.pushNotification;
 					
                     document.getElementById('regId').value = regId; 	
 					
-					registrar_dispositivo();		
-					
-					setTimeout(comprobar_sesion(regId),10000);
-												
+					registrar_dispositivo();														
                 } 
             break; 
 
             case 'message': 
-			
               // NOTIFICACION!!! 
-              //alert('message = '+e.message+' msgcnt = '+e.msgcnt+' url = '+e.payload.url);   
-			  alert(2);
 			  if(e.payload.url){ document.getElementById('pagina').value=e.payload.url;}
-			  setTimeout(comprobar_sesion(regId),10000);
             break; 
 
             case 'error': 
@@ -93,6 +85,9 @@ var pushNotification = window.plugins.pushNotification;
               alert('An unknown GCM event has occurred'); 
             break; 
         } 
+		
+		//setTimeout(comprobar_sesion(regId),10000);
+		comprobar_sesion(regId)
     }, 
     onNotificationAPN: function(event) { 
         var pushNotification = window.plugins.pushNotification; 
