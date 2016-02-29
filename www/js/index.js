@@ -60,7 +60,8 @@ var pushNotification = window.plugins.pushNotification;
         { 
             case 'registered': 
                 if ( e.regid.length > 0 ) 
-                { 
+                {
+					alert(1);				
                     console.log("Regid " + e.regid); 
                     //alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
@@ -74,6 +75,7 @@ var pushNotification = window.plugins.pushNotification;
 
             case 'message': 
               // NOTIFICACION!!! 
+			  alert(2);
 			  if(e.payload.url){ document.getElementById('pagina').value=e.payload.url;}
             break; 
 
@@ -86,8 +88,8 @@ var pushNotification = window.plugins.pushNotification;
             break; 
         } 
 		
-		setTimeout(comprobar_sesion(regId),10000);
-		//comprobar_sesion(regId)
+		//setTimeout(comprobar_sesion(regId),10000);
+		comprobar_sesion(regId)
     }, 
     onNotificationAPN: function(event) { 
         var pushNotification = window.plugins.pushNotification; 
