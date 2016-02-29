@@ -93,6 +93,15 @@
 #contenedorTerraza #btonT{margin:10px 0; text-align:center;}
 #contenedorTerraza #btonT a{ background-color:#e9530d; color:#fff;}
 
+#contenedorSol { background-color:#fff; margin:2px;}
+#contenedorSol #tituloS h4{ font-size:16px; font-weight:bold; color:#e9530d; text-align:center;}
+#contenedorSol #dgeneralesS{background-color:#f2f2f2; padding:5px 5px; margin:10px 0; font-size:12px;}
+#contenedorSol #descripcionS{margin:10px 0;}
+#contenedorSol #descripcionS h5{font-size:14px; font-weight:bold; color:#e9530d;}
+#contenedorSol #descripcionS p{font-size:12px; text-align:justify;}
+#contenedorSol #formS{margin:10px 0; text-align:center;}
+#contenedorSol #formS input[type="button"]{ background-color:#e9530d; color:#fff;}
+
 #contenedorCita {margin:2px;}
 #contenedorCita #solicitar {color:#f1642a;}
 

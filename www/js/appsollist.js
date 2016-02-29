@@ -53,6 +53,13 @@ function getDestacadosList() {
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 				imagen = '<div class="imgcontent"><img src="http://www.fulp.es/FULP/terraza/imagenes/'+destacado.id+'.jpg"></div>';
 			}
+			else if(destacado.tipo=='CSOL')
+			{
+				var icono = "img/ico_curso.png";
+				var enlace = '<a onclick="getDetalleSol('+destacado.id +');">';
+				if(destacado.descripcion_corta!=false)
+				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
+			}
 			else if(destacado.tipo=='C')
 			{
 				var icono = "img/ico-empleo.png";
@@ -127,6 +134,13 @@ function getFavoritosList() {
 				if(favorito.descripcion_corta!=false)
 				descripcion = '<p>' + favorito.descripcion_corta + '</p>';
 				imagen = '<div class="imgcontent"><img src="http://www.fulp.es/FULP/terraza/imagenes/'+favorito.id+'.jpg"></div>';
+			}
+			else if(favorito.tipo=='CSOL')
+			{
+				var icono = "img/ico_curso.png";
+				var enlace = '<a onclick="getDetalleSol('+favorito.id +');">';
+				if(favorito.descripcion_corta!=false)
+				descripcion = '<p>' + favorito.descripcion_corta + '</p>';
 			}
 			else if(favorito.tipo=='C')
 			{
@@ -249,6 +263,23 @@ function getDetalleTerraza(id) {
 			$('#descripcionT').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"</p>");
 			
 			$("#enlterraza").attr("href","http://www.fulp.es/evento/"+data.enlace);
+
+		//$('#actionList').listview('refresh');
+	});
+}
+
+function getDetalleSol(id) { 
+	
+	mostrarTerraza();
+	$('#tituloS').empty();
+	$('#dgeneralesS').empty();
+	$('#descripcionS').empty();
+	var serviceURL2 = "http://www.fulp.es/servicesfulp/terraza.json?id="+id;
+	$.getJSON(serviceURL2, function(data) {
+	
+			$('#tituloS').append('<h4>'+data.titulo+'</h4>');
+			
+			$('#descripcionS').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"</p>");
 
 		//$('#actionList').listview('refresh');
 	});
