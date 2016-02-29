@@ -19,8 +19,6 @@ eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
 else
 eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 }
-
-if(pagina!=''){ window.location.href ="pagina2.html?cod_personal="+cod_personal+"&regId"+regId+"&pagina="+pagina;  /*document.getElementById("pagina").value=pagina; setTimeout(document.getElementById('irpagina').submit(),10000);*/ }
 </script>
 </head>
 
@@ -54,11 +52,15 @@ if(pagina!=''){ window.location.href ="pagina2.html?cod_personal="+cod_personal+
 
 	document.getElementById("cod_personal").value=cod_personal;
 	document.getElementById("regId").value=regId;
+	
+	alert(cod_personal);
 
 	if((cod_personal!='0')&&(cod_personal!=''))
 	{
 		$("#inicio").attr("onClick","change('itinerario')");
 	}
+	
+	if(pagina!=''){ window.location.href ="pagina2.html?cod_personal="+cod_personal+"&regId"+regId+"&pagina="+pagina;  /*document.getElementById("pagina").value=pagina; setTimeout(document.getElementById('irpagina').submit(),10000);*/ }
 
 </script>
 
