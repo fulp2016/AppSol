@@ -441,7 +441,7 @@ function mostrarTerraza()
   $('#contenedorSol').hide();
 }
 
-function mostrarTerraza()
+function mostrarSol()
 {
   //$('#apptitle').text('Iniciar Sesión');
   $("#imgcab").attr("src","img/cab_oferta.png");
