@@ -55,6 +55,7 @@ var pushNotification = window.plugins.pushNotification;
         alert(error); 
     }, 
     onNotificationGCM: function(e) { 
+		alert(e.event );
 		switch( e.event ) 
         { 
             case 'registered': 
@@ -65,8 +66,7 @@ var pushNotification = window.plugins.pushNotification;
                     //Cuando se registre le pasamos el regid al input 
 					var regId = e.regid;
 					
-                    document.getElementById('regId').value = regId; 
-					var sesion = '';		
+                    document.getElementById('regId').value = regId; 	
 					
 					registrar_dispositivo();		
 					
@@ -88,7 +88,7 @@ var pushNotification = window.plugins.pushNotification;
 
             default: 
               alert('An unknown GCM event has occurred'); 
-              break; 
+            break; 
         } 
     }, 
     onNotificationAPN: function(event) { 
