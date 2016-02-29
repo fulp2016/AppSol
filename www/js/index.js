@@ -79,7 +79,9 @@ var pushNotification = window.plugins.pushNotification;
 			
               // NOTIFICACION!!! 
               //alert('message = '+e.message+' msgcnt = '+e.msgcnt+' url = '+e.payload.url);   
-			  alert(e.regid);
+			  alert('1.....'+e.regid);
+			  alert('2.....'+regId);
+			  alert('3.....'+document.getElementById('regId').value);
 			  if(e.payload.url){ document.getElementById('pagina').value=e.payload.url;}
 			  setTimeout(comprobar_sesion(regId),10000);
             break; 
