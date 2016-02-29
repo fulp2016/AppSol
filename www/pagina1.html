@@ -11,10 +11,10 @@
 <script src="phonegap.js"></script>
 <script>
 cadVariables = location.search.substring(1,location.search.length);
-alert(cadVariables);
 arrVariables = cadVariables.split("&");
 for (i=0; i<arrVariables.length; i++) {
 arrVariableActual = arrVariables[i].split("=");
+alert(arrVariableActual);
 if (isNaN(parseFloat(arrVariableActual[1])))
 eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
 else
