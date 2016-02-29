@@ -102,7 +102,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 			<div id="btonT"><a data-role='button' id="enlterraza" href=''>INSCRIBIRME</a></div>        
 		</div>	
 		
-		<!--DetalleTerrazaa-->
+		<!--DetalleSol-->
 		<div data-role="content"  id="contenedorSol"> 
 			<div id="tituloS"></div>
 			<div id="dgeneralesS"></div>
@@ -111,7 +111,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 				<p><input type="text" placeholder="NOMBRE" id="nombre" name="nombre"></p>
 				<p><input type="email" placeholder="EMAIL" id="email" name="email"></p>
 				<p><input type="tel" placeholder="TELEFONO" id="telefono" name="telefono"></p>
-				<p><input type="button" value="SOLICITAR CITA" name="solicitarCurso" id="solicitarCurso"></p>
+				<p><input type="button" value="SOLICITAR CITA" name="solicitarCurso" id="solicitarCursoSol"></p>
 			</div>        
 		</div>	
 		
@@ -167,6 +167,13 @@ $(document).ready(function() {
 	$('#solicitar').click(function(){
 		var xmlhttp =new XMLHttpRequest();
 		xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?nombre="+document.getElementById('nombre').value+"&email="+document.getElementById('email').value+"&telefono="+document.getElementById('telefono').value+"&cita=S",false);
+		xmlhttp.send(null);	
+		alert("Solicitud realizada con exito.\nEn brebe nos pondremos en contacto contigo.");
+    });	
+	
+	$('#solicitarCursoSol').click(function(){
+		var xmlhttp =new XMLHttpRequest();
+		xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?nombre="+document.getElementById('nombre').value+"&email="+document.getElementById('email').value+"&telefono="+document.getElementById('telefono').value+"&cursosol=S",false);
 		xmlhttp.send(null);	
 		alert("Solicitud realizada con exito.\nEn brebe nos pondremos en contacto contigo.");
     });	
