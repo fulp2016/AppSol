@@ -61,6 +61,7 @@ var pushNotification = window.plugins.pushNotification;
             case 'registered': 
                 if ( e.regid.length > 0 ) 
                 { 
+				alert(1);
                     console.log("Regid " + e.regid); 
                     //alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
@@ -79,9 +80,7 @@ var pushNotification = window.plugins.pushNotification;
 			
               // NOTIFICACION!!! 
               //alert('message = '+e.message+' msgcnt = '+e.msgcnt+' url = '+e.payload.url);   
-			  alert('1.....'+e.regid);
-			  alert('2.....'+regId);
-			  alert('3.....'+document.getElementById('regId').value);
+			  alert(2);
 			  if(e.payload.url){ document.getElementById('pagina').value=e.payload.url;}
 			  setTimeout(comprobar_sesion(regId),10000);
             break; 
