@@ -278,11 +278,11 @@ mostrarItinerario();
 
 function getSesionForm() {
 alert('entra2');
-	if((sesion!='')&&(sesion!='0'))
+	if((cod_personal!='')&&(cod_personal!='0'))
 	{
 	alert('entra3');
 		cerrar_sesion();
-		sesion = '';
+		cod_personal = '';
 		$("#meniniciar").attr("onClick","getSesionForm();");
 		alert('Sesión cerrada correctamente');
 	}

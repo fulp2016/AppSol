@@ -116,7 +116,6 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 <script>
 $(document).ready(function() {	
 
-	var sesion = cod_personal;	
 	if((cod_personal!='0')&&(cod_personal!=''))
 	{
 		$("#meniniciar").attr("onClick","getItinerarioList();");
@@ -144,7 +143,6 @@ $(document).ready(function() {
 				else
 				{
 					cod_personal = data;
-					sesion = data;
 					getItinerarioList();
 					$("#meniniciar").attr("onClick","getItinerarioList();");
 				}
