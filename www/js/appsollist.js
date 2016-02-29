@@ -277,16 +277,14 @@ mostrarItinerario();
 }
 
 function getSesionForm() {
-
+alert('entra2');
 	if((sesion!='')&&(sesion!='0'))
 	{
+	alert('entra3');
 		cerrar_sesion();
 		sesion = '';
 		$("#meniniciar").attr("onClick","getSesionForm();");
-		//document.getElementById('mencerrar').id='meniniciar';
 		alert('Sesión cerrada correctamente');
-		//$("#binicio").attr("src","img/binicio.png");
-		//document.getElementById('meniti').style.display='none';
 	}
 	mostrarSesion();
 }
@@ -351,6 +349,7 @@ function mostrarAvisos()
 
 function mostrarSesion()
 {
+alert('entra');
   //$('#apptitle').text('Iniciar Sesión');
   $("#imgcab").attr("src","img/cab_inicio.png");
   $('#contenedorDestacados').hide();

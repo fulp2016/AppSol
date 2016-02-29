@@ -29,7 +29,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 <div id="appsolListPage" data-role="page">
 
 	<div id="cabecera" data-role="header" data-position="fixed">
-        <div class="btn"><a onclick="getSesionForm(); " data-role="button" id="meniniciar"><img src="img/binicio.png" id="binicio"></a></div>
+        <div class="btn"><a onclick="getSesionForm();" data-role="button" id="meniniciar"><img src="img/binicio.png" id="binicio"></a></div>
 		<img id="imgcab" src="img/cab_general.png">
 	</div>
     
@@ -121,7 +121,7 @@ $(document).ready(function() {
 	{
 		$("#meniniciar").attr("onClick","getItinerarioList();");
 	}
-	alert(pagina);
+
 	if(pagina=='destacado'){$("#imgcab").attr("src","img/cab_descatado.png"); getDestacadosList(); }
 	else if(pagina=='cita'){$("#imgcab").attr("src","img/cab_cita.png"); getCitaForm();}
 	else if(pagina=='aviso'){$("#imgcab").attr("src","img/cab_alertas.png"); getAvisosList();}

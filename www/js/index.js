@@ -123,7 +123,6 @@ function comprobar_sesion(a)
             data: dataString,
             success: function(data) {
 				document.getElementById("cod_personal").value=data;
-				alert(document.getElementById("cod_personal").value);
 				setTimeout(document.getElementById('resgistro').submit(),10000);
             }
         });
