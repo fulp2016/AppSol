@@ -280,6 +280,8 @@ function getDetalleSol(id) {
 			$('#tituloS').append('<h4>'+data.titulo+'</h4>');
 			
 			$('#descripcionS').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion+"</p>");
+			
+			document.getElementById("codcursoinfo").value=id;
 
 		//$('#actionList').listview('refresh');
 	});

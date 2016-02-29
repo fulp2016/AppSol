@@ -108,9 +108,10 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 			<div id="dgeneralesS"></div>
 			<div id="descripcionT"></div>
 			<div id="formS">
-				<p><input type="text" placeholder="NOMBRE" id="nombre" name="nombre"></p>
-				<p><input type="email" placeholder="EMAIL" id="email" name="email"></p>
-				<p><input type="tel" placeholder="TELEFONO" id="telefono" name="telefono"></p>
+				<p><input type="text" placeholder="NOMBRE" id="nombreinfo" name="nombre"></p>
+				<p><input type="email" placeholder="EMAIL" id="emailinfo" name="email"></p>
+				<p><input type="tel" placeholder="TELEFONO" id="telefonoinfo" name="telefono"></p>
+				<input type="hidden" id="codcursoinfo">
 				<p> <a data-role="button" name="solicitarCurso" id="solicitarCursoSol">SOLICITAR INFORMACI&Oacute;N</a></p>
 			</div>        
 		</div>	
@@ -173,7 +174,7 @@ $(document).ready(function() {
 	
 	$('#solicitarCursoSol').click(function(){
 		var xmlhttp =new XMLHttpRequest();
-		xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?nombre="+document.getElementById('nombre').value+"&email="+document.getElementById('email').value+"&telefono="+document.getElementById('telefono').value+"&cursosol=S",false);
+		xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?nombre="+document.getElementById('nombreinfo').value+"&email="+document.getElementById('emailinfo').value+"&telefono="+document.getElementById('telefonoinfo').value+"&cursosol="+document.getElementById('codcursoinfo').value,false);
 		xmlhttp.send(null);	
 		alert("Solicitud realizada con exito.\nEn brebe nos pondremos en contacto contigo.");
     });	
