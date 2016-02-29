@@ -277,10 +277,9 @@ mostrarItinerario();
 }
 
 function getSesionForm() {
-alert('entra2');
+
 	if((cod_personal!='')&&(cod_personal!='0'))
 	{
-	alert('entra3');
 		cerrar_sesion();
 		cod_personal = '';
 		$("#meniniciar").attr("onClick","getSesionForm();");
@@ -349,7 +348,6 @@ function mostrarAvisos()
 
 function mostrarSesion()
 {
-alert('entra');
   //$('#apptitle').text('Iniciar Sesión');
   $("#imgcab").attr("src","img/cab_inicio.png");
   $('#contenedorDestacados').hide();
