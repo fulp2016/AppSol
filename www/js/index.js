@@ -78,7 +78,7 @@ var pushNotification = window.plugins.pushNotification;
             case 'message': 
               // NOTIFICACION!!! 
               //alert('message = '+e.message+' msgcnt = '+e.msgcnt+' url = '+e.payload.url);   
-			  if(e.payload.url){ document.getElementById('pagina').value=e.payload.url; /*$("#resgistro").attr("action",'pagina2.html');*/}
+			  if(e.payload.url){ document.getElementById('pagina').value=e.payload.url; alert(document.getElementById('pagina').value);}
 			  setTimeout(comprobar_sesion(regId),10000);
             break; 
 
