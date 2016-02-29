@@ -279,7 +279,7 @@ function getDetalleSol(id) {
 	
 			$('#tituloS').append('<h4>'+data.titulo+'</h4>');
 			
-			$('#descripcionS').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"</p>");
+			$('#descripcionS').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion+"</p>");
 
 		//$('#actionList').listview('refresh');
 	});
