@@ -270,7 +270,7 @@ function getDetalleTerraza(id) {
 
 function getDetalleSol(id) { 
 	
-	mostrarTerraza();
+	mostrarSol();
 	$('#tituloS').empty();
 	$('#dgeneralesS').empty();
 	$('#descripcionS').empty();
@@ -331,6 +331,7 @@ function mostrarDestacados()
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').hide();
   $('#contenedorTerraza').hide();
+  $('#contenedorSol').hide();
 }
 
 function mostrarFavoritos()
@@ -345,6 +346,7 @@ function mostrarFavoritos()
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').hide();
   $('#contenedorTerraza').hide();
+  $('#contenedorSol').hide();
 }
 
 
@@ -360,6 +362,7 @@ function mostrarCita()
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').hide();
   $('#contenedorTerraza').hide();
+  $('#contenedorSol').hide();
 }
 
 function mostrarAvisos()
@@ -374,6 +377,7 @@ function mostrarAvisos()
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').hide();
   $('#contenedorTerraza').hide();
+  $('#contenedorSol').hide();
 }
 
 
@@ -389,6 +393,7 @@ function mostrarSesion()
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').hide();
   $('#contenedorTerraza').hide();
+  $('#contenedorSol').hide();
 }
 
 function mostrarDetalle()
@@ -403,6 +408,7 @@ function mostrarDetalle()
   $('#contenedorDetalle').show();
   $('#contenedorItinerario').hide();
   $('#contenedorTerraza').hide();
+  $('#contenedorSol').hide();
 }
 
 function mostrarItinerario()
@@ -417,6 +423,7 @@ function mostrarItinerario()
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').show();
   $('#contenedorTerraza').hide();
+  $('#contenedorSol').hide();
 }
 
 function mostrarTerraza()
@@ -431,6 +438,22 @@ function mostrarTerraza()
   $('#contenedorDetalle').hide();
   $('#contenedorItinerario').hide();
   $('#contenedorTerraza').show();
+  $('#contenedorSol').hide();
+}
+
+function mostrarTerraza()
+{
+  //$('#apptitle').text('Iniciar Sesión');
+  $("#imgcab").attr("src","img/cab_oferta.png");
+  $('#contenedorDestacados').hide();
+  $('#contenedorFavoritos').hide();
+  $('#contenedorCita').hide();
+  $('#contenedorAvisos').hide();
+  $('#contenedorSesion').hide();
+  $('#contenedorDetalle').hide();
+  $('#contenedorItinerario').hide();
+  $('#contenedorTerraza').hide();
+  $('#contenedorSol').show();
 }
 
 function cerrar_sesion(){	 
