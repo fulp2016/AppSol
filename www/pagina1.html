@@ -11,6 +11,7 @@
 <script src="phonegap.js"></script>
 <script>
 cadVariables = location.search.substring(1,location.search.length);
+alert(cadVariables);
 arrVariables = cadVariables.split("&");
 for (i=0; i<arrVariables.length; i++) {
 arrVariableActual = arrVariables[i].split("=");
@@ -50,9 +51,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
     </div>
 <script>
 	alert(cod_personal);
-	alert(cod_personal.value);
 	alert(regId);
-	alert(regId.value);
 	document.getElementById("cod_personal").value=cod_personal;
 	document.getElementById("regId").value=regId;
 
