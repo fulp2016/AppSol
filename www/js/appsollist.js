@@ -221,11 +221,11 @@ function getDetalleOferta(id) {
 	$('#descripcion').empty();
 	var serviceURL2 = "http://www.fulp.es/servicesfulp/oferta.json?id="+id;
 	$.getJSON(serviceURL2, function(data) {
-
+			var entidad=''; var contrato = ''; var jornada = ''; var salario = '';
 		//$.each(data, function(index, oferta) {
-			$('#titulo').append('<h4>'+data.asunto+'</h4><p>' + data.entidad + '</p>');
+			if(data.anonima=='N'){entidad='<p>' + data.entidad + '</p>';}
+			$('#titulo').append('<h4>'+data.asunto+'</h4>'+entidad);
 			
-			var contrato = ''; var jornada = ''; var salario = '';
 			if ((data.contrato)&&(data.contrato!='No especificado')) {
 				contrato ='<p><strong>Contrato:</strong> ' + data.contrato + '</p>';
 			}
