@@ -6,12 +6,14 @@ cadVariables = location.search.substring(1,location.search.length);
 alert(cadVariables);
 arrVariables = cadVariables.split("&");
 for (i=0; i<arrVariables.length; i++) {
+alert(arrVariables[i]);
 arrVariableActual = arrVariables[i].split("=");
 if (isNaN(parseFloat(arrVariableActual[1])))
 eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
 else
 eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 }
+alert('llega');
 </script>
 
 <title>Servicio de Orientaci&oacute;n Laboral</title>
