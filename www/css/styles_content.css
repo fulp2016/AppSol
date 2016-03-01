@@ -84,6 +84,7 @@
 
 #contenedorTerraza { background-color:#fff; margin:2px;}
 #contenedorTerraza #tituloT h4{ font-size:16px; font-weight:bold; color:#e9530d; text-align:center;}
+#contenedorTerraza #tituloT  p { font-size:14px; font-weight:bold; color:#000; text-align:center;}
 #contenedorTerraza #imagenT {overflow: hidden; width:100%; height:200px; margin:10px 0;}
 #contenedorTerraza #imagenT img{ width:100%}
 #contenedorTerraza #dgeneralesT{background-color:#f2f2f2; padding:5px 5px; margin:10px 0; font-size:12px;}
@@ -95,6 +96,7 @@
 
 #contenedorSol { background-color:#fff; margin:2px;}
 #contenedorSol #tituloS h4{ font-size:16px; font-weight:bold; color:#e9530d; text-align:center;}
+#contenedorSol #tituloT  p { font-size:14px; font-weight:bold; color:#000; text-align:center;}
 #contenedorSol #dgeneralesS{background-color:#f2f2f2; padding:5px 5px; margin:10px 0; font-size:12px;}
 #contenedorSol #descripcionS{margin:10px 0;}
 #contenedorSol #descripcionS h5{font-size:14px; font-weight:bold; color:#e9530d;}
