@@ -210,7 +210,7 @@ function getAvisosList() {
 		$('#avisosList').listview('refresh');
 	});
 	mostrarAvisos();
-	avisosVistos();
+	
 }
 
 function getDetalleOferta(id) { 
@@ -381,6 +381,8 @@ function mostrarAvisos()
   $('#contenedorItinerario').hide();
   $('#contenedorTerraza').hide();
   $('#contenedorSol').hide();
+  
+  avisosVistos();
 }
 
 
