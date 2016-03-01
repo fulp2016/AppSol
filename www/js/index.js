@@ -66,9 +66,7 @@ var pushNotification = window.plugins.pushNotification;
                     //alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
 					var regId = e.regid;
-					
                     document.getElementById('regId').value = regId; 	
-					
 					registrar_dispositivo();														
                 } 
             break; 
@@ -88,8 +86,8 @@ var pushNotification = window.plugins.pushNotification;
             break; 
         } 
 		
-		//setTimeout(comprobar_sesion(regId),10000);
-		comprobar_sesion(regId)
+		setTimeout(comprobar_sesion(regId),10000);
+		//comprobar_sesion(regId)
     }, 
     onNotificationAPN: function(event) { 
         var pushNotification = window.plugins.pushNotification; 
