@@ -210,6 +210,7 @@ function getAvisosList() {
 		$('#avisosList').listview('refresh');
 	});
 	mostrarAvisos();
+	avisosVistos();
 }
 
 function getDetalleOferta(id) { 
@@ -491,6 +492,14 @@ function eliminar_fav(tipo,codigo,id){
 function eliminar_fav2(tipo,codigo,id){	 
 	 var xmlhttp =new XMLHttpRequest();
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&nofavorito=S",false);
+	 xmlhttp.send(null);	
+	 
+	 getFavoritosList();
+}
+
+function avisosVistos(){	 
+	 var xmlhttp =new XMLHttpRequest();
+	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&avisovisto=S",false);
 	 xmlhttp.send(null);	
 	 
 	 getFavoritosList();
