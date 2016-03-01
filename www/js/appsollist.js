@@ -324,6 +324,7 @@ function getSesionForm() {
 
 function mostrarDestacados()
 {
+	
   //$('#apptitle').text('Destacados');
   $("#imgcab").attr("src","img/cab_descatado.png");
   $('#contenedorDestacados').show();
@@ -339,6 +340,8 @@ function mostrarDestacados()
 
 function mostrarFavoritos()
 {
+	document.getElementById("menvolv").style.display="none";
+	document.getElementById("mendest").style.display="block";
   //$('#apptitle').text('Destacados');
   $("#imgcab").attr("src","img/cab_favorito.png");
   $('#contenedorDestacados').hide();
@@ -403,6 +406,8 @@ function mostrarSesion()
 
 function mostrarDetalle()
 {
+	document.getElementById("menvolv").style.display="block";
+	document.getElementById("mendest").style.display="none";
   //$('#apptitle').text('Iniciar Sesión');
   $("#imgcab").attr("src","img/cab_oferta.png");
   $('#contenedorDestacados').hide();
@@ -433,6 +438,8 @@ function mostrarItinerario()
 
 function mostrarTerraza()
 {
+	document.getElementById("menvolv").style.display="block";
+	document.getElementById("mendest").style.display="none";
   //$('#apptitle').text('Iniciar Sesión');
   $("#imgcab").attr("src","img/cab_oferta.png");
   $('#contenedorDestacados').hide();
@@ -448,6 +455,8 @@ function mostrarTerraza()
 
 function mostrarSol()
 {
+	document.getElementById("menvolv").style.display="block";
+	document.getElementById("mendest").style.display="none";
   //$('#apptitle').text('Iniciar Sesión');
   $("#imgcab").attr("src","img/cab_oferta.png");
   $('#contenedorDestacados').hide();
