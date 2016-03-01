@@ -261,7 +261,7 @@ function getDetalleTerraza(id) {
 			
 			$("#imgterraza").attr("src","http://www.fulp.es/FULP/terraza/imagenes/"+data.id+".jpg");
 			
-			$('#descripcionT').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"</p>");
+			$('#descripcionT').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion.replace(/(?:\r\n|\r|\n)/g, '<br />')+"<br><b>Lugar de celebraci&oacute;n:</b>"+data.lugar+"</p>");
 			
 			$("#enlterraza").attr("href","http://www.fulp.es/evento/"+data.enlace);
 
@@ -280,7 +280,7 @@ function getDetalleSol(id) {
 	
 			$('#tituloS').append('<h4>'+data.titulo+'</h4>');
 			
-			$('#descripcionS').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion+"</p>");
+			$('#descripcionS').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion+"<br><b>Lugar de celebraci&oacute;n:</b>"+data.lugar+"</p>");
 			
 			document.getElementById("codcursoinfo").value=id;
 
@@ -382,7 +382,7 @@ function mostrarAvisos()
   $('#contenedorTerraza').hide();
   $('#contenedorSol').hide();
   
-  setTimeout(avisosVistos(),10000);
+  //setTimeout(avisosVistos(),10000);
 }
 
 
