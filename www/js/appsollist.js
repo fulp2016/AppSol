@@ -501,6 +501,4 @@ function avisosVistos(){
 	 var xmlhttp =new XMLHttpRequest();
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&avisovisto=S",false);
 	 xmlhttp.send(null);	
-	 
-	 getFavoritosList();
 }
