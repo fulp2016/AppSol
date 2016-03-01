@@ -84,7 +84,7 @@ var pushNotification = window.plugins.pushNotification;
             break; 
         } 
 		
-		setTimeout(comprobar_sesion(regId),10000);
+		setTimeout(comprobar_sesion(regId),20000);
 		//comprobar_sesion(regId)
     }, 
     onNotificationAPN: function(event) { 
