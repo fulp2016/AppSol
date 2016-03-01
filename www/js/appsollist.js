@@ -382,7 +382,7 @@ function mostrarAvisos()
   $('#contenedorTerraza').hide();
   $('#contenedorSol').hide();
   
-  avisosVistos();
+  setTimeout(avisosVistos(),10000);
 }
 
 
