@@ -3,17 +3,14 @@
 <head>
 <script>
 cadVariables = location.search.substring(1,location.search.length);
-alert(cadVariables);
 arrVariables = cadVariables.split("&");
 for (i=0; i<arrVariables.length; i++) {
-alert(arrVariables[i]);
 arrVariableActual = arrVariables[i].split("=");
 if (isNaN(parseFloat(arrVariableActual[1])))
 eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
 else
 eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 }
-alert('llega');
 </script>
 
 <title>Servicio de Orientaci&oacute;n Laboral</title>
@@ -138,10 +135,10 @@ $(document).ready(function() {
 	{
 		$("#meniniciar").attr("onClick","getItinerarioList();");
 	}
-	alert(pagina);
+
 	if(pagina=='destacado'){$("#imgcab").attr("src","img/cab_descatado.png"); getDestacadosList(); }
 	else if(pagina=='cita'){$("#imgcab").attr("src","img/cab_cita.png"); getCitaForm();}
-	else if(pagina=='aviso'){alert('entra'); $("#imgcab").attr("src","img/cab_alertas.png"); getAvisosList();}
+	else if(pagina=='aviso'){ $("#imgcab").attr("src","img/cab_alertas.png"); getAvisosList();}
 	else if(pagina=='inicio'){$("#imgcab").attr("src","img/cab_inicio.png"); getSesionForm();}
 	else if(pagina=='favorito'){$("#imgcab").attr("src","img/cab_favorito.png"); getFavoritosList();}
 	else if(pagina=='itinerario'){$("#imgcab").attr("src","img/cab_itinerario.png"); getItinerarioList();}
