@@ -136,10 +136,10 @@ $(document).ready(function() {
 	{
 		$("#meniniciar").attr("onClick","getItinerarioList();");
 	}
-
+	alert(pagina);
 	if(pagina=='destacado'){$("#imgcab").attr("src","img/cab_descatado.png"); getDestacadosList(); }
 	else if(pagina=='cita'){$("#imgcab").attr("src","img/cab_cita.png"); getCitaForm();}
-	else if(pagina=='aviso'){$("#imgcab").attr("src","img/cab_alertas.png"); getAvisosList();}
+	else if(pagina=='aviso'){alert('entra'); $("#imgcab").attr("src","img/cab_alertas.png"); getAvisosList();}
 	else if(pagina=='inicio'){$("#imgcab").attr("src","img/cab_inicio.png"); getSesionForm();}
 	else if(pagina=='favorito'){$("#imgcab").attr("src","img/cab_favorito.png"); getFavoritosList();}
 	else if(pagina=='itinerario'){$("#imgcab").attr("src","img/cab_itinerario.png"); getItinerarioList();}
