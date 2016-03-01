@@ -111,7 +111,7 @@ function registrar_dispositivo(){
 }
 
 function comprobar_sesion(a)
-{
+{alert(a);
 	var dataString = "regId="+a+"&comprobarses=S";
 		$.ajax({ 
             type: "POST",
