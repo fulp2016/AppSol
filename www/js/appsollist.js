@@ -257,7 +257,7 @@ function getDetalleTerraza(id) {
 	var serviceURL2 = "http://www.fulp.es/servicesfulp/terraza.json?id="+id;
 	$.getJSON(serviceURL2, function(data) {
 	
-			$('#tituloT').append('<h4>'+data.titulo+'</h4>');
+			$('#tituloT').append('<h4>'+data.titulo+'</h4><p>'+data.fecha_inicio+'</p>');
 			
 			$("#imgterraza").attr("src","http://www.fulp.es/FULP/terraza/imagenes/"+data.id+".jpg");
 			
@@ -278,9 +278,9 @@ function getDetalleSol(id) {
 	var serviceURL2 = "http://www.fulp.es/servicesfulp/terraza.json?id="+id;
 	$.getJSON(serviceURL2, function(data) {
 	
-			$('#tituloS').append('<h4>'+data.titulo+'</h4>');
+			$('#tituloS').append('<h4>'+data.titulo+'</h4><p>'+data.periodo+'</p>');
 			
-			$('#descripcionS').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion+"<br><b>Lugar de celebraci&oacute;n:</b>"+data.lugar+"</p>");
+			$('#descripcionS').append("<h5>Descripci&oacute;n</h5><p>"+data.descripcion+"</p> <h5>Lugar de celebraci&oacute;n:</h5><p>"+data.lugar+"</p>");
 			
 			document.getElementById("codcursoinfo").value=id;
 
