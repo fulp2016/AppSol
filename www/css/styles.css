@@ -1,7 +1,7 @@
 header{height:30px;}
 
 body.p1{  
-background: url("../img/fondo.png") no-repeat center center fixed; background-color:#ff8663; -webkit-background-size: cover; background-size: cover;}
+background: url("../img/fondo.png") no-repeat center center fixed; background-color:#ff8663; -webkit-background-size: cover; background-size: cover; background-size: cover cover;}
 .cabecera{ width:100%;}
 .cabecera p{ margin:2px; color:#4c4745; text-align:center;  font-weight:bold;}
 .cabecera img{ margin:auto; width:90%;}
