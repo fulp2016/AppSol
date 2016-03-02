@@ -11,8 +11,8 @@
 @media(min-width:960px)
 {
 	#cabecera { width:100%; height: 140px; overflow:hidden;}
-	#cabecera .naranja{background-color: #E9530D !important;}
-	#cabecera .blanco{background-color: #FFF !important;}
+	#cabecera.naranja{background-color: #E9530D !important;}
+	#cabecera.blanco{background-color: #FFF !important;}
 	#cabecera img { width:auto;}
 }
 
