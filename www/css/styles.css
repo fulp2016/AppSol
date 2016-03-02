@@ -76,6 +76,10 @@ background: url("../img/fondo.png") no-repeat center center fixed; background-co
 .cabecera{ width:100%;}
 .cabecera p{ margin:2px; color:#4c4745; text-align:center;  font-weight:bold;}
 .cabecera img{ margin:auto; width:90%;}
+@media(min-width:600px)
+{
+	.cabecera img{ margin:auto; width:50%;}
+}
 .cabecera p.tit{ font-size:25px; }
 .cabecera p.subtit{ font-size:90px;}
 
