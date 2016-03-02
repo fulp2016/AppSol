@@ -325,7 +325,7 @@ function getSesionForm() {
 function mostrarDestacados()
 {
 	
-  //$('#apptitle').text('Destacados');
+  $("#cabecera").attr("class","naranja");
   $("#imgcab").attr("src","img/cab_descatado.png");
   $('#contenedorDestacados').show();
   $('#contenedorFavoritos').hide();
@@ -340,9 +340,7 @@ function mostrarDestacados()
 
 function mostrarFavoritos()
 {
-	/*document.getElementById("menvolv").style.display="none";
-	document.getElementById("mendest").style.display="block";*/
-  //$('#apptitle').text('Destacados');
+  $("#cabecera").attr("class","blanco");
   $("#imgcab").attr("src","img/cab_favorito.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').show();
@@ -358,7 +356,7 @@ function mostrarFavoritos()
 
 function mostrarCita()
 {
- // $('#apptitle').text('Solicitar Cita');
+  $("#cabecera").attr("class","blanco");
   $("#imgcab").attr("src","img/cab_cita.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').hide();
@@ -373,7 +371,7 @@ function mostrarCita()
 
 function mostrarAvisos()
 {
-  //$('#apptitle').text('Notificaciones/Avisos');
+  $("#cabecera").attr("class","blanco");
   $("#imgcab").attr("src","img/cab_alertas.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').hide();
@@ -391,7 +389,7 @@ function mostrarAvisos()
 
 function mostrarSesion()
 {
-  //$('#apptitle').text('Iniciar Sesión');
+  $("#cabecera").attr("class","blanco");
   $("#imgcab").attr("src","img/cab_inicio.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').hide();
@@ -406,9 +404,7 @@ function mostrarSesion()
 
 function mostrarDetalle()
 {
-	/*document.getElementById("menvolv").style.display="block";
-	document.getElementById("mendest").style.display="none";*/
-  //$('#apptitle').text('Iniciar Sesión');
+  $("#cabecera").attr("class","naranja");
   $("#imgcab").attr("src","img/cab_oferta.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').hide();
@@ -423,7 +419,7 @@ function mostrarDetalle()
 
 function mostrarItinerario()
 {
-  //$('#apptitle').text('Iniciar Sesión');
+  $("#cabecera").attr("class","blanco");
   $("#imgcab").attr("src","img/cab_itinerario.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').hide();
@@ -438,9 +434,7 @@ function mostrarItinerario()
 
 function mostrarTerraza()
 {
-	/*document.getElementById("menvolv").style.display="block";
-	document.getElementById("mendest").style.display="none";*/
-  //$('#apptitle').text('Iniciar Sesión');
+  $("#cabecera").attr("class","naranja");
   $("#imgcab").attr("src","img/cab_oferta.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').hide();
@@ -455,9 +449,7 @@ function mostrarTerraza()
 
 function mostrarSol()
 {
-	/*document.getElementById("menvolv").style.display="block";
-	document.getElementById("mendest").style.display="none";*/
-  //$('#apptitle').text('Iniciar Sesión');
+  $("#cabecera").attr("class","naranja");
   $("#imgcab").attr("src","img/cab_oferta.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').hide();
