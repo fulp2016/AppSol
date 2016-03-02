@@ -11,19 +11,10 @@
 
 @media(min-width:600px)
 {
-	#cabecera { width:100%; height: 120px; overflow:hidden;}
-	#cabecera.naranja{background-color: #E9530D !important;}
-	#cabecera.blanco{background-color: #FFF !important;}
-	#cabecera img { width:auto;}
-	#cabecera #meniniciar{top:20%; right:5%;}
-}
-
-@media(min-width:300px) and (max-width:600px)
-{
 	#cabecera { width:100%; height: 100px; overflow:hidden;}
 	#cabecera.naranja{background-color: #E9530D !important;}
 	#cabecera.blanco{background-color: #FFF !important;}
-	#cabecera img { width:50%;}
+	#cabecera img { width:auto;}
 	#cabecera #meniniciar{top:20%; right:5%;}
 }
 
