@@ -18,7 +18,7 @@
 	#cabecera #meniniciar{top:20%; right:5%;}
 }
 
-#contenido { width:100%; min-height:600px; overflow:hidden; padding:0;}
+#contenido { width:100%; min-height:300px; overflow:hidden; padding:0;}
 #contenido input{ width:90%; border-radius:10px;}
 #contenido #contenedorCita{ text-align:center;}
 #contenido #contenedorSesion{ text-align:center;}
