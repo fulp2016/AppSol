@@ -69,9 +69,9 @@
 #avisosList ul{ width:100%;}
 #avisosList li { background:#f3f3f3; list-style:none; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:10px; margin:1px 0; width:100%; min-height:40px;}
 #avisosList li.nuevo{background:#fff; /*background-image:url("../img/nuevo_aviso.png"); background-repeat: no-repeat; background-attachment: fixed;  background-position: 97% 1%; background-size: 10px; */}
-#avisosList  li div.imagn{ width:100%; }
-#avisosList  li div.imagn img { width:40px; float:left; margin-right:10px;}
-#avisosList li div.contn{ width:100%; }
+#avisosList  li a div.imagn{ width:100%; }
+#avisosList  li a div.imagn img { width:40px; float:left; margin-right:10px;}
+#avisosList li a div.contn{ width:100%; }
 #avisosList li p{ color:#666;  font-size:13px; font-family:Arial, Helvetica, sans-serif; font-weight:normal;}
 
 #contenedorItinerario{ padding-right:4px; padding-top:0;}
