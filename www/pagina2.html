@@ -147,6 +147,7 @@ $(document).ready(function() {
 		id_oferta = pagina[1];
 		pagina = pagina[0];
 	}
+	alert(pagina);
 	if(pagina=='destacado'){$("#imgcab").attr("src","img/cab_descatado.png"); getDestacadosList(); }
 	else if(pagina=='cita'){$("#imgcab").attr("src","img/cab_cita.png"); getCitaForm();}
 	else if(pagina=='aviso'){ $("#imgcab").attr("src","img/cab_alertas.png"); getAvisosList();}
