@@ -289,7 +289,7 @@ function getDetalleSol(id) {
 }
 
 function getItinerarioList() {
-	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/itinerario.json?cod_personal=2262";
+	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/itinerario.json?cod_personal="+cod_personal;
 	
 	$.getJSON(serviceFavoritoURL, function(data) {
 		$('#itinerarioList li').remove();
@@ -435,7 +435,7 @@ function mostrarItinerario()
 function mostrarTerraza()
 {
   $("#cabecera").attr("class","naranja");
-  $("#imgcab").attr("src","img/cab_oferta.png");
+  $("#imgcab").attr("src","img/cab_terraza.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').hide();
   $('#contenedorCita').hide();
@@ -450,7 +450,7 @@ function mostrarTerraza()
 function mostrarSol()
 {
   $("#cabecera").attr("class","naranja");
-  $("#imgcab").attr("src","img/cab_oferta.png");
+  $("#imgcab").attr("src","img/cab_curso.png");
   $('#contenedorDestacados').hide();
   $('#contenedorFavoritos').hide();
   $('#contenedorCita').hide();
