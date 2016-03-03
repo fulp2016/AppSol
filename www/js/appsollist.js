@@ -28,7 +28,7 @@ function getDestacadosList() {
 		var i=0;
 		var m=0;
 		$.each(employees, function(index, destacado) {
-		var imagen='';		var descripcion = '';		var imgfav= '';		var fav = destacado.favorito;  var funfav= '';
+		var imagen='';		var descripcion = '';		var imgfav= '';		var fav = destacado.favorito;  var funfav= ''; var descripcion_tipo= '';
 		
 			if(destacado.tipo=='YOUTUBE')
 			{
@@ -49,6 +49,7 @@ function getDestacadosList() {
 			{
 				var icono = "img/ico-terraza.png";
 				var enlace = '<a onclick="getDetalleTerraza('+destacado.id +');">';
+				descripcion_tipo = '<p><i>Evento Terraza Fundaci&oacute;n</i></p>';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 				imagen = '<div class="imgcontent"><img src="http://www.fulp.es/FULP/terraza/imagenes/'+destacado.id+'.jpg"></div>';
@@ -57,6 +58,7 @@ function getDestacadosList() {
 			{
 				var icono = "img/ico_curso.png";
 				var enlace = '<a onclick="getDetalleSol('+destacado.id +');">';
+				descripcion_tipo = '<p><i>Grupales y Talleres</i></p>';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 			}
@@ -64,6 +66,7 @@ function getDestacadosList() {
 			{
 				var icono = "img/ico-empleo.png";
 				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');">';
+				descripcion_tipo = '<p><i>Oferta de Empleo</i></p>';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 			}
@@ -71,6 +74,7 @@ function getDestacadosList() {
 			{
 				var icono = "img/ico-beca.png";
 				var enlace = '<a onclick="getDetalleOferta('+destacado.id +');">';
+				descripcion_tipo = '<p><i>Oferta del Programa Inserta</i></p>';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
 			}
@@ -90,6 +94,7 @@ function getDestacadosList() {
 				enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + destacado.titulo + '</h4>' +
+				descripcion_tipo +
 				descripcion + '</div>'+
 				imagen +
 				'</li></a>');
@@ -110,7 +115,7 @@ function getFavoritosList() {
 		var i=0;
 		var m=0;
 		$.each(employees, function(index, favorito) {
-		var imagen='';		var descripcion = '';		var imgfav= '';		var fav = favorito.favorito;  var funfav= '';
+		var imagen='';		var descripcion = '';		var imgfav= '';		var fav = favorito.favorito;  var funfav= ''; var descripcion_tipo='';
 		
 			if(favorito.tipo=='YOUTUBE')
 			{
@@ -131,6 +136,7 @@ function getFavoritosList() {
 			{
 				var icono = "img/ico-terraza.png";
 				var enlace = '<a onclick="getDetalleTerraza('+favorito.id +');">';
+				descripcion_tipo = '<p><i>Eveto Terraza Fundaci&oacute;n</i></p>';
 				if(favorito.descripcion_corta!=false)
 				descripcion = '<p>' + favorito.descripcion_corta + '</p>';
 				imagen = '<div class="imgcontent"><img src="http://www.fulp.es/FULP/terraza/imagenes/'+favorito.id+'.jpg"></div>';
@@ -139,6 +145,7 @@ function getFavoritosList() {
 			{
 				var icono = "img/ico_curso.png";
 				var enlace = '<a onclick="getDetalleSol('+favorito.id +');">';
+				descripcion_tipo = '<p><i>Grupales y Talleres</i></p>';
 				if(favorito.descripcion_corta!=false)
 				descripcion = '<p>' + favorito.descripcion_corta + '</p>';
 			}
@@ -146,6 +153,7 @@ function getFavoritosList() {
 			{
 				var icono = "img/ico-empleo.png";
 				var enlace = '<a onclick="getDetalleOferta('+favorito.id +');">';
+				descripcion_tipo = '<p><i>Oferta de Empleo</i></p>';
 				if(favorito.descripcion_corta!=false)
 				descripcion = '<p>' + favorito.descripcion_corta + '</p>';
 			}
@@ -153,6 +161,7 @@ function getFavoritosList() {
 			{
 				var icono = "img/ico-beca.png";
 				var enlace = '<a onclick="getDetalleOferta('+favorito.id +');">';
+				descripcion_tipo = '<p><i>Oferta del Programa Inserta</i></p>';
 				if(favorito.descripcion_corta!=false)
 				descripcion = '<p>' + favorito.descripcion_corta + '</p>';
 			}
@@ -172,6 +181,7 @@ function getFavoritosList() {
 				enlace + '<li>' +
 				'<div class="imagn"><img src="'+ icono +'"></div> '+
 				'<div class="contn"><h4>' + favorito.titulo + '</h4>' +
+				descripcion_tipo +
 				descripcion + '</div>'+
 				imagen +
 				'</li></a>');
