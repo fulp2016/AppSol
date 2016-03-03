@@ -214,7 +214,7 @@ function getAvisosList() {
 			}
 			else if(aviso.tipo=='A')
 			{
-				var icono = "img/ico-empleo.png";
+				var icono = "img/ico-aviso.png";
 				var enlace = '';
 				var finenlace = '';
 			}
