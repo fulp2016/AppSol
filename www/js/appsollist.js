@@ -199,12 +199,43 @@ function getAvisosList() {
 		var i=0;
 		$.each(employees, function(index, aviso) {
 			var clase='';
+			
+			if((aviso.tipo=='B')||(aviso.tipo=='F'))
+			{
+				var icono = "img/ico-beca.png";
+				var enlace = '<a onclick="getDetalleOferta('+aviso.id +');">';
+				var finenlace = '</a>';
+			}
+			else if(aviso.tipo=='C')
+			{
+				var icono = "img/ico-empleo.png";
+				var enlace = '<a onclick="getDetalleOferta('+aviso.id +');">';
+				var finenlace = '</a>';
+			}
+			else if(aviso.tipo=='A')
+			{
+				var icono = "img/ico-empleo.png";
+				var enlace = '';
+				var finenlace = '';
+			}
+			else if(aviso.tipo=='T')
+			{
+				var icono = "img/ico-terraza.png";
+				var enlace = '<a onclick="getDetalleTerraza('+aviso.id +');">';
+				var finenlace = '</a>';
+			}
+			else if(aviso.tipo=='S')
+			{
+				var icono = "img/ico-ico_curso.png";
+				var enlace = '<a onclick="getDetalleSol('+aviso.id +');">';
+				var finenlace = '</a>';
+			}
 			if(aviso.visto=='N'){clase = 'nuevo';}
-			$('#avisosList').append( '<li class="'+ clase +'">' +
-				'<div class="imagn"><img src="img/ico-beca.png"></div> '+
+			$('#avisosList').append( '<li class="'+ clase +'">' + enlace +
+				'<div class="imagn"><img src="'+icono+'"></div> '+
 				'<div class="contn">' +
 				'<p>'+aviso.aviso + '</p>'+ 
-				'</div>'+
+				'</div>'+ finenlace +
 				'</li>');
 		});
 		$('#avisosList').listview('refresh');
