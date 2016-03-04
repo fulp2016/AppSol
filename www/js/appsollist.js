@@ -334,34 +334,35 @@ function getDetalleSol(id) {
 
 function getItinerarioList() {
 	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/itinerario.json?cod_personal="+cod_personal;
-	
-	if(serviceFavoritoURL=='null')
-	{
+
+		$.getJSON(serviceFavoritoURL, function(data) {
+			$('#itinerarioList li').remove();
+			if(data=='null')
+			{
 			$('#itinerarioList').append( '<li>' +
 				'<a onclick="getCitaForm()"><div class="imagn"><img src="img/ico_tutoria.png"></div> '+
 				'<div class="contn"><h4>Para acceder al itinerario debes ser usuario del SOL</h4>' +
 				'<p>Solicita tu cita aqui</p></div></a>'+
 				'</li>');
-	}
-	else
-	{
-		$.getJSON(serviceFavoritoURL, function(data) {
-			$('#itinerarioList li').remove();
+			}
+			else
+			{
 			employees = data;
-			var i=0;
-			$.each(employees, function(index, itinerario) {
-			var icoiti='';
-				if(itinerario.tipo == 'T') {icoiti='img/ico_tutoria.png';}
-				else if(itinerario.tipo == 'C') {icoiti='img/ico_curso.png';}
-				$('#itinerarioList').append( '<li>' +
-					'<div class="imagn"><img src="'+icoiti+'"></div> '+
-					'<div class="contn"><h4>' + itinerario.nombre_accion + '</h4>' +
-					'<p>Del '+itinerario.fecha_inicio + ' al '+itinerario.fecha_fin+'</p></div>'+
-					'</li>');
-			});
+				var i=0;
+				$.each(employees, function(index, itinerario) {
+				var icoiti='';
+					if(itinerario.tipo == 'T') {icoiti='img/ico_tutoria.png';}
+					else if(itinerario.tipo == 'C') {icoiti='img/ico_curso.png';}
+					$('#itinerarioList').append( '<li>' +
+						'<div class="imagn"><img src="'+icoiti+'"></div> '+
+						'<div class="contn"><h4>' + itinerario.nombre_accion + '</h4>' +
+						'<p>Del '+itinerario.fecha_inicio + ' al '+itinerario.fecha_fin+'</p></div>'+
+						'</li>');
+				});
+			}
 			$('#itinerarioList').listview('refresh');
 		});
-	}
+	
 mostrarItinerario();	
 }
 
