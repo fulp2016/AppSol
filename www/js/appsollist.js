@@ -262,10 +262,13 @@ function getDetalleOferta(id) {
 	$('#descripcion').empty();
 	var serviceURL2 = "http://www.fulp.es/servicesfulp/oferta.json?id="+id;
 	$.getJSON(serviceURL2, function(data) {
-			var entidad=''; var contrato = ''; var jornada = ''; var salario = '';
+			var entidad=''; var contrato = ''; var jornada = ''; var salario = ''; var tipo = '';
 		//$.each(data, function(index, oferta) {
 			if(data.anonima=='N'){entidad='<p>' + data.entidad + '</p>';}
-			$('#titulo').append('<h4>'+data.asunto+'</h4>'+entidad);
+			if((data.tipo='B')||(data.tipo='B')){ tipo = '<p><i>Oferta del Programa Inserta</i></p>';}
+			else if(data.tipo='C'){tipo = '<p><i>Oferta de Empleo</i></p>'}
+			
+			$('#titulo').append('<h4>'+data.asunto+'</h4>' + tipo + entidad);
 			
 			if ((data.contrato)&&(data.contrato!='No especificado')) {
 				contrato ='<p><strong>Contrato:</strong> ' + data.contrato + '</p>';
