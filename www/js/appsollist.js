@@ -340,11 +340,11 @@ function getItinerarioList() {
 	
 			if(data == null)
 			{
-			$('#itinerarioList').append( '<li>' +
-				'<a onclick="getCitaForm()"><div class="imagn"><img src="img/ico_tutoria.png"></div> '+
+			$('#itinerarioList').append( '<a onclick="getCitaForm()"><li>' +
+				'<div class="imagn"><img src="img/ico_tutoria.png"></div> '+
 				'<div class="contn"><h4>Para acceder al itinerario debes ser usuario del SOL</h4>' +
-				'<p>Solicita tu cita aqui</p></div></a>'+
-				'</li>');
+				'<p>Solicita tu cita aqui</p></div>'+
+				'</li></a>');
 			}
 			else
 			{
