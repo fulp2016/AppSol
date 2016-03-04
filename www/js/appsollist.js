@@ -337,7 +337,8 @@ function getItinerarioList() {
 
 		$.getJSON(serviceFavoritoURL, function(data) {
 			$('#itinerarioList li').remove();
-			if(data=='null')
+			alert(data);
+			if(data=='')
 			{
 			$('#itinerarioList').append( '<li>' +
 				'<a onclick="getCitaForm()"><div class="imagn"><img src="img/ico_tutoria.png"></div> '+
