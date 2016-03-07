@@ -22,35 +22,50 @@ var app = {
     onDeviceReady: function() { 
 	
         app.receivedEvent('deviceready'); 
+
     }, 
     // Update DOM on a Received Event 
     receivedEvent: function(id) { 
-	
-        var parentElement = document.getElementById(id); 
-       /* var listeningElement = parentElement.querySelector('.listening'); 
-        var receivedElement = parentElement.querySelector('.received'); 
-        listeningElement.setAttribute('style', 'display:none;'); 
-        receivedElement.setAttribute('style', 'display:block;'); */
 
         console.log('Received Event: ' + id);
 		//alert('Received Event: ' + id);
 		
 var pushNotification = window.plugins.pushNotification; 
+
+var so= device.platform;
        // if (device.platform == 'android' || device.platform == 'Android') { 
            // alert("Register called"); 
             //tu Project ID aca!! 
-     pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"}); 
-	 
-      /* } 
-        else { 
-            alert("Register called"); 
-            pushNotification.register(this.successHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"}); 
-        } */
+	if(so=="Android")
+	{
+		pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
+    }
+	else if(so=="iOS")
+	{
+		pushNotification.register(this.successIOS, this.errorHandler,{
+							"badge":"true", 
+							"sound": "true", 
+							"alert": "true", 
+							"ecb":"app.onNotificationAPN"});
+							}
+	}
+	
     }, 
-    // result contains any message sent from the plugin call 
-    successHandler: function(result) { 
-        //alert('Callback Success! Result = '+result) 
-    }, 
+    // funcion aviso si todo es correcto en ANDROID // 
+				successAndroid: function(result) { 
+					// se muestra si la obtención del regId ha sido correcta //
+					alert('Callback Success! Result = '+result);
+				}, 
+				
+				// funcion aviso si todo es correcto en IOS // 
+				successIOS: function(result) { 
+					// a diferencia de la parte android aqui el valor "result" es el token del dispositivo //
+					
+					// guardamos en el dispositivo el token, para poder usarlo mas tarde //
+					var token = result;
+					window.localStorage.setItem("token", token);
+					
+				}, 
     errorHandler:function(error) { 
         alert(error); 
     }, 
@@ -65,6 +80,7 @@ var pushNotification = window.plugins.pushNotification;
                     //alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
 					var regId = e.regid;
+					window.localStorage.setItem("regId", regId);
                     document.getElementById('regId').value = regId; 	
 					registrar_dispositivo();	
 					setTimeout(comprobar_sesion(regId),10000);					
