@@ -29,25 +29,23 @@ var app = {
 
         console.log('Received Event: ' + id);
 		//alert('Received Event: ' + id);
-		
+		alert(1);
 var pushNotification = window.plugins.pushNotification; 
 
 var so= device.platform;
+alert(2);
        // if (device.platform == 'android' || device.platform == 'Android') { 
            // alert("Register called"); 
             //tu Project ID aca!! 
 	if(so=="Android")
 	{
+	alert(3);
 		pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
     }
 	else if(so=="iOS")
 	{
-		pushNotification.register(this.successIOS, this.errorHandler,{
-							"badge":"true", 
-							"sound": "true", 
-							"alert": "true", 
-							"ecb":"app.onNotificationAPN"});
-							}
+	alert(4);
+		pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
 	}
 	
     }, 
@@ -60,7 +58,7 @@ var so= device.platform;
 				// funcion aviso si todo es correcto en IOS // 
 				successIOS: function(result) { 
 					// a diferencia de la parte android aqui el valor "result" es el token del dispositivo //
-					
+					alert('Callback Success! Result = '+result);
 					// guardamos en el dispositivo el token, para poder usarlo mas tarde //
 					var token = result;
 					window.localStorage.setItem("token", token);
