@@ -29,22 +29,22 @@ var app = {
 
         console.log('Received Event: ' + id);
 		//alert('Received Event: ' + id);
-		alert(1);
+
 var pushNotification = window.plugins.pushNotification; 
 
 var so= device.platform;
-alert(2);
+
        // if (device.platform == 'android' || device.platform == 'Android') { 
            // alert("Register called"); 
             //tu Project ID aca!! 
 	if(so=="Android")
 	{
-	alert(3);
-		pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
+
+		pushNotification.register(this.successAndroid, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
     }
 	else if(so=="iOS")
 	{
-	alert(4);
+
 		pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
 	}
 	
@@ -114,6 +114,8 @@ alert(2);
             var snd = new Media(event.sound); 
             snd.play(); 
         } 
+		
+		comprobar_sesion(token);
     } 
 };
 
