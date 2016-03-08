@@ -3,6 +3,7 @@ var app = {
     // Application Constructor 
     initialize: function() { 
 		var regId = ''; var cod_personal = ''; var pagina = '';
+		
 		this.bindEvents(); 
 		
     }, 
@@ -77,8 +78,8 @@ var so= device.platform;
                     //Cuando se registre le pasamos el regid al input 
 					regId = e.regid;
                     //document.getElementById('regId').value = regId; 	
-					alert(regId);
 					registrar_dispositivo(regId,'ANDROID');	
+					alert(2);
 					setTimeout(comprobar_sesion(regId),10000);			
                 } 
             break; 
@@ -133,10 +134,12 @@ function comprobar_sesion(a)
             data: dataString,
             success: function(data) {
 				cod_personal = data;
+				alert(3);
 				window.localStorage.setItem("regId", regId);
 				window.localStorage.setItem("cod_personal", cod_personal);
 				window.localStorage.setItem("pagina", pagina);
 				//document.getElementById("cod_personal").value=data;
+				alert(4);
 				setTimeout(document.getElementById('resgistro').submit(),10000);
             }
         });
