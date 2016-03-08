@@ -133,11 +133,14 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
     
 </div>
 <script>
+var regId = window.localStorage.getItem("regId");
+var cod_personal = window.localStorage.getItem("cod_personal");
+var pagina = window.localStorage.getItem("pagina");
+alert(regId);
+alert(pagina);
+var id_oferta='';
+	
 $(document).ready(function() {	
-	var regId = window.localStorage.getItem("regId");
-	var cod_personal = window.localStorage.getItem("cod_personal");
-	var pagina = window.localStorage.getItem("pagina");
-	var id_oferta='';
 	
 	if((cod_personal!='0')&&(cod_personal!=''))
 	{
