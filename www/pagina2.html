@@ -136,8 +136,6 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 var regId = window.localStorage.getItem("regId");
 var cod_personal = window.localStorage.getItem("cod_personal");
 var pagina = window.localStorage.getItem("pagina");
-alert(regId);
-alert(pagina);
 var id_oferta='';
 	
 $(document).ready(function() {	
@@ -150,7 +148,6 @@ $(document).ready(function() {
 	if(pagina.indexOf('_') != -1)
 	{ 
 		pagina = pagina.split("_");
-		
 		id_oferta = pagina[1];
 		pagina = pagina[0];
 	}
