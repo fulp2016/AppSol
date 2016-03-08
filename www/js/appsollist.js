@@ -200,15 +200,15 @@ function getCitaForm() {
 
 
 function getAvisosList() {
-	
-	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/avisos.json?regId="+regId;
-	$.getJSON(serviceFavoritoURL, function(data) {
+	alert(regId);
+	var serviceAvisoURL = "http://www.fulp.es/servicesfulp/avisos.json?regId="+regId;
+	alert(serviceAvisoURL);
+	$.getJSON(serviceAvisoURL, function(data) {
 		alert(data);
 		$('#avisosList li').remove();
 		var i=0;
 		$.each(data, function(index, aviso) {
 			var clase='';
-			alert(4);
 			if((aviso.tipo=='B')||(aviso.tipo=='F'))
 			{
 				var icono = "img/ico-beca.png";
@@ -239,7 +239,7 @@ function getAvisosList() {
 				var enlace = '<a onclick="getDetalleSol('+aviso.id +');">';
 				var finenlace = '</a>';
 			}
-			alert(5);
+
 			if(aviso.visto=='N'){clase = 'nuevo';}
 			$('#avisosList').append( '<li class="'+ clase +'">' + enlace +
 				'<div class="imagn"><img src="'+icono+'"></div> '+
