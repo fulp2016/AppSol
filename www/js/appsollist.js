@@ -200,14 +200,14 @@ function getCitaForm() {
 
 
 function getAvisosList() {
-	alert(regId);
-	var serviceAvisoURL = "http://www.fulp.es/servicesfulp/avisos.json?regId="+regId;
-	alert(serviceAvisoURL);
-	$.getJSON(serviceAvisoURL, function(data) {
-		alert(data);
+	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/avisos.json?regId="+regId;
+	
+	$.getJSON(serviceFavoritoURL, function(data) {
 		$('#avisosList li').remove();
+		employees = data;
+
 		var i=0;
-		$.each(data, function(index, aviso) {
+		$.each(employees, function(index, aviso) {
 			var clase='';
 			if((aviso.tipo=='B')||(aviso.tipo=='F'))
 			{
