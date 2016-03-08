@@ -3,7 +3,10 @@ var app = {
     // Application Constructor 
     initialize: function() { 
 		var regId = ''; var cod_personal = ''; var pagina = '';
-		
+		alert(regId);
+		alert(1);
+		alert(pagina);
+		alert(2);
 		this.bindEvents(); 
 		
     }, 
