@@ -3,6 +3,9 @@ var app = {
     // Application Constructor 
     initialize: function() { 
 		var regId = ''; var cod_personal = ''; var pagina = '';
+		window.localStorage.setItem("regId", regId);
+		window.localStorage.setItem("cod_personal", cod_personal);
+		window.localStorage.setItem("pagina", pagina);
 
 		this.bindEvents(); 
 		
@@ -85,7 +88,7 @@ var so= device.platform;
 
             case 'message': 
               // NOTIFICACION!!! 
-			  if(e.payload.url){ /*document.getElementById('pagina').value=e.payload.url;*/ pagina=e.payload.url; alert(pagina); window.localStorage.setItem("pagina", pagina);}
+			  if(e.payload.url){ /*document.getElementById('pagina').value=e.payload.url;*/ pagina=e.payload.url; window.localStorage.setItem("pagina", pagina);}
 			  
             break; 
 
