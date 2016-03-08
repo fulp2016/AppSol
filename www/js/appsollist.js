@@ -200,7 +200,7 @@ function getCitaForm() {
 
 
 function getAvisosList() {
-	
+	alert(regId);
 	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/avisos.json?regId="+regId;
 	
 	$.getJSON(serviceFavoritoURL, function(data) {
@@ -240,6 +240,7 @@ function getAvisosList() {
 				var enlace = '<a onclick="getDetalleSol('+aviso.id +');">';
 				var finenlace = '</a>';
 			}
+			alert(1);
 			if(aviso.visto=='N'){clase = 'nuevo';}
 			$('#avisosList').append( '<li class="'+ clase +'">' + enlace +
 				'<div class="imagn"><img src="'+icono+'"></div> '+
