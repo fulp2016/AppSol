@@ -79,7 +79,6 @@ var so= device.platform;
 					regId = e.regid;
                     //document.getElementById('regId').value = regId; 	
 					registrar_dispositivo(regId,'ANDROID');	
-					alert(2);
 					setTimeout(comprobar_sesion(regId),10000);			
                 } 
             break; 
@@ -134,12 +133,13 @@ function comprobar_sesion(a)
             data: dataString,
             success: function(data) {
 				cod_personal = data;
-				alert(3);
 				window.localStorage.setItem("regId", regId);
+				alert(1);
 				window.localStorage.setItem("cod_personal", cod_personal);
+				alert(2);
 				window.localStorage.setItem("pagina", pagina);
+				alert(3);
 				//document.getElementById("cod_personal").value=data;
-				alert(4);
 				setTimeout(document.getElementById('resgistro').submit(),10000);
             }
         });
