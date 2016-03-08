@@ -1,9 +1,8 @@
 var app = { 
-	var regId = ''; var cod_personal = ''; var pagina = '';
-	
+		
     // Application Constructor 
     initialize: function() { 
-
+		var regId = ''; var cod_personal = ''; var pagina = '';
 		this.bindEvents(); 
 		
     }, 
