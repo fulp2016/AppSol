@@ -10,7 +10,7 @@
 <script src="js/appsoldetails.js"></script>
 <script src="phonegap.js"></script>
 <script>
-cadVariables = location.search.substring(1,location.search.length);
+/*cadVariables = location.search.substring(1,location.search.length);
 arrVariables = cadVariables.split("&");
 for (i=0; i<arrVariables.length; i++) {
 arrVariableActual = arrVariables[i].split("=");
@@ -18,7 +18,7 @@ if (isNaN(parseFloat(arrVariableActual[1])))
 eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
 else
 eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
-}
+}*/
 </script>
 </head>
 
@@ -49,14 +49,19 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
         </form>    
     </div>
 <script>
-	document.getElementById("cod_personal").value=cod_personal;
+var regId = window.localStorage.getItem("regId");
+var cod_personal = window.localStorage.getItem("cod_personal");
+
+alert(regId+"---"+cod_personal);
+
+/*	document.getElementById("cod_personal").value=cod_personal;
 	document.getElementById("regId").value=regId;
 
 	if((cod_personal!='0')&&(cod_personal!=''))
 	{
 		$("#inicio").attr("onClick","change('itinerario')");
 	}
-	if(pagina!=''){ window.location.href ="pagina2.html?cod_personal="+cod_personal+"&regId="+regId+"&pagina="+pagina; }
+	if(pagina!=''){ window.location.href ="pagina2.html?cod_personal="+cod_personal+"&regId="+regId+"&pagina="+pagina; }*/
 
 </script>
 

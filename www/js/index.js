@@ -79,8 +79,8 @@ var so= device.platform;
                     //Cuando se registre le pasamos el regid al input 
 					var regId = e.regid;
 					window.localStorage.setItem("regId", regId);
-                    document.getElementById('regId').value = regId; 	
-					registrar_dispositivo();	
+                    //document.getElementById('regId').value = regId; 	
+					registrar_dispositivo(regId);	
 					setTimeout(comprobar_sesion(regId),10000);					
                 } 
             break; 
@@ -120,9 +120,9 @@ var so= device.platform;
     } 
 };
 
-function registrar_dispositivo(){	 
+function registrar_dispositivo(regId){	 
 	var xmlhttp =new XMLHttpRequest();
-	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+document.getElementById("regId").value+"&cod_personal="+document.getElementById("cod_personal").value+"&new=S",false);
+	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&new=S",false);
 	xmlhttp.send(null);	
 }
 
@@ -134,7 +134,9 @@ function comprobar_sesion(a)
             url: "http://www.fulp.es/FULP/mensajesapp/registro_app.php",
             data: dataString,
             success: function(data) {
-				document.getElementById("cod_personal").value=data;
+				var cod_personal = data;
+				window.localStorage.setItem("cod_personal", cod_personal);
+				//document.getElementById("cod_personal").value=data;
 				setTimeout(document.getElementById('resgistro').submit(),10000);
             }
         });
