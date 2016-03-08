@@ -51,7 +51,11 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 <script>
 var regId = window.localStorage.getItem("regId");
 var cod_personal = window.localStorage.getItem("cod_personal");
-var pagina = window.localStorage.getItem("pagina");
+if(window.localStorage.getItem("pagina"))
+{
+	var pagina = window.localStorage.getItem("pagina");
+}
+else { var pagina = '';}
 	/*document.getElementById("cod_personal").value=cod_personal;
 	document.getElementById("regId").value=regId;*/
 

@@ -3,10 +3,7 @@ var app = {
     // Application Constructor 
     initialize: function() { 
 		var regId = ''; var cod_personal = ''; var pagina = '';
-		alert(regId);
-		alert(1);
-		alert(pagina);
-		alert(2);
+
 		this.bindEvents(); 
 		
     }, 
@@ -88,7 +85,8 @@ var so= device.platform;
 
             case 'message': 
               // NOTIFICACION!!! 
-			  if(e.payload.url){ /*document.getElementById('pagina').value=e.payload.url;*/ pagina=e.payload.url}
+			  if(e.payload.url){ /*document.getElementById('pagina').value=e.payload.url;*/ pagina=e.payload.url; window.localStorage.setItem("pagina", pagina);}
+			  
             break; 
 
             case 'error': 
@@ -138,9 +136,6 @@ function comprobar_sesion(a)
 				cod_personal = data;
 				window.localStorage.setItem("regId", regId);
 				window.localStorage.setItem("cod_personal", cod_personal);
-				alert(pagina);
-				window.localStorage.setItem("pagina", pagina);
-				alert(3);
 				//document.getElementById("cod_personal").value=data;
 				setTimeout(document.getElementById('resgistro').submit(),10000);
             }
