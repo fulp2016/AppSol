@@ -202,14 +202,11 @@ function getCitaForm() {
 function getAvisosList() {
 	
 	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/avisos.json?regId="+regId;
-	alert(1);
 	$.getJSON(serviceFavoritoURL, function(data) {
-	alert(2);
+
 		$('#avisosList li').remove();
-		employees = data;
 		var i=0;
-		alert(3);
-		$.each(employees, function(index, aviso) {
+		$.each(data, function(index, aviso) {
 			var clase='';
 			alert(4);
 			if((aviso.tipo=='B')||(aviso.tipo=='F'))
