@@ -61,7 +61,7 @@ var so= device.platform;
 					/*alert('Callback Success! Result = '+result);*/
 					// guardamos en el dispositivo el token, para poder usarlo mas tarde //
 					regId = result;
-					registrar_dispositivo(regId,'ios');
+					registrar_dispositivo(regId,'IOS');
 				}, 
     errorHandler:function(error) { 
         alert(error); 
@@ -78,8 +78,9 @@ var so= device.platform;
                     //Cuando se registre le pasamos el regid al input 
 					regId = e.regid;
                     //document.getElementById('regId').value = regId; 	
-					registrar_dispositivo(regId,'android');	
-					setTimeout(comprobar_sesion(regId),10000);					
+					alert(regId);
+					registrar_dispositivo(regId,'ANDROID');	
+					setTimeout(comprobar_sesion(regId),10000);			
                 } 
             break; 
 
