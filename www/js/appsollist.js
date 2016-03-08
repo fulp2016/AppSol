@@ -200,7 +200,7 @@ function getCitaForm() {
 
 
 function getAvisosList() {
-alert(regId);
+
 	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/avisos.json?regId="+regId;
 	
 	$.getJSON(serviceFavoritoURL, function(data) {
@@ -242,12 +242,12 @@ alert(regId);
 			}
 
 			if(aviso.visto=='N'){clase = 'nuevo';}
-			$('#avisosList').append( '<li class="'+ clase +'">' + enlace +
+			$('#avisosList').append( enlace +'<li class="'+ clase +'">' + 
 				'<div class="imagn"><img src="'+icono+'"></div> '+
 				'<div class="contn">' +
 				'<p>'+aviso.aviso + '</p>'+ 
-				'</div>'+ finenlace +
-				'</li>');
+				'</div>' +
+				'</li>'+ finenlace);
 		});
 		$('#avisosList').listview('refresh');
 	});
