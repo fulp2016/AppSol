@@ -203,7 +203,7 @@ function getAvisosList() {
 	
 	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/avisos.json?regId="+regId;
 	$.getJSON(serviceFavoritoURL, function(data) {
-
+		alert(data);
 		$('#avisosList li').remove();
 		var i=0;
 		$.each(data, function(index, aviso) {
