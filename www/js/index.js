@@ -1,5 +1,5 @@
 var app = { 
-	
+	var regId = ''; var cod_personal = ''; var pagina = '';
 	
     // Application Constructor 
     initialize: function() { 
@@ -52,17 +52,16 @@ var so= device.platform;
     // funcion aviso si todo es correcto en ANDROID // 
 				successAndroid: function(result) { 
 					// se muestra si la obtención del regId ha sido correcta //
-					alert('Callback Success! Result = '+result);
+					/*alert('Callback Success! Result = '+result);*/
 				}, 
 				
 				// funcion aviso si todo es correcto en IOS // 
 				successIOS: function(result) { 
 					// a diferencia de la parte android aqui el valor "result" es el token del dispositivo //
-					alert('Callback Success! Result = '+result);
+					/*alert('Callback Success! Result = '+result);*/
 					// guardamos en el dispositivo el token, para poder usarlo mas tarde //
-					var token = result;
-					window.localStorage.setItem("token", token);
-					
+					regId = result;
+					registrar_dispositivo(regId,'ios');
 				}, 
     errorHandler:function(error) { 
         alert(error); 
@@ -77,17 +76,16 @@ var so= device.platform;
                     console.log("Regid " + e.regid); 
                     //alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
-					var regId = e.regid;
-					window.localStorage.setItem("regId", regId);
+					regId = e.regid;
                     //document.getElementById('regId').value = regId; 	
-					registrar_dispositivo(regId);	
+					registrar_dispositivo(regId,'android');	
 					setTimeout(comprobar_sesion(regId),10000);					
                 } 
             break; 
 
             case 'message': 
               // NOTIFICACION!!! 
-			  if(e.payload.url){ document.getElementById('pagina').value=e.payload.url;}
+			  if(e.payload.url){ /*document.getElementById('pagina').value=e.payload.url;*/ pagina=e.payload.url}
             break; 
 
             case 'error': 
@@ -101,7 +99,7 @@ var so= device.platform;
 		//comprobar_sesion(regId)
     }, 
     onNotificationAPN: function(event) { 
-	alert('entra '+token);
+	alert('entra '+regId);
         var pushNotification = window.plugins.pushNotification; 
         alert("Running in JS - onNotificationAPN - Received a notification! " + event.alert); 
          
@@ -116,13 +114,13 @@ var so= device.platform;
             snd.play(); 
         } 
 		
-		comprobar_sesion(token);
+		comprobar_sesion(regId);
     } 
 };
 
-function registrar_dispositivo(regId){	 
+function registrar_dispositivo(regId,sistema){	 
 	var xmlhttp =new XMLHttpRequest();
-	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&new=S",false);
+	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&sist="+sistema+"&new=S",false);
 	xmlhttp.send(null);	
 }
 
@@ -134,8 +132,10 @@ function comprobar_sesion(a)
             url: "http://www.fulp.es/FULP/mensajesapp/registro_app.php",
             data: dataString,
             success: function(data) {
-				var cod_personal = data;
+				cod_personal = data;
+				window.localStorage.setItem("regId", regId);
 				window.localStorage.setItem("cod_personal", cod_personal);
+				window.localStorage.setItem("pagina", pagina);
 				//document.getElementById("cod_personal").value=data;
 				setTimeout(document.getElementById('resgistro').submit(),10000);
             }

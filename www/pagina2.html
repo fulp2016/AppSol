@@ -2,7 +2,7 @@
 <html>
 <head>
 <script>
-cadVariables = location.search.substring(1,location.search.length);
+/*cadVariables = location.search.substring(1,location.search.length);
 arrVariables = cadVariables.split("&");
 for (i=0; i<arrVariables.length; i++) {
 arrVariableActual = arrVariables[i].split("=");
@@ -10,7 +10,7 @@ if (isNaN(parseFloat(arrVariableActual[1])))
 eval(arrVariableActual[0]+"='"+unescape(arrVariableActual[1])+"';");
 else
 eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
-}
+}*/
 </script>
 
 <title>Servicio de Orientaci&oacute;n Laboral</title>
@@ -134,7 +134,11 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
 </div>
 <script>
 $(document).ready(function() {	
- var id_oferta='';
+	var regId = window.localStorage.getItem("regId");
+	var cod_personal = window.localStorage.getItem("cod_personal");
+	var pagina = window.localStorage.getItem("pagina");
+	var id_oferta='';
+	
 	if((cod_personal!='0')&&(cod_personal!=''))
 	{
 		$("#meniniciar").attr("onClick","getItinerarioList();");

@@ -528,7 +528,9 @@ function cerrar_sesion(){
 
 function change(a)
 {
-	document.getElementById("pagina").value=a;
+	//document.getElementById("pagina").value=a;
+	pagina = a;
+	window.localStorage.setItem("pagina", pagina);
 	document.getElementById('irpagina').submit();
 }
 
