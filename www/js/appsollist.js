@@ -373,6 +373,7 @@ function getSesionForm() {
 	{
 		cerrar_sesion();
 		cod_personal = '';
+		window.localStorage.setItem("cod_personal", cod_personal);
 		$("#meniniciar").attr("onClick","getSesionForm();");
 		alert('Sesión cerrada correctamente');
 	}

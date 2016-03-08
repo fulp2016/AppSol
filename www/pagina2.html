@@ -175,6 +175,7 @@ $(document).ready(function() {
 				else
 				{
 					cod_personal = data;
+					window.localStorage.setItem("cod_personal", cod_personal);
 					getItinerarioList();
 					$("#meniniciar").attr("onClick","getItinerarioList();");
 				}
