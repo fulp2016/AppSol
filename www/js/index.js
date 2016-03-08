@@ -134,9 +134,8 @@ function comprobar_sesion(a)
             success: function(data) {
 				cod_personal = data;
 				window.localStorage.setItem("regId", regId);
-				alert(1);
 				window.localStorage.setItem("cod_personal", cod_personal);
-				alert(2);
+				alert(pagina);
 				window.localStorage.setItem("pagina", pagina);
 				alert(3);
 				//document.getElementById("cod_personal").value=data;
