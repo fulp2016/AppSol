@@ -85,7 +85,7 @@ var so= device.platform;
 
             case 'message': 
               // NOTIFICACION!!! 
-			  if(e.payload.url){ /*document.getElementById('pagina').value=e.payload.url;*/ pagina=e.payload.url; window.localStorage.setItem("pagina", pagina);}
+			  if(e.payload.url){ /*document.getElementById('pagina').value=e.payload.url;*/ pagina=e.payload.url; alert(pagina); window.localStorage.setItem("pagina", pagina);}
 			  
             break; 
 
