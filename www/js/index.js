@@ -67,6 +67,10 @@ var so= device.platform;
 					registrar_dispositivo(regId,'IOS');
 					comprobar_sesion(regId);
 				}, 
+				
+				successHandler: function(result) { 
+					alert(result);
+				}, 
     errorHandler:function(error) { 
         alert(error); 
     }, 
