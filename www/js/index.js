@@ -65,6 +65,7 @@ var so= device.platform;
 					// guardamos en el dispositivo el token, para poder usarlo mas tarde //
 					regId = result;
 					registrar_dispositivo(regId,'IOS');
+					setTimeout(comprobar_sesion(regId),10000);	
 				}, 
 				
 				successHandler: function(result) { 
@@ -124,7 +125,6 @@ var so= device.platform;
 		
     }
 
-		comprobar_sesion(regId);
 };
 
 function registrar_dispositivo(regId,sistema){	 
