@@ -129,16 +129,20 @@ function registrar_dispositivo(regId,sistema){
 }
 
 function comprobar_sesion(a)
-{
+{	alert(1);
 	var dataString = "regId="+a+"&comprobarses=S";
 		$.ajax({ 
             type: "POST",
             url: "http://www.fulp.es/FULP/mensajesapp/registro_app.php",
             data: dataString,
             success: function(data) {
+			alert(2);
 				cod_personal = data;
+			alert(3);	
 				window.localStorage.setItem("regId", regId);
+				alert(4);
 				window.localStorage.setItem("cod_personal", cod_personal);
+				alert(5);
 				//document.getElementById("cod_personal").value=data;
 				setTimeout(document.getElementById('resgistro').submit(),10000);
             }
