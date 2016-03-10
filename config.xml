@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="sol.fulp" version="1.0.3">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="sol.fulp" version="1.0.4">
   <name>Orientación Laboral FULP</name>
   <description>Aplicación Servicio de Orientación Laboral FULP</description>
   <author href="http://fulp.es" email="webmaster@fulp.es">Fundación Universitaria de Las Palmas</author>
