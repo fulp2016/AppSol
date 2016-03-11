@@ -152,13 +152,13 @@ $(document).ready(function() {
 		pagina = pagina[0];
 	}
 
-	if(pagina=='destacado'){$("#imgcab").attr("src","img/cab_descatado.png"); getDestacadosList(); }
-	else if(pagina=='cita'){$("#imgcab").attr("src","img/cab_cita.png"); getCitaForm();}
-	else if(pagina=='aviso'){ $("#imgcab").attr("src","img/cab_alertas.png"); getAvisosList();}
-	else if(pagina=='inicio'){$("#imgcab").attr("src","img/cab_inicio.png"); getSesionForm();}
-	else if(pagina=='favorito'){$("#imgcab").attr("src","img/cab_favorito.png"); getFavoritosList();}
-	else if(pagina=='itinerario'){$("#imgcab").attr("src","img/cab_itinerario.png"); getItinerarioList();}
-	else if(pagina=='oferta'){$("#imgcab").attr("src","img/cab_oferta.png"); getDetalleOferta(id_oferta);}
+	if(pagina=='destacado'){$("#imgcab").attr("src","img/cab_descatado.png"); getDestacadosList(); window.localStorage.setItem("pagina", '');}
+	else if(pagina=='cita'){$("#imgcab").attr("src","img/cab_cita.png"); getCitaForm(); window.localStorage.setItem("pagina", '');}
+	else if(pagina=='aviso'){ $("#imgcab").attr("src","img/cab_alertas.png"); getAvisosList(); window.localStorage.setItem("pagina", '');}
+	else if(pagina=='inicio'){$("#imgcab").attr("src","img/cab_inicio.png"); getSesionForm(); window.localStorage.setItem("pagina", '');}
+	else if(pagina=='favorito'){$("#imgcab").attr("src","img/cab_favorito.png"); getFavoritosList(); window.localStorage.setItem("pagina", '');}
+	else if(pagina=='itinerario'){$("#imgcab").attr("src","img/cab_itinerario.png"); getItinerarioList(); window.localStorage.setItem("pagina", '');}
+	else if(pagina=='oferta'){$("#imgcab").attr("src","img/cab_oferta.png"); getDetalleOferta(id_oferta); window.localStorage.setItem("pagina", '');}
 
 	$('#iniciar').click(function(){
 		var username = $(this).val();		
