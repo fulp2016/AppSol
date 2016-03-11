@@ -108,7 +108,7 @@ var so= device.platform;
 		//comprobar_sesion(regId)
     }, 
     onNotificationAPN: function(event) { 
-	alert('entra '+regId);
+	
         var pushNotification = window.plugins.pushNotification; 
         alert("Running in JS - onNotificationAPN - Received a notification! " + event.alert); 
          
