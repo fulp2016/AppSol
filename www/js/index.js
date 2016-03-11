@@ -61,7 +61,6 @@ var so= device.platform;
 				// funcion aviso si todo es correcto en IOS // 
 				successIOS: function(result) { 
 					// a diferencia de la parte android aqui el valor "result" es el token del dispositivo //
-					/*alert('Callback Success! Result = '+result);*/
 					// guardamos en el dispositivo el token, para poder usarlo mas tarde //
 					regId = result;
 					registrar_dispositivo(regId,'IOS');
@@ -93,7 +92,7 @@ var so= device.platform;
 
             case 'message': 
               // NOTIFICACION!!! 
-			  if(e.payload.url){ /*document.getElementById('pagina').value=e.payload.url;*/ pagina=e.payload.url; window.localStorage.setItem("pagina", pagina);}
+			  if(e.payload.url){ pagina=e.payload.url; window.localStorage.setItem("pagina", pagina);}
 			  
             break; 
 
@@ -105,7 +104,7 @@ var so= device.platform;
               alert('An unknown GCM event has occurred'); 
             break; 
         } 
-		//comprobar_sesion(regId)
+
     }, 
     onNotificationAPN: function(event) { 
 	
