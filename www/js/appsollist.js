@@ -56,7 +56,7 @@ function getDestacadosList() {
 			}
 			else if(destacado.tipo=='CSOL')
 			{
-				var icono = "img/ico_curso.png";
+				var icono = "img/ico-curso.png";
 				var enlace = '<a onclick="getDetalleSol('+destacado.id +');">';
 				descripcion_tipo = '<p><i>Grupales y Talleres</i></p>';
 				if(destacado.descripcion_corta!=false)
@@ -143,7 +143,7 @@ function getFavoritosList() {
 			}
 			else if(favorito.tipo=='CSOL')
 			{
-				var icono = "img/ico_curso.png";
+				var icono = "img/ico-curso.png";
 				var enlace = '<a onclick="getDetalleSol('+favorito.id +');">';
 				descripcion_tipo = '<p><i>Grupales y Talleres</i></p>';
 				if(favorito.descripcion_corta!=false)
@@ -236,7 +236,7 @@ function getAvisosList() {
 			}
 			else if(aviso.tipo=='S')
 			{
-				var icono = "img/ico-ico_curso.png";
+				var icono = "img/ico-ico-curso.png";
 				var enlace = '<a onclick="getDetalleSol('+aviso.id +');">';
 				var finenlace = '</a>';
 			}
@@ -343,7 +343,7 @@ function getItinerarioList() {
 			if(data == null)
 			{
 			$('#itinerarioList').append( '<a onclick="getCitaForm()"><li>' +
-				'<div class="imagn"><img src="img/ico_tutoria.png"></div> '+
+				'<div class="imagn"><img src="img/ico-tutoria.png"></div> '+
 				'<div class="contn"><h4>Para acceder al itinerario debes ser usuario del SOL</h4>' +
 				'<p>Solicita tu cita aqui</p></div>'+
 				'</li></a>');
@@ -354,8 +354,8 @@ function getItinerarioList() {
 				var i=0;
 				$.each(employees, function(index, itinerario) {
 				var icoiti='';
-					if(itinerario.tipo == 'T') {icoiti='img/ico_tutoria.png';}
-					else if(itinerario.tipo == 'C') {icoiti='img/ico_curso.png';}
+					if(itinerario.tipo == 'T') {icoiti='img/ico-tutoria.png';}
+					else if(itinerario.tipo == 'C') {icoiti='img/ico-curso.png';}
 					$('#itinerarioList').append( '<li>' +
 						'<div class="imagn"><img src="'+icoiti+'"></div> '+
 						'<div class="contn"><h4>' + itinerario.nombre_accion + '</h4>' +
