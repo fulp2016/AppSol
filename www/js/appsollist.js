@@ -242,7 +242,7 @@ function getAvisosList() {
 			}
 
 			if(aviso.visto=='N'){clase = 'nuevo';}
-			alert(icono);
+
 			$('#avisosList').append( enlace +'<li class="'+ clase +'">' + 
 				'<div class="imagn"><img src="'+icono+'"></div> '+
 				'<div class="contn">' +
