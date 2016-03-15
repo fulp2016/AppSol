@@ -123,7 +123,7 @@ function getFavoritosList() {
 				var enlace = '<a href="' +favorito.enlace+ '">';
 				if(favorito.descripcion_corta!=false)
 				descripcion = '<p>' + favorito.descripcion_corta + '</p>';
-				imagen = '<div class="imgcontent"><img src="'+destacado.imagen+'"></div>';		
+				imagen = '<div class="imgcontent"><img src="'+favorito.imagen+'"></div>';		
 			}
 			else if(favorito.tipo=='INFOJOBS')
 			{
