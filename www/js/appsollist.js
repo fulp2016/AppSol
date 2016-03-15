@@ -36,7 +36,7 @@ function getDestacadosList() {
 				var enlace = '<a href="' +destacado.enlace+ '">';
 				if(destacado.descripcion_corta!=false)
 				descripcion = '<p>' + destacado.descripcion_corta + '</p>';
-				imagen = '<div class="imgcontent"><img src="https://i.ytimg.com/vi/V5AB4nrL-8o/maxresdefault.jpg"></div>';		
+				imagen = '<div class="imgcontent"><img src="'+destacado.imagen+'"></div>';		
 			}
 			else if(destacado.tipo=='INFOJOBS')
 			{
@@ -123,7 +123,7 @@ function getFavoritosList() {
 				var enlace = '<a href="' +favorito.enlace+ '">';
 				if(favorito.descripcion_corta!=false)
 				descripcion = '<p>' + favorito.descripcion_corta + '</p>';
-				imagen = '<div class="imgcontent"><img src="https://i.ytimg.com/vi/V5AB4nrL-8o/maxresdefault.jpg"></div>';		
+				imagen = '<div class="imgcontent"><img src="'+destacado.imagen+'"></div>';		
 			}
 			else if(favorito.tipo=='INFOJOBS')
 			{
