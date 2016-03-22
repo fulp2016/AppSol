@@ -20,7 +20,7 @@ $('#appsolListPage').bind('pageinit', function(event) {
         }*/
 
 function getDestacadosList() {
-	var serviceDestacadosURL = "http://www.fulp.es/servicesfulp/ofertas.json?regId="+regId;
+	var serviceDestacadosURL = "http://www.fulp.es/servicesfulp/ofertas.json?regId="+uuid;
 	
 	$.getJSON(serviceDestacadosURL, function(data) {
 		$('#destacadosList a').remove();
@@ -107,7 +107,7 @@ mostrarDestacados();
 }
 
 function getFavoritosList() {
-	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/favoritos.json?regId="+regId;
+	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/favoritos.json?regId="+uuid;
 	
 	$.getJSON(serviceFavoritoURL, function(data) {
 		$('#favoritosList a').remove();

@@ -135,13 +135,13 @@ var app = {
 
 function registrar_dispositivo(){	 
 	var xmlhttp =new XMLHttpRequest();
-	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app2.php?regId="+regId+"&sist="+so+"&uuid="+uuid+"&new=S",false);
+	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&sist="+so+"&uuid="+uuid+"&new=S",false);
 	xmlhttp.send(null);	
 }
 
 function comprobar_sesion()
 {	
-	var dataString = "regId="+regId+"&comprobarses=S";
+	var dataString = "uuid="+uuid+"&comprobarses=S";
 		$.ajax({ 
             type: "POST",
             url: "http://www.fulp.es/FULP/mensajesapp/registro_app.php",
