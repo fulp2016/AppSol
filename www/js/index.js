@@ -83,7 +83,7 @@ var app = {
                     //alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
 					regId = e.regid;
-               			
+               			alert(regId);
 					setTimeout(app.registrarDispositivo(),10000);
                 } 
             break; 
