@@ -2,11 +2,12 @@ var app = {
 		
     // Application Constructor 
     initialize: function() { 
-		var regId = ''; var cod_personal = ''; var pagina = ''; var uuid = '';
+		var regId = ''; var cod_personal = ''; var pagina = ''; var uuid = ''; var so = '';
 		window.localStorage.setItem("regId", regId);
 		window.localStorage.setItem("cod_personal", cod_personal);
 		window.localStorage.setItem("pagina", pagina);
 		window.localStorage.setItem("uuid", uuid);
+		window.localStorage.setItem("so", so);
 
 		this.bindEvents(); 
 		
@@ -36,7 +37,7 @@ var app = {
 
 	var pushNotification = window.plugins.pushNotification; 
 
-	var so = device.platform;
+	  so = device.platform;
 	  uuid = device.uuid;
 
        // if (device.platform == 'android' || device.platform == 'Android') { 
@@ -140,7 +141,9 @@ var app = {
 
 function registrar_dispositivo(){	 
 	var xmlhttp =new XMLHttpRequest();
-	alert(3);
+	alert(regId);
+	alert(so);
+	alert(uuid);
 	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app2.php?regId="+regId+"&sist="+so+"&uuid="+uuid+"&new=S",false);
 	xmlhttp.send(null);	
 }
