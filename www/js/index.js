@@ -32,14 +32,11 @@ var app = {
 
         console.log('Received Event: ' + id);
 		alert('Received Event: ' + id);
-		alert(device);
+		//alert(device);
 var pushNotification = window.plugins.pushNotification; 
 
 var so= device.platform;
-
-       // if (device.platform == 'android' || device.platform == 'Android') { 
-           // alert("Register called"); 
-            //tu Project ID aca!! 
+alert(so);
 	if((so=="Android")||so=="android")||so=="ANDROID"))
 	{
 
