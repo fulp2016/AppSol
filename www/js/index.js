@@ -33,11 +33,11 @@ var app = {
         console.log('Received Event: ' + id);
 		//alert('Received Event: ' + id);
 
-var pushNotification = window.plugins.pushNotification; 
+	var pushNotification = window.plugins.pushNotification; 
 
-var so = device.platform;
-var uuid = device.uuid;
-alert(uuid);
+	var so = device.platform;
+	var uuid = device.uuid;
+
 
        // if (device.platform == 'android' || device.platform == 'Android') { 
            // alert("Register called"); 
@@ -65,16 +65,13 @@ alert(uuid);
 					// a diferencia de la parte android aqui el valor "result" es el token del dispositivo //
 					// guardamos en el dispositivo el token, para poder usarlo mas tarde //
 					regId = result;
-					registrar_dispositivo(regId,'IOS');
+					registrar_dispositivo(regId,'IOS',uuid);
 					setTimeout(comprobar_sesion(regId),10000);	
 				}, 
 				
-				successHandler: function(result) { 
-					alert(result);
+				errorHandler:function(error) { 
+					alert(error); 
 				}, 
-    errorHandler:function(error) { 
-        alert(error); 
-    }, 
     onNotificationGCM: function(e) { 
 
 		switch( e.event ) 
@@ -87,7 +84,7 @@ alert(uuid);
                     //Cuando se registre le pasamos el regid al input 
 					regId = e.regid;
                     //document.getElementById('regId').value = regId; 	
-					registrar_dispositivo(regId,'ANDROID');	
+					registrar_dispositivo(regId,'ANDROID',uuid);	
 					setTimeout(comprobar_sesion(regId),10000);			
                 } 
             break; 
@@ -128,9 +125,9 @@ alert(uuid);
 
 };
 
-function registrar_dispositivo(regId,sistema){	 
+function registrar_dispositivo(regId,sistema,uuid){	 
 	var xmlhttp =new XMLHttpRequest();
-	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&sist="+sistema+"&new=S",false);
+	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&sist="+sistema+"&uuid="+uuid+"&new=S",false);
 	xmlhttp.send(null);	
 }
 
