@@ -35,7 +35,9 @@ var app = {
 
 var pushNotification = window.plugins.pushNotification; 
 
-var so= device.platform;
+var so = device.platform;
+var uuid = device.uuid;
+alert(uuid);
 
        // if (device.platform == 'android' || device.platform == 'Android') { 
            // alert("Register called"); 
