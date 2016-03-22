@@ -34,13 +34,13 @@ var app = {
 		//alert('Received Event: ' + id);
 
 var pushNotification = window.plugins.pushNotification; 
-
+alert(device.uuid);
 var so= device.platform;
 
        // if (device.platform == 'android' || device.platform == 'Android') { 
            // alert("Register called"); 
             //tu Project ID aca!! 
-	if(so=="Android")
+	if((so=="Android")||so=="android")||so=="ANDROID"))
 	{
 
 		pushNotification.register(this.successAndroid, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
