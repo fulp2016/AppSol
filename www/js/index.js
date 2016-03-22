@@ -37,8 +37,6 @@ var app = {
 
 	var so= device.platform;
 
-	var deviceID = device.uuid;
-
 		if((so=="Android")||so=="android")||so=="ANDROID"))
 		{
 			pushNotification.register(this.successAndroid, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
