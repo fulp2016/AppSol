@@ -23,8 +23,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent' 
     // function, we must explicity call 'app.receivedEvent(...);' 
     onDeviceReady: function() { 
-		var deviceID = device.uuid;
-		alert(deviceID);
+	
         app.receivedEvent('deviceready'); 
 
     }, 
@@ -33,19 +32,24 @@ var app = {
 
         console.log('Received Event: ' + id);
 		//alert('Received Event: ' + id);
-		
-	var pushNotification = window.plugins.pushNotification; 
 
-	var so= device.platform;
+var pushNotification = window.plugins.pushNotification; 
 
-		if((so=="Android")||so=="android")||so=="ANDROID"))
-		{
-			pushNotification.register(this.successAndroid, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
-		}
-		else if(so=="iOS")
-		{
-			pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
-		}
+var so= device.platform;
+
+       // if (device.platform == 'android' || device.platform == 'Android') { 
+           // alert("Register called"); 
+            //tu Project ID aca!! 
+	if((so=="Android")||so=="android")||so=="ANDROID"))
+	{
+
+		pushNotification.register(this.successAndroid, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
+    }
+	else if(so=="iOS")
+	{
+
+		pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
+	}
 	
     }, 
     // funcion aviso si todo es correcto en ANDROID // 
@@ -63,6 +67,9 @@ var app = {
 					setTimeout(comprobar_sesion(regId),10000);	
 				}, 
 				
+				successHandler: function(result) { 
+					alert(result);
+				}, 
     errorHandler:function(error) { 
         alert(error); 
     }, 
