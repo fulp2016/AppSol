@@ -31,8 +31,8 @@ var app = {
     receivedEvent: function(id) { 
 
         console.log('Received Event: ' + id);
-		alert('Received Event: ' + id);
-		//alert(device);
+		//alert('Received Event: ' + id);
+		
 var pushNotification = window.plugins.pushNotification; 
 
 var so= device.platform;
