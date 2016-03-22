@@ -108,7 +108,7 @@ mostrarDestacados();
 
 function getFavoritosList() {
 	var serviceFavoritoURL = "http://www.fulp.es/servicesfulp/favoritos.json?uuid="+uuid;
-	
+	alert(serviceFavoritoURL);
 	$.getJSON(serviceFavoritoURL, function(data) {
 		$('#favoritosList a').remove();
 		employees = data;
@@ -539,8 +539,6 @@ function change(a)
 
 function anadir_favorito(tipo,codigo,id){	 
 	 var xmlhttp =new XMLHttpRequest();
-	 alert(1);
-	 alert(uuid);
 	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?uuid="+uuid+"&tipo="+tipo+"&codigo="+codigo+"&newfavorito=S",false);
 	 xmlhttp.send(null);	
 	 $("#icofavorito"+id).attr("src","img/strellaon.png");
