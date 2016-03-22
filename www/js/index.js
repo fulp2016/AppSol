@@ -33,20 +33,20 @@ var app = {
         console.log('Received Event: ' + id);
 		//alert('Received Event: ' + id);
 		
-var pushNotification = window.plugins.pushNotification; 
+	var pushNotification = window.plugins.pushNotification; 
 
-var so= device.platform;
-alert(so);
-	if((so=="Android")||so=="android")||so=="ANDROID"))
-	{
+	var so= device.platform;
 
-		pushNotification.register(this.successAndroid, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
-    }
-	else if(so=="iOS")
-	{
+	var deviceID = device.uuid;
 
-		pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
-	}
+		if((so=="Android")||so=="android")||so=="ANDROID"))
+		{
+			pushNotification.register(this.successAndroid, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
+		}
+		else if(so=="iOS")
+		{
+			pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
+		}
 	
     }, 
     // funcion aviso si todo es correcto en ANDROID // 
@@ -64,9 +64,6 @@ alert(so);
 					setTimeout(comprobar_sesion(regId),10000);	
 				}, 
 				
-				successHandler: function(result) { 
-					alert(result);
-				}, 
     errorHandler:function(error) { 
         alert(error); 
     }, 
