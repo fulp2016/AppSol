@@ -66,9 +66,7 @@ var app = {
 					// a diferencia de la parte android aqui el valor "result" es el token del dispositivo //
 					// guardamos en el dispositivo el token, para poder usarlo mas tarde //
 					regId = result;
-					/*registrar_dispositivo(regId,'IOS');
-					setTimeout(comprobar_sesion(regId),10000);	*/
-					app.registrarDispositivo();
+					setTimeout(app.registrarDispositivo(),10000);
 				}, 
 				
 				errorHandler:function(error) { 
@@ -85,12 +83,8 @@ var app = {
                     //alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
 					regId = e.regid;
-                    //document.getElementById('regId').value = regId; 	
-					
-					/*registrar_dispositivo(regId,'ANDROID');	
-					setTimeout(comprobar_sesion(regId),10000);	*/
-					alert(0);
-					app.registrarDispositivo();
+               			
+					setTimeout(app.registrarDispositivo(),10000);
                 } 
             break; 
 
@@ -129,7 +123,7 @@ var app = {
     },
 	
 	registrarDispositivo: function () {
-		alert(1);
+
 		registrar_dispositivo();	
 		setTimeout(comprobar_sesion(),10000);
 		
@@ -141,9 +135,6 @@ var app = {
 
 function registrar_dispositivo(){	 
 	var xmlhttp =new XMLHttpRequest();
-	alert(regId);
-	alert(so);
-	alert(uuid);
 	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app2.php?regId="+regId+"&sist="+so+"&uuid="+uuid+"&new=S",false);
 	xmlhttp.send(null);	
 }
@@ -160,12 +151,10 @@ function comprobar_sesion()
 				cod_personal = data;
 				
 				window.localStorage.setItem("regId", regId);
-				
 				window.localStorage.setItem("cod_personal", cod_personal);
-				
 				window.localStorage.setItem("uuid", uuid);
+				window.localStorage.setItem("so", so);
 				
-				//document.getElementById("cod_personal").value=data;
 				setTimeout(document.getElementById('resgistro').submit(),10000);
             }
         });
