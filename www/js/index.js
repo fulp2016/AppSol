@@ -37,7 +37,6 @@ var app = {
 
 	var so = device.platform;
 	var uuid = device.uuid;
-	alert(1);
 
        // if (device.platform == 'android' || device.platform == 'Android') { 
            // alert("Register called"); 
@@ -84,7 +83,7 @@ var app = {
                     //Cuando se registre le pasamos el regid al input 
 					regId = e.regid;
                     //document.getElementById('regId').value = regId; 	
-					alert(2);
+					alert(uuid);
 					registrar_dispositivo(regId,'ANDROID',uuid);	
 					setTimeout(comprobar_sesion(regId),10000);			
                 } 
