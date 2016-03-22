@@ -31,10 +31,10 @@ var app = {
     receivedEvent: function(id) { 
 
         console.log('Received Event: ' + id);
-		//alert('Received Event: ' + id);
-
+		alert('Received Event: ' + id);
+		alert(device);
 var pushNotification = window.plugins.pushNotification; 
-alert(device.uuid);
+
 var so= device.platform;
 
        // if (device.platform == 'android' || device.platform == 'Android') { 
