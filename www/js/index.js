@@ -107,7 +107,7 @@ var app = {
     onNotificationAPN: function(event) { 
 	
         var pushNotification = window.plugins.pushNotification; 
-        alert("Running in JS - onNotificationAPN - Received a notification! " + event.alert); 
+        //alert("Running in JS - onNotificationAPN - Received a notification! " + event.alert); 
          
         if (event.alert) { 
             navigator.notification.alert(event.alert); 
