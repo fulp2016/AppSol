@@ -32,9 +32,6 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
     
     <div class="botones">
     	<form id="irpagina" name="irpagina" method="get" action="pagina2.html"> 
-        	<!--<input type="hidden" id="cod_personal" name="cod_personal" >
-            <input type="hidden" name="regId" id="regId" > 
-            <input type="hidden" name="pagina" id="pagina" > -->
         <div>    
 			<input type="button" id="destacado" value="" onClick="change('destacado')">
 			<input type="button" id="cita" value="" onClick="change('cita')">
@@ -49,6 +46,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
         </form>    
     </div>
 <script>
+var uuid = window.localStorage.getItem("uuid");
 var regId = window.localStorage.getItem("regId");
 var cod_personal = window.localStorage.getItem("cod_personal");
 if(window.localStorage.getItem("pagina"))
@@ -56,9 +54,6 @@ if(window.localStorage.getItem("pagina"))
 	var pagina = window.localStorage.getItem("pagina");
 }
 else { var pagina = '';}
-
-	/*document.getElementById("cod_personal").value=cod_personal;
-	document.getElementById("regId").value=regId;*/
 
 	if((cod_personal!='0')&&(cod_personal!=''))
 	{

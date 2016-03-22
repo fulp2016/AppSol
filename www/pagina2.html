@@ -133,6 +133,7 @@ eval(arrVariableActual[0]+"="+arrVariableActual[1]+";");
     
 </div>
 <script>
+var uuid = window.localStorage.getItem("uuid");
 var regId = window.localStorage.getItem("regId");
 var cod_personal = window.localStorage.getItem("cod_personal");
 var pagina = window.localStorage.getItem("pagina");
@@ -162,7 +163,7 @@ $(document).ready(function() {
 
 	$('#iniciar').click(function(){
 		var username = $(this).val();		
-		var dataString = "login="+document.getElementById("login").value+"&pass="+document.getElementById("pass").value+"&regId2="+regId;
+		var dataString = "login="+document.getElementById("login").value+"&pass="+document.getElementById("pass").value+"&uuid="+uuid;
 		$.ajax({
             type: "POST",
             url: "http://www.fulp.es/FULP/mensajesapp/registro_app.php",

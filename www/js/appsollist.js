@@ -524,7 +524,7 @@ function mostrarSol()
 
 function cerrar_sesion(){	 
 	 var xmlhttp =new XMLHttpRequest();
-	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&cerrar=S",false);
+	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?uuid="+uuid+"&cerrar=S",false);
 	 xmlhttp.send(null);	
 	 $("#binicio").attr("src","img/binicio.png");
 }
@@ -539,7 +539,7 @@ function change(a)
 
 function anadir_favorito(tipo,codigo,id){	 
 	 var xmlhttp =new XMLHttpRequest();
-	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&newfavorito=S",false);
+	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?uuid="+uuid+"&tipo="+tipo+"&codigo="+codigo+"&newfavorito=S",false);
 	 xmlhttp.send(null);	
 	 $("#icofavorito"+id).attr("src","img/strellaon.png");
 	 $("#enlcfavorito"+id).attr("onclick",'eliminar_fav(\''+tipo+'\',\''+codigo+'\',\''+ id +'\')'); 
@@ -547,7 +547,7 @@ function anadir_favorito(tipo,codigo,id){
 
 function eliminar_fav(tipo,codigo,id){	 
 	 var xmlhttp =new XMLHttpRequest();
-	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&nofavorito=S",false);
+	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?uuid="+uuid+"&tipo="+tipo+"&codigo="+codigo+"&nofavorito=S",false);
 	 xmlhttp.send(null);	
 	 $("#icofavorito"+id).attr("src","img/strellaoff.png");
 	 $("#enlcfavorito"+id).attr("onclick",'anadir_favorito(\''+tipo+'\',\''+codigo+'\',\''+ id +'\')'); 
@@ -556,7 +556,7 @@ function eliminar_fav(tipo,codigo,id){
 
 function eliminar_fav2(tipo,codigo,id){	 
 	 var xmlhttp =new XMLHttpRequest();
-	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&tipo="+tipo+"&codigo="+codigo+"&nofavorito=S",false);
+	 xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?uuid="+uuid+"&tipo="+tipo+"&codigo="+codigo+"&nofavorito=S",false);
 	 xmlhttp.send(null);	
 	 
 	 getFavoritosList();
