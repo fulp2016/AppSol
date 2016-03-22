@@ -2,10 +2,11 @@ var app = {
 		
     // Application Constructor 
     initialize: function() { 
-		var regId = ''; var cod_personal = ''; var pagina = '';
+		var regId = ''; var cod_personal = ''; var pagina = ''; var uuid = '';
 		window.localStorage.setItem("regId", regId);
 		window.localStorage.setItem("cod_personal", cod_personal);
 		window.localStorage.setItem("pagina", pagina);
+		window.localStorage.setItem("uuid", uuid);
 
 		this.bindEvents(); 
 		
@@ -36,7 +37,7 @@ var app = {
 	var pushNotification = window.plugins.pushNotification; 
 
 	var so = device.platform;
-	var uuid = device.uuid;
+	  uuid = device.uuid;
 
        // if (device.platform == 'android' || device.platform == 'Android') { 
            // alert("Register called"); 
@@ -64,7 +65,7 @@ var app = {
 					// a diferencia de la parte android aqui el valor "result" es el token del dispositivo //
 					// guardamos en el dispositivo el token, para poder usarlo mas tarde //
 					regId = result;
-					registrar_dispositivo(regId,'IOS',uuid);
+					registrar_dispositivo(regId,'IOS');
 					setTimeout(comprobar_sesion(regId),10000);	
 				}, 
 				
@@ -83,9 +84,9 @@ var app = {
                     //Cuando se registre le pasamos el regid al input 
 					regId = e.regid;
                     //document.getElementById('regId').value = regId; 	
-					alert(uuid);
-					registrar_dispositivo(regId,'ANDROID',uuid);	
-					setTimeout(comprobar_sesion(regId),10000);			
+					
+					registrar_dispositivo(regId,'ANDROID');	
+					setTimeout(comprobar_sesion(regId),10000);	
                 } 
             break; 
 
@@ -125,7 +126,7 @@ var app = {
 
 };
 
-function registrar_dispositivo(regId,sistema,uuid){	 
+function registrar_dispositivo(regId,sistema){	 
 	var xmlhttp =new XMLHttpRequest();
 	alert(3);
 	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app2.php?regId="+regId+"&sist="+sistema+"&uuid="+uuid+"&new=S",false);
@@ -146,6 +147,8 @@ function comprobar_sesion(a)
 				window.localStorage.setItem("regId", regId);
 				
 				window.localStorage.setItem("cod_personal", cod_personal);
+				
+				window.localStorage.setItem("uuid", uuid);
 				
 				//document.getElementById("cod_personal").value=data;
 				setTimeout(document.getElementById('resgistro').submit(),10000);
