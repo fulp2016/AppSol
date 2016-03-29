@@ -45,12 +45,11 @@ var app = {
             //tu Project ID aca!! 
 	if((so=="Android")||(so=="android")||(so=="ANDROID"))
 	{
-
 		pushNotification.register(this.successAndroid, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
     }
 	else if(so=="iOS")
 	{
-
+		alert(1);
 		pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
 	}
 	
@@ -70,7 +69,6 @@ var app = {
 				}, 
 				
 				errorHandler:function(error) { 
-				alert(1);
 					app.registrarDispositivo();
 				}, 
     onNotificationGCM: function(e) { 
