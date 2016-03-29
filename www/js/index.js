@@ -70,6 +70,7 @@ var app = {
 				}, 
 				
 				errorHandler:function(error) { 
+				alert(1);
 					app.registrarDispositivo();
 				}, 
     onNotificationGCM: function(e) { 
