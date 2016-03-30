@@ -50,8 +50,8 @@ var app = {
     }
 	else if(so=="iOS")
 	{ 
-		//pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
-		app.registrarDispositivo();
+		pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
+		//app.registrarDispositivo();
 	}
 	
     }, 
@@ -123,7 +123,7 @@ var app = {
     },
 	
 	registrarDispositivo: function () {
-		alert(3);
+		
 		registrar_dispositivo();	
 		setTimeout(comprobar_sesion(),10000);
 		
@@ -134,15 +134,14 @@ var app = {
 
 
 function registrar_dispositivo(){	 
-alert("2 "+so);
-alert("3 "+uuid);
+
 	var xmlhttp =new XMLHttpRequest();
 	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&sist="+so+"&uuid="+uuid+"&new=S",false);
 	xmlhttp.send(null);	
 }
 
 function comprobar_sesion()
-{	alert(5);
+{	
 	var dataString = "uuid="+uuid+"&comprobarses=S";
 		$.ajax({ 
             type: "POST",
@@ -156,7 +155,7 @@ function comprobar_sesion()
 				window.localStorage.setItem("cod_personal", cod_personal);
 				window.localStorage.setItem("uuid", uuid);
 				window.localStorage.setItem("so", so);
-				alert(6);
+				
 				setTimeout(document.getElementById('resgistro').submit(),10000);
             }
         });
