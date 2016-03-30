@@ -49,7 +49,6 @@ var app = {
     }
 	else if(so=="iOS")
 	{
-		alert(1);
 		pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
 	}
 	
