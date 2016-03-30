@@ -40,7 +40,7 @@ var app = {
 
 	  so = device.platform;
 	  uuid = device.uuid;
-
+	  regId = '';
        // if (device.platform == 'android' || device.platform == 'Android') { 
            // alert("Register called"); 
             //tu Project ID aca!! 
