@@ -2,6 +2,7 @@ var app = {
 		
     // Application Constructor 
     initialize: function() { 
+		
 		var regId = ''; var cod_personal = ''; var pagina = ''; var uuid = ''; var so = '';
 		window.localStorage.setItem("regId", regId);
 		window.localStorage.setItem("cod_personal", cod_personal);
@@ -48,7 +49,7 @@ var app = {
 		pushNotification.register(this.successAndroid, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
     }
 	else if(so=="iOS")
-	{ alert(1);
+	{ 
 		//pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
 		app.registrarDispositivo();
 	}
@@ -69,7 +70,6 @@ var app = {
 				}, 
 				
 				errorHandler:function(error) { 
-				alert(2);
 					app.registrarDispositivo();
 				}, 
     onNotificationGCM: function(e) { 
@@ -134,7 +134,6 @@ var app = {
 
 
 function registrar_dispositivo(){	 
-alert("1 "+regId);
 alert("2 "+so);
 alert("3 "+uuid);
 	var xmlhttp =new XMLHttpRequest();
