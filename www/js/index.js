@@ -9,7 +9,7 @@ var app = {
 		window.localStorage.setItem("pagina", pagina);
 		window.localStorage.setItem("uuid", uuid);
 		window.localStorage.setItem("so", so);
-
+		alert(1);
 		this.bindEvents(); 
 		
     }, 
@@ -37,7 +37,7 @@ var app = {
 		//alert('Received Event: ' + id);
 
 	var pushNotification = window.plugins.pushNotification; 
-
+alert(2);
 	  so = device.platform;
 	  uuid = device.uuid;
 	  regId = '';
@@ -47,10 +47,12 @@ var app = {
             //tu Project ID aca!! 
 	if((so=="Android")||(so=="android")||(so=="ANDROID"))
 	{
+	alert(3);
 		pushNotification.register(this.successAndroid, this.errorHandler,{"senderID":"112340636347","ecb":"app.onNotificationGCM"});  
     }
 	else if(so=="iOS")
 	{ 
+	alert(3);
 		pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
 		//setTimeout(app.registrarDispositivo(),10000);
 	}
