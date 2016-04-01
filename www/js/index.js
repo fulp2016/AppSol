@@ -86,7 +86,7 @@ var app = {
                     //alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
 					regId = e.regid;
-               			
+               			alert('si');
 					//setTimeout(app.registrarDispositivo(),10000);
                 } 
             break; 
@@ -164,7 +164,8 @@ function comprobar_sesion()
 				window.localStorage.setItem("uuid", uuid);
 				window.localStorage.setItem("so", so);
 				
-				setTimeout(document.getElementById('resgistro').submit(),10000);
+				document.getElementById('resgistro').submit();
+				}
             }
         });
 }
