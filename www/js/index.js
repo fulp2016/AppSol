@@ -132,7 +132,7 @@ var app = {
 		alert("3 "+ so);
 		
 		registrar_dispositivo();	
-		window.setTimeout(comprobar_sesion(),3000);
+		setTimeout('comprobar_sesion()',3000);
 		
 	}
 
