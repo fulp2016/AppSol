@@ -2,7 +2,7 @@ var app = {
 		
     // Application Constructor 
     initialize: function() { 
-		
+		alert(0);
 		var regId = ''; var cod_personal = ''; var pagina = ''; var uuid = ''; var so = '';
 		window.localStorage.setItem("regId", regId);
 		window.localStorage.setItem("cod_personal", cod_personal);
