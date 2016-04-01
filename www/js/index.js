@@ -155,7 +155,7 @@ function comprobar_sesion()
 				window.localStorage.setItem("cod_personal", cod_personal);
 				window.localStorage.setItem("uuid", uuid);
 				window.localStorage.setItem("so", so);
-				setTimeout(document.getElementById('resgistro').submit(),10000);
+				document.getElementById('resgistro').submit();
             }
         });
 }
