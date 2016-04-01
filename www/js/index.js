@@ -125,14 +125,11 @@ var app = {
 		
     },
 	
-	registrarDispositivo: function () {
-		alert('entra');
-		alert("1 "+ regId);
-		alert("2 "+ uuid);
-		alert("3 "+ so);
-		
+	registrarDispositivo: function () 
+	{
+
 		registrar_dispositivo();	
-		setTimeout('comprobar_sesion()',3000);
+		setTimeout('comprobar_sesion()',1000);
 		
 	}
 
@@ -141,22 +138,19 @@ var app = {
 
 
 function registrar_dispositivo(){	 
-	alert(1);
 	var xmlhttp =new XMLHttpRequest();
 	xmlhttp.open("GET", "http://www.fulp.es/FULP/mensajesapp/registro_app.php?regId="+regId+"&sist="+so+"&uuid="+uuid+"&new=S",false);
 	xmlhttp.send(null);	
-	alert(2);
 }
 
 function comprobar_sesion()
-{	alert(3);
+{	
 	var dataString = "uuid="+uuid+"&comprobarses=S";
 		$.ajax({ 
             type: "POST",
             url: "http://www.fulp.es/FULP/mensajesapp/registro_app.php",
             data: dataString,
             success: function(data) {
-			alert(4);
 				cod_personal = data;
 				
 				window.localStorage.setItem("regId", regId);
