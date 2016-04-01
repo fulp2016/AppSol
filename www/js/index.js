@@ -116,7 +116,7 @@ var app = {
             navigator.notification.alert(event.alert); 
         } 
         if (event.badge) { 
-            pushNotification.setApplicationIconBadgeNumber(this.successHandler, this.errorHandler, event.badge); 
+            pushNotification.setApplicationIconBadgeNumber(this.successBadgeNumber, this.errorBadgeNumber, event.badge); 
         } 
         if (event.sound) { 
             var snd = new Media(event.sound); 
@@ -132,7 +132,7 @@ var app = {
 		alert("3 "+ so);
 		
 		registrar_dispositivo();	
-		setTimeout(comprobar_sesion(),10000);
+		window.setTimeout(comprobar_sesion(),3000);
 		
 	}
 
