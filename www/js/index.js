@@ -41,6 +41,7 @@ var app = {
 	  so = device.platform;
 	  uuid = device.uuid;
 	  regId = '';
+	  //var envio = 'S';
        // if (device.platform == 'android' || device.platform == 'Android') { 
            // alert("Register called"); 
             //tu Project ID aca!! 
@@ -51,7 +52,7 @@ var app = {
 	else if(so=="iOS")
 	{ 
 		pushNotification.register(this.successIOS, this.errorHandler,{"badge":"true", "sound": "true", "alert": "true", "ecb":"app.onNotificationAPN"});
-		//app.registrarDispositivo();
+		//setTimeout(app.registrarDispositivo(),10000);
 	}
 	
     }, 
@@ -63,14 +64,16 @@ var app = {
 				
 				// funcion aviso si todo es correcto en IOS // 
 				successIOS: function(result) { 
+					//envio = 'N';
 					// a diferencia de la parte android aqui el valor "result" es el token del dispositivo //
 					// guardamos en el dispositivo el token, para poder usarlo mas tarde //
 					regId = result;
-					setTimeout(app.registrarDispositivo(),10000);
+					//envio = 'S';
+					//setTimeout(app.registrarDispositivo(),10000);
 				}, 
 				
 				errorHandler:function(error) { 
-					app.registrarDispositivo();
+					alert("Ha ocurrido un error en el registro");
 				}, 
     onNotificationGCM: function(e) { 
 
@@ -84,7 +87,7 @@ var app = {
                     //Cuando se registre le pasamos el regid al input 
 					regId = e.regid;
                			
-					setTimeout(app.registrarDispositivo(),10000);
+					//setTimeout(app.registrarDispositivo(),10000);
                 } 
             break; 
 
@@ -123,6 +126,10 @@ var app = {
     },
 	
 	registrarDispositivo: function () {
+		alert('entra');
+		alert("1 "+ regId);
+		alert("2 "+ uuid);
+		alert("3 "+ so);
 		
 		registrar_dispositivo();	
 		setTimeout(comprobar_sesion(),10000);
@@ -156,7 +163,10 @@ function comprobar_sesion()
 				window.localStorage.setItem("uuid", uuid);
 				window.localStorage.setItem("so", so);
 				
-				setTimeout(document.getElementById('resgistro').submit(),10000);
+				if(envio == 'S')
+				{
+					setTimeout(document.getElementById('resgistro').submit(),10000);
+				}
             }
         });
 }
