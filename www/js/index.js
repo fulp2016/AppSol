@@ -127,10 +127,8 @@ var app = {
 	
 	registrarDispositivo: function () 
 	{
-
 		registrar_dispositivo();	
-		setTimeout('comprobar_sesion()',2000);
-		
+		setTimeout('comprobar_sesion()',2000);	
 	}
 
 };
